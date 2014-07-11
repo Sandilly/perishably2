@@ -1,0 +1,40 @@
+---
+cereals:
+- name: Cheerios
+  expiration_date: 6-8 Months
+  storage: Pantry
+- name: Shredded Wheat
+  expiration_date: 6-8 Months
+  storage: Pantry
+- name: Box of Cereal
+  expiration_date: 6-8 Months
+  storage: Pantry
+- name: Cereal
+  expiration_date: 4-6 Months
+  storage: Pantry
+- name: Cooked Cereal
+  expiration_date: "–"
+  storage: Pantry
+tofus:
+- name: Tofu lasts
+  expiration_date: 3-5 Days
+  storage: Refrigerator
+- name: Tofu
+  expiration_date: 3-5 Days after opening, regardless of date
+  storage: Refrigerator
+sodas:
+- name: Coca Cola
+  expiration_date: 6-9 Months
+  storage: Pantry
+- name: Diet* Pepsi
+  expiration_date: 6-9 Months
+  storage: Pantry
+- name: 7-Up
+  expiration_date: 6-9 Months
+  storage: Pantry
+- name: Diet* Coke Can
+  expiration_date: 1 Day
+  storage: Pantry
+- name: Pepsi Bottle
+  expiration_date: 1-3 Days
+  storage: Pantry

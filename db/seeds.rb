@@ -1,3 +1,8 @@
+require 'yaml'
+YAML.load(File.read('db/eat_by_seeds.yaml')).values.flatten.each do |p|
+  product = Product.create(p)
+end
+
 makeup_array= []
 scraper = Scraper.new("www.bellasugar.com/When-Throw-Makeup-Away-Guidelines-Cosmetic-Life-Span-1124422")
 scraper.fetch
@@ -16,7 +21,6 @@ makeup_array.each do |element|
   # {:name => "mascara",:expiration => "12 months"}
   product = Product.new
   product.name = element[:name]
-  product.expiration_date = 4 #element[:expiration]
+  product.expiration_date = element[:expiration]
   product.save
 end
-
