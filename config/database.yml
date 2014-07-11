@@ -23,3 +23,11 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+  # development:
+  #   adapter: postgresql
+  #   host: localhost
+  #   port: 5432
+  #   username: 
+  #   password: 
+  #   database: example_dev
