@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'home/index' #user homepage
+  root 'home#index' #user homepage
 
-  root 'login#index'
+  # root 'login#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
