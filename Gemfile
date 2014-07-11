@@ -4,6 +4,9 @@ gem 'nokogiri'
 gem 'rest-client', require: "rest_client"
 gem 'mechanize'
 
+gem 'sqlite3'
+gem 'pry'
+
 group :production do
   gem 'pg'
 end
