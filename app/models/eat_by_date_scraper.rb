@@ -1,4 +1,4 @@
-require 'pry-nav'
+
 require "rest_client"
 require 'nokogiri'
 require 'yaml/store'
