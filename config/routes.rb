@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'static_pages/home' #created by "rails g controller"
-  root to: 'static_pages#home' #user homepage
-  #or get '/', to 'static_pages#home'
-  # root 'login#index'
+
+
+  resources :products
+  root :to =>'home#index' #user homepage
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
