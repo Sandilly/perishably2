@@ -1,4 +1,3 @@
-
 require 'yaml'
 #do we need to require the scraper file?
 
