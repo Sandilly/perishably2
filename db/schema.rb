@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140713161545) do
+ActiveRecord::Schema.define(version: 20140711192227) do
 
   create_table "create_join_table_product_users", force: true do |t|
     t.string   "user"
