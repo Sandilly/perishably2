@@ -31,6 +31,7 @@ class EatByDateScraper
 		products
 	end
 <<<<<<< HEAD
+<<<<<<< HEAD
 end
 
 #should go in the rakefile under a task rake db:seeds
@@ -77,13 +78,12 @@ end
 	#store it in YAML--
 	#put it all in the same class
 
+=======
+>>>>>>> parent of 7f5d31f... working on eatbydate scraper
 end
 
-scraper = EatByDateScraper.new("http://www.eatbydate.com")
-scraper.get_links_from_home_page
-scraper.get_all_products
-
 #should go in the rakefile under a task rake db:seeds
+<<<<<<< HEAD
 
 # store = YAML::Store.new "../../db/eat_by_seeds.yml"
 # store.transaction do
@@ -113,3 +113,18 @@ scraper.get_all_products
 >>>>>>> parent of c96e8bf... almost done with eatbyscraper
 =======
 >>>>>>> parent of c96e8bf... almost done with eatbyscraper
+=======
+c = EatByDateScraper.new("www.eatbydate.com/grains/cereal/cereal-shelf-life-expiration-date/")
+cereals = c.get_products
+t = EatByDateScraper.new("www.eatbydate.com/proteins/beans-peas/how-long-does-tofu-last-shelf-life/")
+tofus=t.get_products
+s = EatByDateScraper.new("www.eatbydate.com/drinks/how-long-does-coke-last-shelf-life-expiration-date/")
+sodas= s.get_products
+
+store = YAML::Store.new "../../db/eat_by_seeds.yml"
+store.transaction do
+  store["cereals"] = cereals
+  store["tofus"] = tofus
+  store["sodas"] = sodas
+end
+>>>>>>> parent of 7f5d31f... working on eatbydate scraper
