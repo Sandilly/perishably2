@@ -1,4 +1,9 @@
 require 'yaml'
+#do we need to require the scraper file?
+
+scraper = EatByDateScraper.new("http://www.eatbydate.com")
+scraper.store_data_in_yaml
+
 YAML.load(File.read('db/eat_by_seeds.yaml')).values.flatten.each do |p|
   product = Product.create(p)
 end
