@@ -1,3 +1,9 @@
 class User < ActiveRecord::Base
-	has_secure_password
+<<<<<<< Updated upstream
+
+=======
+	# has_secure_password
+>>>>>>> Stashed changes
+  has_many :products
+
 end

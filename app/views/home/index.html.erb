@@ -2,9 +2,9 @@
 
 <p> List of items </p>
 <ul>
-  <% @products.each do |p|%>
-    <li> <%= p.name %> </li>
-    <li> <%= p.expiration_date %> </li>
+  <% @products.each do |product|%>
+    <li> <a href="/products/<%= product.id %>/edit"><%= product.name %> </a> </li>
+    <!--<li> <%= product.expiration_date %> </li> -->
   <% end %> 
 </ul>
   

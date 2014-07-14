@@ -45,27 +45,6 @@ class EatByDateScraper
 		end
 		@products_on_one_page
 	end
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-end
-
-#should go in the rakefile under a task rake db:seeds
-c = EatByDateScraper.new("www.eatbydate.com/grains/cereal/cereal-shelf-life-expiration-date/")
-cereals = c.get_products
-t = EatByDateScraper.new("www.eatbydate.com/proteins/beans-peas/how-long-does-tofu-last-shelf-life/")
-tofus=t.get_products
-s = EatByDateScraper.new("www.eatbydate.com/drinks/how-long-does-coke-last-shelf-life-expiration-date/")
-sodas= s.get_products
-
-<<<<<<< HEAD
-store = YAML::Store.new "../../db/eat_by_seeds.yml"
-store.transaction do
-  store["cereals"] = cereals
-  store["tofus"] = tofus
-  store["sodas"] = sodas
-end
-=======
 
 
 def get_all_products
@@ -77,29 +56,19 @@ def get_all_products
 	binding.pry
 end
 
-=======
-def get_all_products
-	@products_on_all_pages = []
-	@links.each do |url|
-		products_on_a_page = scrape_one_chart(url)
-		@products_on_all_pages << products_on_a_page
-	end
-	binding.pry
-end
-
->>>>>>> parent of c96e8bf... almost done with eatbyscraper
 	#iterate through the array, 
 	#instantiate EatByScraper.new on each item in array
 	#run get_products on each item in array
 	#store it in YAML--
 	#put it all in the same class
 
-=======
->>>>>>> parent of 7f5d31f... working on eatbydate scraper
 end
 
+scraper = EatByDateScraper.new("http://www.eatbydate.com")
+scraper.get_links_from_home_page
+scraper.get_all_products
+
 #should go in the rakefile under a task rake db:seeds
-<<<<<<< HEAD
 
 # store = YAML::Store.new "../../db/eat_by_seeds.yml"
 # store.transaction do
@@ -125,46 +94,3 @@ end
 #   Product.create!(:name => item.text.strip)
 # end
 
-<<<<<<< HEAD
->>>>>>> parent of c96e8bf... almost done with eatbyscraper
-=======
->>>>>>> parent of c96e8bf... almost done with eatbyscraper
-=======
-c = EatByDateScraper.new("www.eatbydate.com/grains/cereal/cereal-shelf-life-expiration-date/")
-cereals = c.get_products
-t = EatByDateScraper.new("www.eatbydate.com/proteins/beans-peas/how-long-does-tofu-last-shelf-life/")
-tofus=t.get_products
-s = EatByDateScraper.new("www.eatbydate.com/drinks/how-long-does-coke-last-shelf-life-expiration-date/")
-sodas= s.get_products
-
-store = YAML::Store.new "../../db/eat_by_seeds.yml"
-store.transaction do
-  store["cereals"] = cereals
-  store["tofus"] = tofus
-  store["sodas"] = sodas
-end
->>>>>>> parent of 7f5d31f... working on eatbydate scraper
-=======
-
-
-	def get_all_products
-		get_links_from_home_page
-		@products_on_all_pages = []
-		@links.each do |url|
-			products_per_page = scrape_one_chart(url)
-			@products_on_all_pages << products_per_page
-		end
-		@products_on_all_pages
-	end
-
-	def store_data_in_yaml
-		get_all_products
-		all_products = @products_on_all_pages.flatten.flatten
-		store = YAML::Store.new "db/eat_by_seeds.yml"
-			store.transaction do
-  		store[all_products] = "all_products"
-		end
-	end
-
-end
->>>>>>> c96e8bfdec7538a4871f1ec14be42786ee1aea2d
