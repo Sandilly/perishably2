@@ -30,6 +30,7 @@ class EatByDateScraper
 		end
 		products
 	end
+<<<<<<< HEAD
 end
 
 #should go in the rakefile under a task rake db:seeds
@@ -46,3 +47,54 @@ store.transaction do
   store["tofus"] = tofus
   store["sodas"] = sodas
 end
+=======
+
+
+def get_all_products
+	@products_on_all_pages = []
+	@links.each do |url|
+		products_on_a_page = scrape_one_chart(url)
+		@products_on_all_pages << products_on_a_page
+	end
+	binding.pry
+end
+
+	#iterate through the array, 
+	#instantiate EatByScraper.new on each item in array
+	#run get_products on each item in array
+	#store it in YAML--
+	#put it all in the same class
+
+end
+
+scraper = EatByDateScraper.new("http://www.eatbydate.com")
+scraper.get_links_from_home_page
+scraper.get_all_products
+
+#should go in the rakefile under a task rake db:seeds
+
+# store = YAML::Store.new "../../db/eat_by_seeds.yml"
+# store.transaction do
+#   store["cereals"] = cereals
+#   store["tofus"] = tofus
+#   store["sodas"] = sodas
+# end
+
+# require 'pry-nav'
+# require 'mechanize'
+# require 'nokogiri'
+
+
+
+
+# agent = Mechanize.new
+# page = agent.get("http://www.eatbydate.com")
+# endlinks = []
+# page.search('#primary-menu')
+# agent.click("http://www.eatbydate.com/dairy/cheese/cheese-shelf-life-expiration-date/")
+# binding.pry
+# agent.page.search(".edit_item").each do |item|
+#   Product.create!(:name => item.text.strip)
+# end
+
+>>>>>>> parent of c96e8bf... almost done with eatbyscraper
