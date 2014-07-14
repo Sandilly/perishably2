@@ -41,6 +41,7 @@ tofus=t.get_products
 s = EatByDateScraper.new("www.eatbydate.com/drinks/how-long-does-coke-last-shelf-life-expiration-date/")
 sodas= s.get_products
 
+<<<<<<< HEAD
 store = YAML::Store.new "../../db/eat_by_seeds.yml"
 store.transaction do
   store["cereals"] = cereals
@@ -59,6 +60,17 @@ def get_all_products
 	binding.pry
 end
 
+=======
+def get_all_products
+	@products_on_all_pages = []
+	@links.each do |url|
+		products_on_a_page = scrape_one_chart(url)
+		@products_on_all_pages << products_on_a_page
+	end
+	binding.pry
+end
+
+>>>>>>> parent of c96e8bf... almost done with eatbyscraper
 	#iterate through the array, 
 	#instantiate EatByScraper.new on each item in array
 	#run get_products on each item in array
@@ -97,4 +109,7 @@ scraper.get_all_products
 #   Product.create!(:name => item.text.strip)
 # end
 
+<<<<<<< HEAD
+>>>>>>> parent of c96e8bf... almost done with eatbyscraper
+=======
 >>>>>>> parent of c96e8bf... almost done with eatbyscraper
