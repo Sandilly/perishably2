@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'home#index' #user homepage
-
+  get 'static_pages/home' #created by "rails g controller"
+  root to: 'static_pages#home' #user homepage
+  #or get '/', to 'static_pages#home'
   # root 'login#index'
 
 

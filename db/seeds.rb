@@ -3,6 +3,7 @@ YAML.load(File.read('db/eat_by_seeds.yaml')).values.flatten.each do |p|
   product = Product.create(p)
 end
 
+
 makeup_array= []
 scraper = Scraper.new("www.bellasugar.com/When-Throw-Makeup-Away-Guidelines-Cosmetic-Life-Span-1124422")
 scraper.fetch
