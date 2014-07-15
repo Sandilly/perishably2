@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  product_id: 1
+  length_of_time: MyString
+  exp_date: 2014-07-15
+
+two:
+  user_id: 1
+  product_id: 1
+  length_of_time: MyString
+  exp_date: 2014-07-15
