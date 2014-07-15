@@ -2,6 +2,6 @@
 <% @products.each do |product| %>
   <div class="product">
     <h1 class="product-name"><%= link_to product.name, product_path(product) %></h1>
-    <p class="product-expiration_date"><%= product.expiration_date %></p>
+    <p class="product-time"><%= product.time %></p>
   </div>
 <% end %>
