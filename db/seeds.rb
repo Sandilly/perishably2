@@ -6,7 +6,7 @@ scraper.parse('.tiptable tr') do |element|
   item = {}
   next if element.css('td').empty?
   item[:name] =  element.css('td')[0].text
-  item[:expiration_date] = element.css('td')[1].text
+  item[:time] = element.css('td')[1].text
   makeup_array << item
 end
 
@@ -16,7 +16,7 @@ makeup_array.each do |element|
   # {:name => "mascara",:expiration => "12 months"}
   product = Product.new
   product.name = element[:name]
-  product.expiration_date = element[:expiration_date]
+  product.time = element[:time]
   product.save
 end
 
