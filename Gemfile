@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'pry'
 gem 'bcrypt'
 gem 'nokogiri'
 gem 'rest-client', require: "rest_client"

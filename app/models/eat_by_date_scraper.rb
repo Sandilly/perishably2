@@ -1,7 +1,3 @@
-require "rest_client"
-require 'nokogiri'
-require 'yaml/store'
-
 class EatByDateScraper 
 	
 	attr_reader :products_on_one_page, :links, :html, :homepath, :primary_selector, :response, :page, :allstudentlis, :info
@@ -45,24 +41,28 @@ class EatByDateScraper
 		@products_on_one_page
 	end
 
+	def save_a_chart_to_activerecord_db(url)
+		chart = scrape_one_chart(url)
+		chart.each do |p|
+			product = Product.create(p)
+		end
+	end
 
-	def get_all_products
+	def save_all_charts_to_active_record
 		get_links_from_home_page
-		@products_on_all_pages = []
-		@links.each do |url|
-			products_per_page = scrape_one_chart(url)
-			@products_on_all_pages << products_per_page
+		@links.each do |l|
+			save_a_chart_to_activerecord_db(l)
 		end
-		@products_on_all_pages
 	end
 
-	def store_data_in_yaml
-		get_all_products
-		all_products = @products_on_all_pages.flatten.flatten
-		store = YAML::Store.new "db/eat_by_seeds.yaml"
-			store.transaction do
-  		store[all_products] = "all_products"
-		end
-	end
+	# def get_all_products
+	# 	@products_on_all_pages = []
+	# 	@links.each do |url|
+	# 		products_per_page = scrape_one_chart(url)
+	# 		@products_on_all_pages << products_per_page
+	# 	end
+	# 	@products_on_all_pages
+	# end
 
 end
+
