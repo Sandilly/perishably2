@@ -59,7 +59,7 @@ class EatByDateScraper
 	def store_data_in_yaml
 		get_all_products
 		all_products = @products_on_all_pages.flatten.flatten
-		store = YAML::Store.new "db/eat_by_seeds.yml"
+		store = YAML::Store.new "db/eat_by_seeds.yaml"
 			store.transaction do
   		store[all_products] = "all_products"
 		end

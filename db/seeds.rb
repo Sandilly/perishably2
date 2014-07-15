@@ -1,14 +1,14 @@
 
-require 'yaml'
-require_relative 'eat_by_date'
-require_relative 'scraper'
+# require 'yaml'
+# require_relative '../app/models/eat_by_date_scraper'
+# require_relative '../app/models/scraper'
 
-scraper = EatByDateScraper.new("http://www.eatbydate.com")
-scraper.store_data_in_yaml
+# scraper = EatByDateScraper.new("http://www.eatbydate.com")
+# scraper.store_data_in_yaml
 
-YAML.load(File.read('db/eat_by_seeds.yaml')).values.flatten.each do |p|
-  product = Product.create(p)
-end
+# YAML.load(File.read('db/eat_by_seeds.yaml')).values.flatten.each do |p|
+#   product = Product.create(p)
+# end
 
 
 

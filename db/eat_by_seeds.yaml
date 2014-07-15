@@ -1,40 +1,3106 @@
 ---
-cereals:
-- name: Cheerios
-  expiration_date: 6-8 Months
-  storage: Pantry
-- name: Shredded Wheat
-  expiration_date: 6-8 Months
-  storage: Pantry
-- name: Box of Cereal
-  expiration_date: 6-8 Months
-  storage: Pantry
-- name: Cereal
-  expiration_date: 4-6 Months
-  storage: Pantry
-- name: Cooked Cereal
-  expiration_date: "–"
-  storage: Pantry
-tofus:
-- name: Tofu lasts
-  expiration_date: 3-5 Days
+- name: Butter
+  time: 1 Month
   storage: Refrigerator
-- name: Tofu
-  expiration_date: 3-5 Days after opening, regardless of date
+- name: Butter
+  time: 2 Weeks
   storage: Refrigerator
-sodas:
+- name: Margarine
+  time: 4-5 Months
+  storage: Refrigerator
+- name: Margarine
+  time: 1-2 Months
+  storage: Refrigerator
+- name: Cottage Cheese lasts for
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Ricotta Cheese lasts for
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Cottage Cheese lasts for
+  time: 5-7 Days
+  storage: Refrigerator
+- name: Ricotta Cheese lasts for
+  time: 5-7 Days
+  storage: Refrigerator
+- name: Cream Cheese (Foil Wrapped)
+  time: 3-4 Weeks
+  storage: Refrigerator
+- name: Cream Cheese (Plastic Container)
+  time: 3-4 Weeks
+  storage: Refrigerator
+- name: Flavored Cream CheeseFlavored Cream Cheese
+  time: 3-4 Weeks
+  storage: Refrigerator
+- name: Reduced Fat Cream CheeseReduced Fat Cream Cheese
+  time: 2-3 Weeks
+  storage: Refrigerator
+- name: Neufchatel CheeseNeufchatel Cheese
+  time: 2-3 Weeks
+  storage: Refrigerator
+- name: All Cream CheeseAll Cream Cheese
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Hard Cheese (Parmesan, Asiago, Romano)
+  time: 2-4 Months
+  storage: Fridge
+- name: Shredded Hard Cheese
+  time: 1-2 Month
+  storage: Fridge
+- name: Semi-Hard Cheese Chunk (Cheddar, Swiss)
+  time: 1-2 Months
+  storage: Fridge
+- name: Sliced Semi-Hard Cheese
+  time: 1 Month
+  storage: Fridge
+- name: Hard Cheese Chunk (Parmesan, Asiago, Romano)
+  time: 3-6 Weeks
+  storage: Fridge
+- name: Shredded Hard Cheese
+  time: 3-4 Weeks
+  storage: Fridge
+- name: Semi-Hard Cheese Chunk
+  time: 3-6 Weeks
+  storage: Fridge
+- name: Sliced Semi-Hard Cheese
+  time: 2 Weeks
+  storage: Fridge
+- name: Brie Cheese
+  time: 1 Week
+  storage: Refrigerator
+- name: Mozzarella Cheese
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Feta Cheese
+  time: 1 Week
+  storage: Refrigerator
+- name: Monterey Jack Cheese
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Muenster Cheese
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Havarti Cheese
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Gorgonzola Cheese
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Buttermilk
+  time: 7-14 Days
+  storage: Refrigerator
+- name: Low-Fat Buttermilk 
+  time: 7-14 Days
+  storage: Refrigerator
+- name: All Buttermilk
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Half and Half
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Light Cream
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Whipping Cream
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Heavy Cream
+  time: 2-3 Weeks
+  storage: Refrigerator
+- name: Double Cream
+  time: 2-3 Weeks
+  storage: Refrigerator
+- name: Canned Dream Whip
+  time: 2-3 Months
+  storage: Refrigerator
+- name: Cool Whip
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: All liquid Creams
+  time: 5-7 Days
+  storage: Refrigerator
+- name: Canned Dream Whip
+  time: 2-3 Months
+  storage: Refrigerator
+- name: Cool Whip
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Coffee-mate Liquid
+  time: "–"
+  storage: Pantry
+- name: Coffee-mate Powder
+  time: 2-4 Months
+  storage: Pantry
+- name: Liquid Coffee-mate
+  time: "–"
+  storage: Pantry
+- name: Powder Coffee-mate
+  time: 1-2 Months
+  storage: Pantry
+- name: Half and Half
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Light Cream
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Whipping Cream
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Heavy Cream
+  time: 2-3 Weeks
+  storage: Refrigerator
+- name: Double Cream
+  time: 2-3 Weeks
+  storage: Refrigerator
+- name: Canned Dream Whip
+  time: 2-3 Months
+  storage: Refrigerator
+- name: Cool Whip
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: All liquid Creams
+  time: 5-7 Days
+  storage: Refrigerator
+- name: Canned Dream Whip
+  time: 2-3 Months
+  storage: Refrigerator
+- name: Cool Whip
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Canned Eggnog
+  time: 4-5 Months
+  storage: Refrigerator
+- name: Eggnog
+  time: 5-7 Days
+  storage: Refrigerator
+- name: Homemade Eggnog
+  time: 2-3 Days
+  storage: Refrigerator
+- name: Reduced Fat Eggnog
+  time: 5-7 Days
+  storage: Refrigerator
+- name: All Eggnogs
+  time: 5 Days
+  storage: Refrigerator
+- name: Adult Nutrition
+  time: best by date
+  storage: "(Unopened in Pantry)"
+- name: Evaporated Milk
+  time: 1 Year
+  storage: Pantry
+- name: Low Fat Skim Evaporated Milk
+  time: 9 Months
+  storage: Pantry
+- name: Evaporated Milk
+  time: 3-4 Days, regardless of any date
+  storage: Pantry
+- name: Ice Cream
+  time: 2-3 Months
+  storage: Freezer
+- name: Sherbert
+  time: 3-4 Months
+  storage: Freezer
+- name: Ice Cream
+  time: 1-2 Months
+  storage: Freezer
+- name: Sherbert
+  time: 2-3 Months
+  storage: Freezer
+- name: Infant/Baby Formula Liquid lasts
+  time: use by date
+  storage: Unopened in Pantry
+- name: Infant/Baby Formula Powder lasts
+  time: use by date
+  storage: Unopened in Pantry
+- name: Lactose-Free Milk lasts
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Non-Fat Milk lasts
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Skim Milk lasts
+  time: 7 Days
+  storage: Refrigerator
+- name: Reduced-Fat Milk lasts
+  time: 7 Days
+  storage: Refrigerator
+- name: Whole Milk lasts
+  time: 5-7 Days
+  storage: Refrigerator
+- name: Milk lasts
+  time: 5-7 Days
+  storage: Refrigerator
+- name: ''
+  time: Past Printed Date
+  storage: Pantry
+- name: Soy Milk
+  time: 1 Month
+  storage: Pantry
+- name: Almond Milk
+  time: 1 Month
+  storage: Pantry
+- name: Rice Milk
+  time: 1 Month
+  storage: Pantry
+- name: Cocount Milk
+  time: 1 Month
+  storage: Pantry
+- name: ''
+  time: Past Printed Date
+  storage: Pantry
+- name: Soy Milk
+  time: 7-10 Days
+  storage: Pantry
+- name: Rice Milk
+  time: 7-10 Days
+  storage: Pantry
+- name: Almond Milk
+  time: 7-10 Days
+  storage: Pantry
+- name: Coconut Milk
+  time: 7-10 Days
+  storage: Pantry
+- name: Hemp Milk
+  time: 7-10 Days
+  storage: Pantry
+- name: ''
+  time: Past Printed Date
+  storage: Pantry
+- name: All Milk Alternatives
+  time: 5-7 Days
+  storage: Pantry
+- name: Powdered Milk
+  time: 2-10 Years
+  storage: Pantry
+- name: Powdered Milk
+  time: 4-5 Days
+  storage: Pantry
+- name: Sweetened Condensed Milk
+  time: 1 Year
+  storage: Pantry
+- name: Sweetened Condensed Milk
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Aerosol Whipped Cream Canisters
+  time: 2-3 Weeks
+  storage: Refrigerator
+- name: Homemade Whipped Cream
+  time: 2-3 Days
+  storage: Refrigerator
+- name: Cool Whip Cream
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Cool Whip Cream lasts
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Vanilla Pudding
+  time: 3-4 Weeks
+  storage: Pantry
+- name: Chocolate Pudding
+  time: 3-4 Weeks
+  storage: Pantry
+- name: Kraft’s Dry Pudding Mix
+  time: 4-5 Weeks
+  storage: Pantry
+- name: Pudding Prepared from Dry Mix
+  time: 1 Day
+  storage: Pantry
+- name: Homemade Pudding
+  time: 1 Day
+  storage: Pantry
+- name: Sour Cream
+  time: 1-2 weeks
+  storage: Refrigerator
+- name: Reduced Fat Sour Cream
+  time: 1-2 weeks
+  storage: Refrigerator
+- name: Sour Cream Dip
+  time: 2 weeks
+  storage: Refrigerator
+- name: All Sour Creams
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Frozen Yogurt
+  time: "–"
+  storage: Refrigerator
+- name: Drinkable Yogurt
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Greek Yogurt
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Reduced Fat Yogurt
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Yogurt
+  time: 2-3 Weeks
+  storage: Refrigerator
+- name: Yogurt With Fruit 
+  time: 7-10 Days
+  storage: Refrigerator
+- name: All Opened Yogurt
+  time: 1 Week
+  storage: Refrigerator
+- name: Canned Beer lasts
+  time: 6-9 Months
+  storage: Pantry
+- name: Bottled Beer lasts
+  time: 6-9 Months
+  storage: Pantry
+- name: Homemade Beer lasts
+  time: 6-9 Months
+  storage: Pantry
+- name: Champagne lasts
+  time: 3-4 Years
+  storage: Cellar/Fridge
+- name: Sparkling Wine lasts
+  time: 3-4 Years
+  storage: Cellar/Fridge
+- name: Vintage Champagne lasts
+  time: 20+ Years
+  storage: Cellar/Fridge
+- name: Vodka
+  time: Indefinite
+  storage: Pantry
+- name: Tequila 
+  time: Indefinite
+  storage: Pantry
+- name: Rum 
+  time: Indefinite
+  storage: Pantry
+- name: Gin
+  time: Indefinite
+  storage: Pantry
+- name: Whiskey
+  time: Indefinite
+  storage: Pantry
+- name: Brandy
+  time: Indefinite
+  storage: Pantry
+- name: Bottled White Wine
+  time: 1-2 Years
+  storage: Pantry
+- name: Bottled Red Wine 
+  time: 2-3 Years
+  storage: Pantry
+- name: Wine juice box
+  time: 1 Year
+  storage: Pantry
+- name: Fine Wine 
+  time: Decades in a wine cellar
+  storage: Pantry
+- name: White Wine
+  time: 1-3 Days
+  storage: Pantry
+- name: Red Wine
+  time: 1-2 Weeks
+  storage: Pantry
+- name: Cooking Wine
+  time: 1-2 Months
+  storage: Pantry
+- name: Wine juice box
+  time: 6-12 Months
+  storage: Pantry
+- name: Ground Coffee lasts
+  time: 3-5 Months
+  storage: Pantry
+- name: Whole Bean Coffee lasts
+  time: 6-9 Months
+  storage: Pantry
+- name: Instant Coffee lasts
+  time: 2-20 Years
+  storage: Pantry
+- name: Ground Coffee lasts
+  time: 3-5 Months
+  storage: Pantry
+- name: Coffee Beans last
+  time: 6 Months
+  storage: Pantry
+- name: Instant Coffee (freeze dried)
+  time: 2-20 Years
+  storage: Pantry
+- name: K Cups Coffee
+  time: 3-8 Months
+  storage: Pantry
+- name: K Cups Tea
+  time: 6-12 Months
+  storage: Pantry
+- name: K Cups Hot Chocolate
+  time: 6-12 Months
+  storage: Pantry
+- name: K Cups Apple Cider
+  time: 8-12 Months
+  storage: Pantry
+- name: Packaged Tea
+  time: 6-12 Months
+  storage: Pantry
+- name: Loose Tea
+  time: 6-12 Months
+  storage: Pantry
+- name: Powder Iced Tea Mix
+  time: 6-12 Months
+  storage: Pantry
+- name: Prepared Tea
+  time: 3-5 Days
+  storage: Pantry
+- name: Fresh Apple Cider
+  time: "–"
+  storage: Pantry
+- name: Bottled Apple Juice 
+  time: 2-3 Months
+  storage: Pantry
+- name: Canned Apple Juice
+  time: 6-9 Months
+  storage: Pantry
+- name: Bottled Grape Juice 
+  time: 2-3 Months
+  storage: Pantry
+- name: Orange Juice
+  time: "–"
+  storage: Pantry
+- name: Canned Hawaiian Punch
+  time: 6-9 Months
+  storage: Pantry
+- name: Cranberry Juice Cocktail
+  time: 6-9 Months
+  storage: Pantry
+- name: Apple juice box
+  time: 2-3 Months
+  storage: Pantry
+- name: Capri Sun Juice Boxes
+  time: 6-9 Months
+  storage: Pantry
+- name: Minute Maid Juice Box
+  time: 2-3 Months
+  storage: Pantry
+- name: Fresh Squeezed Citrus Juice
+  time: 2-3 Days
+  storage: Pantry
+- name: Treetop Apple Juice 
+  time: 7-10 Days
+  storage: Pantry
+- name: Welch’s Grape Juice 
+  time: 7-10 Days
+  storage: Pantry
+- name: Orange Juice 
+  time: 5-7 Days
+  storage: Pantry
+- name: Grapefruit Juice 
+  time: 5-7 Days
+  storage: Pantry
+- name: Mango Juice 
+  time: 5-7 Days
+  storage: Pantry
+- name: Guava Juice 
+  time: 5-7 Days
+  storage: Pantry
+- name: Ocean Spray Cranberry Juice 
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Fruit Juice Concentrate
+  time: 5-10 Days
+  storage: Pantry
+- name: Minute Maid Juice Box 
+  time: 2-3 Days
+  storage: Pantry
+- name: Capri Sun juice Boxes
+  time: 5-7 Days
+  storage: Pantry
+- name: Canned Eggnog
+  time: 4-5 Months
+  storage: Refrigerator
+- name: Eggnog
+  time: 5-7 Days
+  storage: Refrigerator
+- name: Homemade Eggnog
+  time: 2-3 Days
+  storage: Refrigerator
+- name: Reduced Fat Eggnog
+  time: 5-7 Days
+  storage: Refrigerator
+- name: All Eggnogs
+  time: 5 Days
+  storage: Refrigerator
+- name: Infant/Baby Formula Liquid lasts
+  time: use by date
+  storage: Unopened in Pantry
+- name: Infant/Baby Formula Powder lasts
+  time: use by date
+  storage: Unopened in Pantry
+- name: Lactose-Free Milk lasts
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Non-Fat Milk lasts
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Skim Milk lasts
+  time: 7 Days
+  storage: Refrigerator
+- name: Reduced-Fat Milk lasts
+  time: 7 Days
+  storage: Refrigerator
+- name: Whole Milk lasts
+  time: 5-7 Days
+  storage: Refrigerator
+- name: Milk lasts
+  time: 5-7 Days
+  storage: Refrigerator
+- name: ''
+  time: Past Printed Date
+  storage: Pantry
+- name: Soy Milk
+  time: 1 Month
+  storage: Pantry
+- name: Almond Milk
+  time: 1 Month
+  storage: Pantry
+- name: Rice Milk
+  time: 1 Month
+  storage: Pantry
+- name: Cocount Milk
+  time: 1 Month
+  storage: Pantry
+- name: ''
+  time: Past Printed Date
+  storage: Pantry
+- name: Soy Milk
+  time: 7-10 Days
+  storage: Pantry
+- name: Rice Milk
+  time: 7-10 Days
+  storage: Pantry
+- name: Almond Milk
+  time: 7-10 Days
+  storage: Pantry
+- name: Coconut Milk
+  time: 7-10 Days
+  storage: Pantry
+- name: Hemp Milk
+  time: 7-10 Days
+  storage: Pantry
+- name: ''
+  time: Past Printed Date
+  storage: Pantry
+- name: All Milk Alternatives
+  time: 5-7 Days
+  storage: Pantry
 - name: Coca Cola
-  expiration_date: 6-9 Months
+  time: 6-9 Months
   storage: Pantry
 - name: Diet* Pepsi
-  expiration_date: 6-9 Months
+  time: 6-9 Months
   storage: Pantry
 - name: 7-Up
-  expiration_date: 6-9 Months
+  time: 6-9 Months
   storage: Pantry
 - name: Diet* Coke Can
-  expiration_date: 1 Day
+  time: 1 Day
   storage: Pantry
 - name: Pepsi Bottle
-  expiration_date: 1-3 Days
+  time: 1-3 Days
   storage: Pantry
+- name: Gatorade bottles
+  time: 9 Months
+  storage: Pantry
+- name: Powerade
+  time: 9 Months
+  storage: Pantry
+- name: Propel
+  time: 9 Months
+  storage: Pantry
+- name: Vitamin Water
+  time: 9 Months
+  storage: Pantry
+- name: Gatorade Dry Powder 
+  time: 6-8 Months
+  storage: Pantry
+- name: All Sport Drinks
+  time: 3-5 Days
+  storage: Pantry
+- name: Bottled Water
+  time: 2+ Years
+  storage: Pantry
+- name: Flavored Water
+  time: 9 Months
+  storage: Pantry
+- name: Vitamin Water
+  time: 9 Months
+  storage: Pantry
+- name: Sparkling Water
+  time: 1+ Years
+  storage: Pantry
+- name: Sparking Water
+  time: 2-3 Hours
+  storage: Pantry
+- name: Bottled Water
+  time: 2-3 Hours
+  storage: Pantry
+- name: ''
+  time: 1-2 Years
+  storage: Pantry
+- name: ''
+  time: 7 Days
+  storage: Pantry
+- name: ''
+  time: 3-4 Days
+  storage: Pantry
+- name: ''
+  time: 1-2 Years
+  storage: Pantry
+- name: ''
+  time: 6-9 Months
+  storage: Pantry
+- name: ''
+  time: "–"
+  storage: Pantry
+- name: ''
+  time: "–"
+  storage: Pantry
+- name: ''
+  time: 2-4 Years
+  storage: Pantry
+- name: Raisins
+  time: 6-12 Months
+  storage: Pantry
+- name: Dried Cranberries
+  time: 6-12 Months
+  storage: Pantry
+- name: Craisins
+  time: 6-12 Months
+  storage: Pantry
+- name: Dried Cherries
+  time: 6-12 Months
+  storage: Pantry
+- name: Dried Apricots
+  time: 6-12 Months
+  storage: Pantry
+- name: Dried Mangoes
+  time: 6-12 Months
+  storage: Pantry
+- name: Dates
+  time: 3-12 Months
+  storage: Pantry
+- name: Dried Blueberries
+  time: 6-12 Months
+  storage: Pantry
+- name: Dried Plums
+  time: 6-12 Months
+  storage: Pantry
+- name: Banana Chips
+  time: 1-2 Months
+  storage: Pantry
+- name: Figs
+  time: 3-12 Months
+  storage: Pantry
+- name: Chocolate Cherries
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Open Dried Fruit
+  time: 3-6 Months
+  storage: Pantry
+- name: Fresh Apples
+  time: 2-4 Weeks
+  storage: Pantry
+- name: Packaged Fresh Cut Apples
+  time: "–"
+  storage: Pantry
+- name: Applesauce
+  time: 1-2 Months (Unopened)
+  storage: Pantry
+- name: Apple Pie
+  time: 1-2 Days
+  storage: Pantry
+- name: Fresh Avocados
+  time: 3-4 Days
+  storage: Shelf
+- name: Homemade Guacamole
+  time: 3-4 Hours
+  storage: Shelf
+- name: Fresh Bananas
+  time: 2-7 Days
+  storage: Counter
+- name: Fresh Whole Blueberries
+  time: 2-3 Days
+  storage: Counter
+- name: Fresh Coconuts last
+  time: 1 Week
+  storage: Counter
+- name: Packaged Coconut lasts
+  time: 6-12 Months
+  storage: Counter
+- name: Fresh Coconuts last
+  time: "–"
+  storage: Counter
+- name: Homemade Roasted Coconut lasts
+  time: 2-3 Months
+  storage: Counter
+- name: Packaged (Dried) Coconut lasts
+  time: 4-6 Months
+  storage: Counter
+- name: Coconut Oil lasts
+  time: 1-2 Years
+  storage: Counter
+- name: Fresh Figs
+  time: 2-5 Days
+  storage: Counter
+- name: Grapes
+  time: 3-5 Days
+  storage: Counter
+- name: Fresh Lemons last
+  time: 2-4 Weeks
+  storage: Counter
+- name: Cut Lemons last
+  time: Same Day
+  storage: Counter
+- name: Lemon Juice
+  time: "–"
+  storage: Counter
+- name: Fresh Squeezed Lemonade
+  time: Same Day
+  storage: Counter
+- name: Processed Lemonade (Unopened)
+  time: "–"
+  storage: Counter
+- name: Processed Lemonade (Opened)
+  time: "–"
+  storage: Counter
+- name: Fresh Limes last
+  time: 2-4 Weeks
+  storage: Counter
+- name: Cut Limes last
+  time: Same Day
+  storage: Counter
+- name: Lime Juice(Unopened)
+  time: "–"
+  storage: Counter
+- name: Lime Juice(Opened)
+  time: "–"
+  storage: Counter
+- name: Processed Limeade (Unopened)(Unopened)
+  time: "–"
+  storage: Counter
+- name: Processed Limeade (Opened)(Opened)
+  time: "–"
+  storage: Counter
+- name: Fresh Oranges
+  time: 2-3 Weeks
+  storage: Counter
+- name: Cut Oranges
+  time: Same Day
+  storage: Counter
+- name: Pineapple (Whole)
+  time: 2-3 Days
+  storage: Counter
+- name: Pineapple (Cut)
+  time: "-"
+  storage: Counter
+- name: Fresh Pumpkins last
+  time: 2-3 Months
+  storage: Counter
+- name: Canned Pumpkin lasts
+  time: 1-2 Years
+  storage: Counter
+- name: Fresh Cut Pumpkins last
+  time: 2-3 Days
+  storage: Counter
+- name: Cooked Pumpkin lasts
+  time: 7 Days
+  storage: Counter
+- name: Canned Pumpkin lasts
+  time: 7 Days
+  storage: Counter
+- name: Pumpkin Pie lasts
+  time: 3-4 Days
+  storage: Counter
+- name: Fresh Whole Strawberries
+  time: 1-2 Days
+  storage: Counter
+- name: Fresh Cut Strawberries
+  time: 1 Day
+  storage: Counter
+- name: Fresh Tomatoes
+  time: 1 Week
+  storage: Counter
+- name: Canned Tomatoes
+  time: 1 Year (Unopened)
+  storage: Counter
+- name: Watermelon – Whole
+  time: " 7-10 Days"
+  storage: Counter
+- name: Watermelon – Cut
+  time: 1 Day
+  storage: Counter
+- name: Frozen Fruit
+  time: 8-10 Months
+  storage: Freezer
+- name: Frozen Fruit
+  time: 6-8 Months
+  storage: Freezer
+- name: Maraschino Cherries last
+  time: 2-3 Years
+  storage: Pantry (Unopened)
+- name: Olives
+  time: 1-2 Years
+  storage: Pantry (Unopened)
+- name: Deli Olives (in oil)
+  time: "–"
+  storage: Pantry (Unopened)
+- name: Pimentos
+  time: 1-2 Years
+  storage: Pantry (Unopened)
+- name: Bakery Bread
+  time: 2-3 Days
+  storage: Pantry
+- name: Packaged Bagels (Soft)
+  time: 5-7 Days
+  storage: Pantry
+- name: Bakery Bagels
+  time: 2-3 Days
+  storage: Pantry
+- name: Packaged Bread (Soft)
+  time: 5-7 Days
+  storage: Pantry
+- name: Cooked French Toast
+  time: 5-7 Days
+  storage: Pantry
+- name: Bread Crumbs
+  time: 5-6 Months
+  storage: Pantry
+- name: Croutons
+  time: 5-6 Months
+  storage: Pantry
+- name: Cheerios
+  time: 6-8 Months
+  storage: Pantry
+- name: Shredded Wheat
+  time: 6-8 Months
+  storage: Pantry
+- name: Box of Cereal
+  time: 6-8 Months
+  storage: Pantry
+- name: Cereal
+  time: 4-6 Months
+  storage: Pantry
+- name: Cooked Cereal
+  time: "–"
+  storage: Pantry
+- name: Instant Oatmeal
+  time: 1-2 Years
+  storage: Pantry
+- name: Flavored/Cream Instant Oatmeal
+  time: 6-9 Months
+  storage: Pantry
+- name: 1 minute Oatmeal
+  time: 2-3 Years
+  storage: Pantry
+- name: 5 minute Oatmeal 
+  time: 2-3 Years
+  storage: Pantry
+- name: 'Steel Cut Oatmeal (Irish Oatmeal) '
+  time: 2-3 Years
+  storage: Pantry
+- name: 'Oatmeal Cookies '
+  time: 2-3 Days
+  storage: Pantry
+- name: 'Prepared (Cooked) Oatmeal '
+  time: 5-7 Days
+  storage: Pantry
+- name: Deli Lasagna  lasts
+  time: 5-7 Days
+  storage: Refrigerator
+- name: Frozen Lasagna lasts
+  time: 5-7 Days
+  storage: Refrigerator
+- name: Homemade Lasagna lasts
+  time: 5-7 Days
+  storage: Refrigerator
+- name: Dry Pasta lasts
+  time: 1-2 Years
+  storage: Pantry
+- name: Dry Noodles last
+  time: 1-2 Years
+  storage: Pantry
+- name: Fresh Pasta lasts
+  time: "–"
+  storage: Pantry
+- name: Fresh Noodles last
+  time: "–"
+  storage: Pantry
+- name: Cooked Pasta lasts
+  time: "–"
+  storage: Pantry
+- name: Cooked Noodles last
+  time: "–"
+  storage: Pantry
+- name: Dominos Pizza
+  time: 1 Day
+  storage: Counter
+- name: Frozen Pizza
+  time: 1 Day
+  storage: Counter
+- name: Homemade Pizza
+  time: "–"
+  storage: Counter
+- name: Pop Tarts
+  time: 6-12 Months
+  storage: Pantry
+- name: Pop Tarts
+  time: 1-2 Weeks
+  storage: Pantry
+- name: White Quinoa
+  time: 2-3 Years
+  storage: Pantry
+- name: Red Quinoa
+  time: 2-3 Years
+  storage: Pantry
+- name: Black Quinoa
+  time: 2-3 Years
+  storage: Pantry
+- name: Quinoa lasts
+  time: "–"
+  storage: Pantry
+- name: White Rice
+  time: 4-5 Years
+  storage: Pantry
+- name: Oxygen Free White Rice*
+  time: 25-30 Years
+  storage: Pantry
+- name: Brown Rice
+  time: 6-8 Months
+  storage: Pantry
+- name: Wild Rice
+  time: 6-8 Months
+  storage: Pantry
+- name: Minute Rice
+  time: 4-5 Years
+  storage: Pantry
+- name: White Rice
+  time: "–"
+  storage: Pantry
+- name: Brown Rice
+  time: "–"
+  storage: Pantry
+- name: Wild Rice 
+  time: "–"
+  storage: Pantry
+- name: Packaged Dry Stuffing lasts
+  time: 6 Months
+  storage: Pantry
+- name: Stove Top Stuffing Mix lasts
+  time: 6 Months
+  storage: Pantry
+- name: Prepared Stuffing lasts
+  time: "–"
+  storage: Pantry
+- name: Homemade Stuffing lasts
+  time: "–"
+  storage: Pantry
+- name: Flour Tortillas last
+  time: 1 Week
+  storage: Pantry
+- name: Corn Tortillas last
+  time: 7-10 Days
+  storage: Pantry
+- name: Spinach Tortillas last
+  time: 1 Week
+  storage: Pantry
+- name: Whole Wheat Tortillas last
+  time: 1 Week
+  storage: Pantry
+- name: Homemade Tortillas last
+  time: 2-3 Days
+  storage: Pantry
+- name: Dried Beans
+  time: Indefinite
+  storage: Pantry
+- name: Canned Beans
+  time: 1 Year
+  storage: Pantry
+- name: Fresh Green Beans
+  time: 1-2 Days
+  storage: Pantry
+- name: Lentils (Dried)
+  time: Indefinite
+  storage: Pantry
+- name: Canned Beans
+  time: "–"
+  storage: Pantry
+- name: Cooked Beans
+  time: "–"
+  storage: Pantry
+- name: Bean Sprouts
+  time: 1 Day
+  storage: Pantry
+- name: Hummus
+  time: "–"
+  storage: Pantry
+- name: Fresh Pea Pods
+  time: 2-3 Days (Do not shell until ready to use)
+  storage: Pantry
+- name: Fresh Snap Peas
+  time: 2-3 Days
+  storage: Pantry
+- name: Dried Split Peas (regular packaging)
+  time: 4-5 Years
+  storage: Pantry
+- name: Dried Split Peas (with O2 absorbers)
+  time: Indefinite
+  storage: Pantry
+- name: Canned Peas
+  time: 1 Year
+  storage: Pantry
+- name: Lentils (Dried)
+  time: Indefinite
+  storage: Pantry
+- name: Canned Peas
+  time: "–"
+  storage: Pantry
+- name: Cooked Peas
+  time: "–"
+  storage: Pantry
+- name: Chic Peas
+  time: "–"
+  storage: Pantry
+- name: Tofu lasts
+  time: 3-5 Days
+  storage: Refrigerator
+- name: Tofu
+  time: 3-5 Days after opening, regardless of date
+  storage: Refrigerator
+- name: Fresh Deli Meats last
+  time: 5-6 Days
+  storage: Refrigerator
+- name: Pre-packaged Deli Meats last
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Bologna lasts
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Salami (hard)*
+  time: 3-4 Weeks
+  storage: Refrigerator
+- name: Fresh Deli Meats last
+  time: 5-6 Days
+  storage: Refrigerator
+- name: Packaged Lunch Meat lasts
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Bologna lasts
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Salami (hard)*
+  time: 2-3 Weeks
+  storage: Refrigerator
+- name: Pepperoni lasts
+  time: 2-3 Weeks
+  storage: Refrigerator
+- name: Bacon
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Bacon Bits
+  time: 6 Months
+  storage: Refrigerator
+- name: Fresh Bacon
+  time: 1 Week
+  storage: Refrigerator
+- name: Cooked Bacon
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Bacon Bits
+  time: 6 Weeks
+  storage: Refrigerator
+- name: Fresh Beef
+  time: 1-2 Days
+  storage: Refrigerator
+- name: Ground Beef
+  time: 1-2 Days
+  storage: Refrigerator
+- name: 'Corned Beef '
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Steak
+  time: 1-2 Days
+  storage: Refrigerator
+- name: Beef or Steak
+  time: 7 Days
+  storage: Refrigerator
+- name: Ground Beef
+  time: 7 Days
+  storage: Refrigerator
+- name: Canned Beef (Opened)
+  time: 7-10 Days
+  storage: Refrigerator
+- name: 'Corned Beef '
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Beef jerky
+  time: 1-2 Years
+  storage: Pantry
+- name: Turkey jerky 
+  time: 1-2 Years
+  storage: Pantry
+- name: Homemade jerky
+  time: 2-3 Months
+  storage: Pantry
+- name: Spam
+  time: 2-5 Years
+  storage: Pantry
+- name: Canned Chicken
+  time: 2-5 Years
+  storage: Pantry
+- name: Canned Tuna
+  time: 2-5 Years
+  storage: Pantry
+- name: Canned Corn Beef
+  time: 2-5 Years
+  storage: Pantry
+- name: Deviled Ham
+  time: 2-5 Years
+  storage: Pantry
+- name: Canned Clams
+  time: 2-5 Years
+  storage: Pantry
+- name: Spam
+  time: 7-10 Days
+  storage: Pantry
+- name: Canned Chicken
+  time: 7 Days
+  storage: Pantry
+- name: Canned Tuna
+  time: 7 Days
+  storage: Pantry
+- name: Canned Corn Beef
+  time: 7-10 Days
+  storage: Pantry
+- name: Deviled Ham
+  time: 7-10 Days
+  storage: Pantry
+- name: Canned Clams
+  time: 5-7 Days
+  storage: Pantry
+- name: Ham
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Ham
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Fresh Hamburgers
+  time: 1-2 Days
+  storage: Refrigerator
+- name: Fresh Ground Turkey
+  time: 1 Day
+  storage: Refrigerator
+- name: Hamburgers
+  time: 5-6 Days
+  storage: Refrigerator
+- name: Fresh Hot Dogs last
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Fresh Hot Dogs last
+  time: 7 Days
+  storage: Refrigerator
+- name: Cooked Hot Dogs last
+  time: 7 Days
+  storage: Refrigerator
+- name: Fresh Pork Chops
+  time: 1-2 Days
+  storage: Refrigerator
+- name: Fresh Ground Pork
+  time: 1-2 Days
+  storage: Refrigerator
+- name: 'Fresh Pork Shoulder '
+  time: 1-2 Days
+  storage: Refrigerator
+- name: Fresh Pork Loin
+  time: 1-2 Days
+  storage: Refrigerator
+- name: 'Pork Sausage '
+  time: 3-4 Days
+  storage: Refrigerator
+- name: Cooked Pork Shoulder/Loin/Chops/Sausage
+  time: 7 Days
+  storage: Refrigerator
+- name: 'Flax Seeds '
+  time: 6-12 Months
+  storage: Pantry
+- name: 'Flax Meal '
+  time: 1 Week
+  storage: Pantry
+- name: Almonds last
+  time: 9-12 Months
+  storage: Pantry
+- name: Brazil Nuts last
+  time: 9 Months
+  storage: Pantry
+- name: Cashews last
+  time: 6-9 Months
+  storage: Pantry
+- name: Hazelnuts last
+  time: 4-6 Months
+  storage: Pantry
+- name: Macadamias last
+  time: 6-9 Months
+  storage: Pantry
+- name: Peanuts last
+  time: 6-9 Months
+  storage: Pantry
+- name: Pecans last
+  time: 6 Months
+  storage: Pantry
+- name: Pine Nuts last
+  time: 1-2 Months
+  storage: Pantry
+- name: Pistachios last
+  time: 3 Months
+  storage: Pantry
+- name: Walnuts last
+  time: 6 Months
+  storage: Pantry
+- name: Smooth Peanut Butter lasts
+  time: 1 Year
+  storage: Pantry
+- name: Crunchy Peanut Butter lasts
+  time: 1 Year
+  storage: Pantry
+- name: Natural Peanut Butter lasts
+  time: 2-3 Months
+  storage: Pantry
+- name: Homemade Peanut Butter
+  time: "–"
+  storage: Pantry
+- name: Natural Peanut Butter
+  time: "–"
+  storage: Pantry
+- name: Smooth Peanut Butter
+  time: 3-4 Months
+  storage: Pantry
+- name: Crunchy Peanut Butter
+  time: 3-4 Months
+  storage: Pantry
+- name: Sesame Seeds (Raw)
+  time: 6-12 Months
+  storage: Pantry
+- name: 'Roasted Sesame Seeds '
+  time: 1-3 Years
+  storage: Pantry
+- name: Tahini
+  time: 4-6 Months
+  storage: Pantry
+- name: Tahini Paste
+  time: 4-6 Months
+  storage: Pantry
+- name: Sunflower Seeds (Raw)
+  time: 2-3 Months
+  storage: Pantry
+- name: Sunflower Seeds (Roasted – Shelled)
+  time: 3-4 Months
+  storage: Pantry
+- name: Sunflower Seeds (Roasted – In-Shell)
+  time: 4-5 Months
+  storage: Pantry
+- name: 'Sun Butter '
+  time: 6 Months (Unopened)
+  storage: Pantry
+- name: Fresh Chicken
+  time: 1-2 Days
+  storage: Refrigerator
+- name: Cooked Chicken lasts
+  time: 7 Days
+  storage: Refrigerator
+- name: Roasted Chicken lasts
+  time: 7 Days
+  storage: Refrigerator
+- name: Canned Chicken lasts
+  time: 2-5 Years
+  storage: Refrigerator
+- name: Chicken Broth lasts
+  time: 1 Year
+  storage: Pantry
+- name: Chicken bullion cubes last
+  time: 6-12 Months
+  storage: Pantry
+- name: Chicken Broth lasts
+  time: 4-5 Days
+  storage: Pantry
+- name: Homemade Chicken Broth lasts
+  time: 5-6 Days
+  storage: Pantry
+- name: "(Raw) Fresh Turkey lasts"
+  time: 1-2 Days
+  storage: Refrigerator
+- name: "(Raw) Ground Turkey lasts"
+  time: 1-2 Days
+  storage: Refrigerator
+- name: Homemade Turkey Soup
+  time: 5-6 Days
+  storage: Refrigerator
+- name: Cooked Turkey
+  time: 7 Days
+  storage: Refrigerator
+- name: Turkey Salad
+  time: 5-6 Days
+  storage: Refrigerator
+- name: Thanksgiving Turkey
+  time: 7 Days
+  storage: Refrigerator
+- name: Deli Turkey
+  time: 5-6 Days
+  storage: Refrigerator
+- name: Salmon
+  time: "–"
+  storage: Pantry
+- name: Cod
+  time: "–"
+  storage: Pantry
+- name: Halibut
+  time: "–"
+  storage: Pantry
+- name: Ono
+  time: "–"
+  storage: Pantry
+- name: Tilapia
+  time: "–"
+  storage: Pantry
+- name: Catfish
+  time: "–"
+  storage: Pantry
+- name: Cooked Fish
+  time: "–"
+  storage: Pantry
+- name: Smoked Salmon
+  time: "–"
+  storage: Pantry
+- name: Canned Tuna
+  time: 9-12 Months
+  storage: Pantry
+- name: Sardines
+  time: 9-12 Months
+  storage: Pantry
+- name: Fresh Salmon lasts
+  time: "–"
+  storage: Pantry
+- name: Smoked Salmon lasts
+  time: 1-2 Weeks*
+  storage: Pantry
+- name: Canned Salmon lasts
+  time: 6-8 Months
+  storage: Pantry
+- name: Cooked Salmon for
+  time: "–"
+  storage: Pantry
+- name: Frozen Salmon lasts
+  time: "–"
+  storage: Pantry
+- name: Fresh Shrimp
+  time: 1-2 Days
+  storage: Refrigerator
+- name: Shrimp
+  time: 5-7 Days
+  storage: Refrigerator
+- name: Canned Shrimp
+  time: 5-7 Days
+  storage: Refrigerator
+- name: 'Sushi '
+  time: 24 Hours
+  storage: Refrigerator
+- name: 'Sashimi '
+  time: 24 Hours
+  storage: Refrigerator
+- name: 'Poke '
+  time: 24 Hours
+  storage: Refrigerator
+- name: Canned Vegetables
+  time: 1-2 Years
+  storage: Pantry
+- name: Can Corn
+  time: 1-2 Years
+  storage: Pantry
+- name: Canned Soup
+  time: 1-2 Years
+  storage: Pantry
+- name: Canned Vegetables
+  time: 7-10 Days
+  storage: Pantry
+- name: Can Corn
+  time: 7-10 Days
+  storage: Pantry
+- name: Canned Soup
+  time: 7 Days
+  storage: Pantry
+- name: 'Fresh Asparagus '
+  time: 5-7 Days
+  storage: Fridge
+- name: Cooked Asparagus
+  time: 5-7 Days
+  storage: Fridge
+- name: Fresh Green Bell Peppers (Whole)
+  time: 2-3 Weeks
+  storage: Refrigerator
+- name: Fresh Red Bell Peppers (Whole)
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Fresh Orange Bell Peppers
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Fresh Yellow Bell Peppers (Whole)
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Cut Bell Peppers (any color)
+  time: 1-3 Days
+  storage: Refrigerator
+- name: Frozen Chopped Bell Peppers
+  time: 4-6 Months
+  storage: Refrigerator
+- name: 'Fresh Broccoli '
+  time: 7-14 Days
+  storage: Fridge
+- name: Cooked Broccoli
+  time: 7-9 Days
+  storage: Fridge
+- name: Fresh Carrots (Whole)
+  time: 4-5 Weeks
+  storage: Fridge
+- name: Baby Carrots
+  time: 3-4 Weeks
+  storage: Fridge
+- name: Cooked Carrots
+  time: 1 Week
+  storage: Fridge
+- name: Fresh Celery (Whole)
+  time: 3-4 Weeks
+  storage: Fridge
+- name: Celery Packages
+  time: 2-3 Days
+  storage: Fridge
+- name: Cooked Celery
+  time: 1 Week
+  storage: Fridge
+- name: 'Fresh Corn '
+  time: 5-7 Days
+  storage: Fridge
+- name: Cooked Corn
+  time: 5-7 Days
+  storage: Fridge
+- name: Fresh Cucumbers (Whole)
+  time: 1 Week
+  storage: Fridge
+- name: English Cucumbers
+  time: 7-10 Days
+  storage: Fridge
+- name: Japanese Cucumbers
+  time: 7-10 Days
+  storage: Fridge
+- name: Persian Cucumbers
+  time: 1 Week
+  storage: Fridge
+- name: Pickling Cukes
+  time: 1-2 Weeks
+  storage: Fridge
+- name: Sliced Cucumbers
+  time: 1-2 Days
+  storage: Fridge
+- name: Fresh Garlic (Whole)
+  time: 3-6 Months
+  storage: Counter
+- name: Fresh Garlic Cloves
+  time: 1-2 Months
+  storage: Counter
+- name: 'Fresh Chopped Garlic '
+  time: "–"
+  storage: Counter
+- name: Prepared Jar of Chopped Garlic
+  time: "–"
+  storage: Counter
+- name: 'Fresh Kale '
+  time: 1-2 Weeks
+  storage: Fridge
+- name: Cooked Kale
+  time: 5-7 Days
+  storage: Fridge
+- name: Iceburg Lettuce lasts
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Romaine Lettuce lasts
+  time: 7-10 Days
+  storage: Refrigerator
+- name: Leaf Lettuce lasts
+  time: 5-7 Days
+  storage: Refrigerator
+- name: Butter Lettuce lasts
+  time: 3-5 Days
+  storage: Refrigerator
+- name: Chopped or Loose Lettuce
+  time: 3-5 Days
+  storage: Refrigerator
+- name: Fresh Express Lettuce lasts
+  time: 3-5 Days
+  storage: Refrigerator
+- name: Fresh Mushrooms (Whole)
+  time: 7-10 Days
+  storage: Fridge
+- name: Fresh Mushrooms (Sliced)
+  time: 5-7 Days
+  storage: Fridge
+- name: Cooked Mushrooms
+  time: 7-10 Days
+  storage: Fridge
+- name: Nori
+  time: 2-3 Years
+  storage: Pantry
+- name: Olives
+  time: 1-2 Years
+  storage: Pantry (Unopened)
+- name: Deli Olives (in oil)
+  time: "–"
+  storage: Pantry (Unopened)
+- name: Pimentos
+  time: 1-2 Years
+  storage: Pantry (Unopened)
+- name: Fresh Onion (Whole)
+  time: 4-6 Weeks
+  storage: Counter
+- name: Fresh Onion Chopped
+  time: "–"
+  storage: Counter
+- name: Fresh Scallions (Whole)
+  time: 1-2 Days
+  storage: Counter
+- name: 'Frozen Onions '
+  time: "–"
+  storage: Counter
+- name: Fresh Pea Pods
+  time: 2-3 Days (Do not shell until ready to use)
+  storage: Pantry
+- name: Fresh Snap Peas
+  time: 2-3 Days
+  storage: Pantry
+- name: Dried Split Peas (regular packaging)
+  time: 4-5 Years
+  storage: Pantry
+- name: Dried Split Peas (with O2 absorbers)
+  time: Indefinite
+  storage: Pantry
+- name: Canned Peas
+  time: 1 Year
+  storage: Pantry
+- name: Lentils (Dried)
+  time: Indefinite
+  storage: Pantry
+- name: Canned Peas
+  time: "–"
+  storage: Pantry
+- name: Cooked Peas
+  time: "–"
+  storage: Pantry
+- name: Chic Peas
+  time: "–"
+  storage: Pantry
+- name: Russet or White Potatoes
+  time: 3-5 Weeks
+  storage: Pantry
+- name: Yukon Gold Potatoes
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Red or New Potatoes
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Fingerlings
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Sweet Potatoes
+  time: 3-5 Weeks
+  storage: Pantry
+- name: Sliced Potatoes or French Fries
+  time: "–"
+  storage: Pantry
+- name: Cooked Potatoes
+  time: "–"
+  storage: Pantry
+- name: Baked Potatoes
+  time: "–"
+  storage: Pantry
+- name: Mashed Potatoes
+  time: "–"
+  storage: Pantry
+- name: Instant Dry Potato Packages
+  time: 1 Year
+  storage: Pantry
+- name: 'Packaged Lettuce '
+  time: 3-5 Days
+  storage: Refrigerator
+- name: Caesar Salad (Undressed)
+  time: 3-5 Days
+  storage: Refrigerator
+- name: Green (Dressed)
+  time: 1-5 Days
+  storage: Refrigerator
+- name: Egg Salad (Undressed)
+  time: 3-5 Days
+  storage: Refrigerator
+- name: Chicken Salad
+  time: 3-5 Days
+  storage: Refrigerator
+- name: Tuna Salad
+  time: 3-5 Days
+  storage: Refrigerator
+- name: 'Potato Salad '
+  time: 3-5 Days
+  storage: Refrigerator
+- name: 'Macaroni Salad '
+  time: 3-5 Days
+  storage: Refrigerator
+- name: Pasta Salad (Non-mayonnaise)
+  time: 5-7 Days
+  storage: Refrigerator
+- name: Fresh Fruit Salad
+  time: 3-5 Days
+  storage: Refrigerator
+- name: Fresh Spinach
+  time: 5-7 Days
+  storage: Refrigerator
+- name: Fresh Spinach
+  time: 3-5 Days
+  storage: Refrigerator
+- name: Fresh Summer Squash lasts
+  time: 1-5 Days
+  storage: Counter
+- name: Zucchini lasts
+  time: 3-5 Days
+  storage: Counter
+- name: Crooked Neck Squash lasts
+  time: 3-5 Days
+  storage: Counter
+- name: Prepared (Cooked) Squash lasts
+  time: "–"
+  storage: Counter
+- name: Fresh Sweet Potatoes last
+  time: 3-5 Weeks
+  storage: Pantry
+- name: Canned Sweet Potatoes last
+  time: 1 Year
+  storage: Pantry
+- name: Sweet Potato Fries last
+  time: "–"
+  storage: Pantry
+- name: Frozen Sweet Potatoes last
+  time: "–"
+  storage: Pantry
+- name: Fresh Yams last
+  time: 3-5 Weeks
+  storage: Pantry
+- name: Canned Yams last
+  time: 1 Year
+  storage: Pantry
+- name: Dry Instant Sweet Potatoes last
+  time: 6-12 Months
+  storage: Pantry
+- name: Canned Sweet Potatoes or Yams
+  time: "–"
+  storage: Pantry
+- name: Cooked Sweet Potatoes last
+  time: "–"
+  storage: Pantry
+- name: Cooked Yams last
+  time: "–"
+  storage: Pantry
+- name: Fresh Tomatoes
+  time: 1 Week
+  storage: Counter
+- name: Canned Tomatoes
+  time: 1 Year (Unopened)
+  storage: Counter
+- name: Fresh Winter Squash
+  time: 1-3 Months
+  storage: Counter
+- name: Fresh Spaghetti Squash
+  time: 1-3 Months
+  storage: Counter
+- name: Fresh Butternut Squash
+  time: 1-3 Months
+  storage: Counter
+- name: Chopped/Sliced Fresh Winter Squash
+  time: "–"
+  storage: Counter
+- name: Cooked Spaghetti Squash
+  time: "–"
+  storage: Counter
+- name: Cooked Butternut Squash
+  time: "–"
+  storage: Counter
+- name: Other Cooked Winter Squash
+  time: "–"
+  storage: Counter
+- name: Frozen Vegetables
+  time: 8-10 Months
+  storage: Freezer
+- name: Baking Powder
+  time: 1 Year
+  storage: Pantry
+- name: Baking Soda
+  time: Indefinite
+  storage: Pantry
+- name: Cake Mix
+  time: 4-5 Months
+  storage: Pantry
+- name: Muffin Mix
+  time: 4-5 Months
+  storage: Pantry
+- name: Brownie Mix
+  time: 4-5 Months
+  storage: Pantry
+- name: Cocoa
+  time: 2 Years
+  storage: Pantry
+- name: Cocoa Powder
+  time: 2 Years
+  storage: Pantry
+- name: Nestle Hot Chocolate Mix
+  time: 6-12 Months
+  storage: Pantry
+- name: Swiss Miss Packages
+  time: 6-12 Months
+  storage: Pantry
+- name: K-Cup Hot Chocolate
+  time: 8-12 Months
+  storage: Pantry
+- name: Cocoa Powder
+  time: 1 Year
+  storage: Pantry
+- name: Pillsbury Cookie Dough
+  time: 2-4 Hours
+  storage: Counter
+- name: Frozen Cookie Dough
+  time: 2-4 Hours
+  storage: Counter
+- name: Homemade Cookie Dough
+  time: 2-4 Hours
+  storage: Counter
+- name: Cornstarch
+  time: Indefinite
+  storage: Pantry
+- name: Crisco shortening Cans
+  time: 1-2 Years
+  storage: Pantry
+- name: Crisco Sticks 
+  time: 1-2 Years
+  storage: Pantry
+- name: Crisco shortening Cans
+  time: 1 Year
+  storage: Pantry
+- name: Crisco Sticks
+  time: 6 Months
+  storage: Pantry
+- name: Flour
+  time: 6-8 Months
+  storage: Pantry
+- name: Rice Flour
+  time: 6-8 Months
+  storage: Pantry
+- name: Corn meal Flour
+  time: 6-8 Months
+  storage: Pantry
+- name: Potato Flour
+  time: 6-8 Months
+  storage: Pantry
+- name: Whole Wheat Flour
+  time: 4-6 Months
+  storage: Pantry
+- name: Self-rising Flour
+  time: 4-6 Months
+  storage: Pantry
+- name: 'Corn Meal '
+  time: 9-12 Months
+  storage: Pantry
+- name: 'Canned Frosting/Icing '
+  time: 3-4 Months
+  storage: Pantry
+- name: Dry Frosting Mix
+  time: 5-6 Months
+  storage: Pantry
+- name: Canned Frosting/Icing
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Ready to Decorate Icing – Gel
+  time: Indefinite – the icing will liquify and not work
+  storage: Pantry
+- name: Homemade Frosting/Icing
+  time: 1-2 Weeks
+  storage: Pantry
+- name: Molasses lasts
+  time: At least a few Years
+  storage: Pantry
+- name: Candy Sprinkles
+  time: 3-5 Years
+  storage: Pantry
+- name: Jimmies
+  time: 3-5 Years
+  storage: Pantry
+- name: Colored Sugar Crystals
+  time: 3-5 Years
+  storage: Pantry
+- name: Granulated White Sugar lasts
+  time: Indefinitely
+  storage: Pantry
+- name: White Sugar Cubes last
+  time: Indefinitely
+  storage: Pantry
+- name: Raw Sugar lasts
+  time: Indefinitely
+  storage: Pantry
+- name: Brown Sugar lasts
+  time: Indef, but Best within 2 Years
+  storage: Pantry
+- name: Powdered Sugar lasts
+  time: Indef, but Best within 2 Years
+  storage: Pantry
+- name: Sugar Substitutes last
+  time: Indefinite
+  storage: Pantry
+- name: Equal lasts
+  time: Indef, but best within 2 Years
+  storage: Pantry
+- name: Sweet n Low lasts
+  time: Indef, but best within 2 Years
+  storage: Pantry
+- name: Dry Active Yeast
+  time: 2-4 Months
+  storage: Pantry
+- name: 'Cake Yeast '
+  time: 1-2 Weeks
+  storage: Pantry
+- name: Dry Active Yeast
+  time: 4-6 Months
+  storage: Pantry
+- name: Compressed or Cake Yeast
+  time: 4 Months
+  storage: Pantry
+- name: Barbecue (Barbeque) Sauce
+  time: 6-12 Months
+  storage: Pantry
+- name: Barbecue (Barbeque) Sauce
+  time: 1 Year
+  storage: Pantry
+- name: Capers
+  time: 1-2 Years
+  storage: Pantry (Unopened)
+- name: Fish Sauce lasts
+  time: 1-2 Years
+  storage: Pantry
+- name: Strawberry Jam
+  time: 6 Months – 1 Year
+  storage: Pantry (Unopened)
+- name: Apricot Jam
+  time: 6 Months – 1 Year
+  storage: Pantry (Unopened)
+- name: Peach Jam
+  time: 6 Months – 1 Year
+  storage: Pantry (Unopened)
+- name: Blackberry Jam
+  time: 6 Months – 1 Year
+  storage: Pantry (Unopened)
+- name: Homemade Jam
+  time: 1-2 Years
+  storage: Pantry (Unopened)
+- name: Low Sugar Jam
+  time: 9-12 Months
+  storage: Pantry (Unopened)
+- name: Sugar Free Jam
+  time: 6-9 Months
+  storage: Pantry (Unopened)
+- name: Smucker’s Simply Fruit
+  time: 6-9 Months
+  storage: Pantry (Unopened)
+- name: Smucker’s Sugar Free Jam
+  time: 6-9 months
+  storage: Pantry (Unopened)
+- name: Welch’s Grape Jelly
+  time: 1-2 Years
+  storage: Pantry (Unopened)
+- name: Orange Marmalade
+  time: 6 Months – 1 Year
+  storage: Pantry (Unopened)
+- name: Apple Butter
+  time: 2-3 Months
+  storage: Pantry (Unopened)
+- name: Pumpkin Butter
+  time: 2-3 Months
+  storage: Pantry (Unopened)
+- name: Lemon Curd
+  time: 1-2 Months
+  storage: Pantry (Unopened)
+- name: Prepared Ketchup
+  time: 1-2 Years
+  storage: Pantry
+- name: Heinz Ketchup
+  time: 2 Years
+  storage: Pantry
+- name: Prepared Ketchup
+  time: 1 Year
+  storage: Pantry
+- name: Heinz Ketchup
+  time: 1 Year
+  storage: Pantry
+- name: Mayonnaise
+  time: 1 Week
+  storage: Pantry
+- name: Miracle Whip
+  time: 1 Week
+  storage: Pantry
+- name: Mayonnaise
+  time: 1 Month
+  storage: Pantry
+- name: Miracle Whip
+  time: 1 Month
+  storage: Pantry
+- name: American Mustard lasts
+  time: 1-2 Years
+  storage: Pantry (Unopened)
+- name: Dijon Mustard lasts
+  time: 2-3 Years
+  storage: Pantry (Unopened)
+- name: Chinese Mustard lasts
+  time: 1-2 Years
+  storage: Pantry (Unopened)
+- name: Honey Mustard lasts
+  time: 2-3 Years
+  storage: Pantry (Unopened)
+- name: Homemade Mustard lasts
+  time: 1 Day
+  storage: Pantry (Unopened)
+- name: Dry Mustard lasts
+  time: 1-2 Years
+  storage: Pantry (Unopened)
+- name: Avocado Oil
+  time: 9-12 Months
+  storage: Pantry
+- name: Blended Oil
+  time: 2 Years
+  storage: Pantry
+- name: Canola Oil 
+  time: 2 Years
+  storage: Pantry
+- name: Coconut Oil 
+  time: 1 Year
+  storage: Pantry
+- name: Corn Oil
+  time: 1 Year
+  storage: Pantry
+- name: Chili Oil 
+  time: 9-12 Months
+  storage: Pantry
+- name: EVOO (Extra Virgin Olive)
+  time: 2-3 Years
+  storage: Pantry
+- name: Grape Seed
+  time: 3 Months
+  storage: Pantry
+- name: Hazelnut Oil 
+  time: 1 Year
+  storage: Pantry
+- name: Macadamia Nut Oil
+  time: 2 Years
+  storage: Pantry
+- name: Olive Oil
+  time: 2-3 Years
+  storage: Pantry
+- name: Peanut 
+  time: 3 Years
+  storage: Pantry
+- name: Sesame Oil
+  time: 1 Years
+  storage: Pantry
+- name: Safflower Oil
+  time: 2 Years
+  storage: Pantry
+- name: Sunflower Oil
+  time: 2 Years
+  storage: Pantry
+- name: Truffle Oil 
+  time: 1 Year
+  storage: Pantry
+- name: Vegetable Oil
+  time: 1 Year
+  storage: Pantry
+- name: Walnut Oil 
+  time: 1 Year
+  storage: Pantry
+- name: Avocado Oil
+  time: 6-8 Months
+  storage: Pantry
+- name: Blended Oil
+  time: 1 Year
+  storage: Pantry
+- name: Canola Oil 
+  time: 1 Year
+  storage: Pantry
+- name: Coconut Oil 
+  time: 1 Year
+  storage: Pantry
+- name: Corn Oil
+  time: 1 Year
+  storage: Pantry
+- name: Chili Oil 
+  time: 6 Months
+  storage: Pantry
+- name: 'Extra Virgin Olive Oil (EVOO) '
+  time: 2-3 Years
+  storage: Pantry
+- name: Grape Seed Oil
+  time: 3 Months
+  storage: Pantry
+- name: Hazelnut Oil 
+  time: 3 Months
+  storage: Pantry
+- name: Macadamia Nut Oil
+  time: 2 Years
+  storage: Pantry
+- name: Olive Oil
+  time: 2-3 Years
+  storage: Pantry
+- name: Peanut 
+  time: 2 Years
+  storage: Pantry
+- name: Sesame Oil
+  time: 6-8 Months
+  storage: Pantry
+- name: Safflower Oil
+  time: 1 Year
+  storage: Pantry
+- name: Sunflower Oil
+  time: 1 Year
+  storage: Pantry
+- name: Truffle Oil 
+  time: 4-6 Months
+  storage: Pantry
+- name: Vegetable Oil
+  time: 1 Year
+  storage: Pantry
+- name: Walnut Oil 
+  time: 3-4 Months
+  storage: Pantry
+- name: Spray Oil Can
+  time: 2 Years
+  storage: Pantry
+- name: Oyster Sauce lasts
+  time: 1 Year
+  storage: Pantry
+- name: Oyster Sauce lasts
+  time: 6 Months
+  storage: Pantry
+- name: Pickles
+  time: 1-2 Years
+  storage: Pantry (Unopened)
+- name: Pickled Peppers
+  time: 1-2 Years
+  storage: Pantry (Unopened)
+- name: Pickled Corn
+  time: 1-2 Years
+  storage: Pantry (Unopened)
+- name: Sauerkraut (pickled cabbage)
+  time: 1-2 Years
+  storage: Pantry (Unopened)
+- name: Soy Sauce for
+  time: Indefinite
+  storage: Pantry
+- name: Soy Sauce lasts
+  time: 2-3 Years
+  storage: Pantry
+- name: Pure Maple Syrup
+  time: "–"
+  storage: Pantry
+- name: Pancake Syrup 
+  time: Indefinite
+  storage: Pantry
+- name: Corn Syrup 
+  time: Indefinite
+  storage: Pantry
+- name: White Vinegar lasts
+  time: Indefinite
+  storage: Pantry
+- name: Apple Cider Vinegar lasts
+  time: Indefinite
+  storage: Pantry
+- name: Balsamic Vinegar lasts
+  time: Indedinite
+  storage: Pantry
+- name: Raspberry Vinegar lasts
+  time: Indefinite
+  storage: Pantry
+- name: Rice Wine Vinegar lasts
+  time: Indedinite
+  storage: Pantry
+- name: Red Wine Vinegar lasts
+  time: Indefinite
+  storage: Pantry
+- name: Worcestershire Sauce
+  time: Indefinite
+  storage: Pantry
+- name: Worcestershire Sauce 
+  time: 3-4 Years
+  storage: Pantry
+- name: Dry Ice lasts
+  time: 18-24 Hours
+  storage: In a Cooler (ice chest)
+- name: Purchased Refrigerated Pesto
+  time: 1-3 Weeks
+  storage: Refrigerator
+- name: Purchased Canned Pesto
+  time: 4-6 Weeks
+  storage: Refrigerator
+- name: Purchased Powdered Pesto Mix
+  time: 6-8 Weeks in Pantry
+  storage: Refrigerator
+- name: Homemade Pesto
+  time: '5-7 Days '
+  storage: Refrigerator
+- name: Purchased Refrigerated Pesto
+  time: 7-14 Days
+  storage: Refrigerator
+- name: Purchased Canned Pesto
+  time: 7-14 Days
+  storage: Refrigerator
+- name: Pesto Prepared From Dry Mix
+  time: 7-14 Days
+  storage: Refrigerator
+- name: Ranch Dressing
+  time: 1-2 Months
+  storage: Unopened/Opened
+- name: Blue Cheese Dressing
+  time: 1-2 Months
+  storage: Unopened/Opened
+- name: Caesar Dressing
+  time: 1-2 Months
+  storage: Unopened/Opened
+- name: Thousand Island Dressing
+  time: 1-2 Months
+  storage: Unopened/Opened
+- name: Italian Dressing
+  time: 3-4 Months
+  storage: Unopened/Opened
+- name: Balsamic Vinegarette
+  time: 3-4 Months
+  storage: Unopened/Opened
+- name: Tomato Based Pasta Sauce
+  time: 1 Year
+  storage: Pantry (Unopened)
+- name: Cream Based Pasta Sauce
+  time: 6-8 Months
+  storage: Pantry (Unopened)
+- name: Oil Based Pasta Sauce
+  time: 1 Year
+  storage: Pantry (Unopened)
+- name: Dry Package Pasta Sauce Mix
+  time: 6-12 Months
+  storage: Pantry (Unopened)
+- name: Newman’s Own Spaghetti Sauce [1]
+  time: 3-7 Days
+  storage: Pantry (Unopened)
+- name: Ragu Cheese Based Pasta Sauce [2]
+  time: 3 Days
+  storage: Pantry (Unopened)
+- name: Ragu Tomato Based Pasta Sauce [2]
+  time: 3-5 Days
+  storage: Pantry (Unopened)
+- name: Barilla Pasta Sauce [3]
+  time: 3-5 Days
+  storage: Pantry (Unopened)
+- name: Classico Tomato Based Pasta Sauce [4]
+  time: 3-5 Days
+  storage: Pantry (Unopened)
+- name: Allspice
+  time: "–"
+  storage: Fresh
+- name: Apple Pie Spice
+  time: "–"
+  storage: Fresh
+- name: Anise
+  time: "–"
+  storage: Fresh
+- name: Basil
+  time: 5-7 Days
+  storage: Fresh
+- name: Bay Leaves
+  time: 5-7 Days
+  storage: Fresh
+- name: Black Pepper
+  time: "–"
+  storage: Fresh
+- name: Caraway Seeds 
+  time: "–"
+  storage: Fresh
+- name: Cardaman
+  time: 5-7 Days
+  storage: Fresh
+- name: Cayenne Pepper
+  time: 5-7 Days
+  storage: Fresh
+- name: Celery Seed
+  time: 5-7 Days
+  storage: Fresh
+- name: Chevil
+  time: 5-7 Days
+  storage: Fresh
+- name: Chili Powder
+  time: ''
+  storage: Fresh
+- name: Chives
+  time: 7-10 Days
+  storage: Fresh
+- name: Cilantro
+  time: 5-7 Days
+  storage: Fresh
+- name: Cinnamon
+  time: "–"
+  storage: Fresh
+- name: Cloves
+  time: 5-7 Days
+  storage: Fresh
+- name: Coriander
+  time: 5-7 Days
+  storage: Fresh
+- name: Cream of Tartar
+  time: 5-7 Days
+  storage: Fresh
+- name: Cumin
+  time: "–"
+  storage: Fresh
+- name: Curry
+  time: 5-7 Days
+  storage: Fresh
+- name: Dill
+  time: 5-7 Days
+  storage: Fresh
+- name: Fennel
+  time: "–"
+  storage: Fresh
+- name: Garlic
+  time: 4-6 Months
+  storage: Fresh
+- name: Italian Seasoning
+  time: "–"
+  storage: Fresh
+- name: Jalapenos
+  time: 5-7 Days
+  storage: Fresh
+- name: Jerk Seasoning
+  time: 5-7 Days
+  storage: Fresh
+- name: Lavender
+  time: "–"
+  storage: Fresh
+- name: Lemon
+  time: 4-5 Months
+  storage: Fresh
+- name: Lemon Grass
+  time: 5-7 Days
+  storage: Fresh
+- name: Liquid Smoke
+  time: "–"
+  storage: Fresh
+- name: Mace
+  time: 5-7 Days
+  storage: Fresh
+- name: Maple
+  time: 5-7 Days
+  storage: Fresh
+- name: Marjoram
+  time: ''
+  storage: Fresh
+- name: Mint
+  time: 7-10 Days
+  storage: Fresh
+- name: Mustard
+  time: 5-7 Days
+  storage: Fresh
+- name: Nutmeg
+  time: "–"
+  storage: Fresh
+- name: Onions
+  time: 5-7 Days
+  storage: Fresh
+- name: Oranges
+  time: 2-3 Months
+  storage: Fresh
+- name: Oregano
+  time: 5-7 Days
+  storage: Fresh
+- name: Paprika
+  time: "–"
+  storage: Fresh
+- name: Parsley
+  time: 5-7 Days
+  storage: Fresh
+- name: Peppercorns
+  time: "–"
+  storage: Fresh
+- name: Pickling Spice
+  time: "–"
+  storage: Fresh
+- name: Poppy Seeds
+  time: "–"
+  storage: Fresh
+- name: Poultry Seasoning
+  time: "–"
+  storage: Fresh
+- name: Pumpkin Pie Spice
+  time: "–"
+  storage: Fresh
+- name: Fresh Basil lasts
+  time: 5-9 Days
+  storage: Pantry
+- name: Dried Basil lasts
+  time: 2-3 Years
+  storage: Pantry
+- name: Cinnamon Sticks last
+  time: 2-3 Years
+  storage: Pantry
+- name: Ground Cinnamon lasts 
+  time: 6-12 Months
+  storage: Pantry
+- name: Fresh Ginger Root lasts
+  time: 1 Week
+  storage: Pantry
+- name: Peeled Chopped Ginger* last
+  time: "–"
+  storage: Pantry
+- name: Ginger Paste lasts
+  time: "–"
+  storage: Pantry
+- name: Prepared Jar of Chopped Ginger lasts
+  time: 2-3 Months (Unopened Only)
+  storage: Pantry
+- name: Pickled Ginger (Gari) lasts
+  time: "–"
+  storage: Pantry
+- name: Ground Ginger (Powder) lasts
+  time: 2-3 Years
+  storage: Pantry
+- name: Crystallized Ginger lasts
+  time: 2-3 Years
+  storage: Pantry
+- name: Salt
+  time: Indefinite
+  storage: Pantry
+- name: Wasabi Paste lasts
+  time: 12 Months
+  storage: Pantry
+- name: Wasabi Powder lasts
+  time: 12 Months
+  storage: Pantry
+- name: Wasabi Root lasts
+  time: 1-2 days
+  storage: Pantry
+- name: Wasabi Peas lasts
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Wasabi Paste lasts
+  time: "–"
+  storage: Pantry
+- name: Wasabi Powder lasts
+  time: 6 Months
+  storage: Pantry
+- name: Wasabi Root lasts
+  time: 1 Day
+  storage: Pantry
+- name: Wasabi Peas lasts
+  time: 1-2 Weeks
+  storage: Pantry
+- name: Pure Vanilla Extract
+  time: Indefinitely
+  storage: Pantry
+- name: Imitation Vanilla Extract 
+  time: 2-4 years
+  storage: Pantry
+- name: Purchased Guacamole
+  time: 1-2 Weeks
+  storage: Refrigerator
+- name: Homemade Guacamole
+  time: '1-2 Days '
+  storage: Refrigerator
+- name: Purchased Guacamole
+  time: 1-2 Days
+  storage: Refrigerator
+- name: Packaged Hummus lasts
+  time: 3-10 Days
+  storage: Fridge
+- name: Homemade Hummus lasts
+  time: 3-5 Days
+  storage: Fridge
+- name: Packaged Hummus lasts
+  time: 4-6 Days
+  storage: Fridge
+- name: Homemade Hummus lasts
+  time: 3-5 Days
+  storage: Fridge
+- name: Popcorn lasts
+  time: Indefinitely
+  storage: Pantry
+- name: Microwave Popcorn lasts
+  time: 6-8 Months
+  storage: Pantry
+- name: Popped Popcorn lasts
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Packaged Potato Chips
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Vegetable Chips
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Bugles
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Fritos
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Chex Mix
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Pringles
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Tostitos
+  time: 3-4 Weeks
+  storage: Pantry
+- name: Doritos
+  time: 3-4 Weeks
+  storage: Pantry
+- name: Goldfish
+  time: 3-4 Weeks
+  storage: Pantry
+- name: Pretzels
+  time: 3-4 Weeks
+  storage: Pantry
+- name: Crackers
+  time: 3-4 Weeks
+  storage: Pantry
+- name: Homemade Potato Chips
+  time: 2-3 Days
+  storage: Pantry
+- name: Packaged Potato Chips
+  time: 5-7 Days
+  storage: Pantry
+- name: Packaged Tortilla Chips
+  time: 1-2 Weeks
+  storage: Pantry
+- name: Crackers
+  time: 2-4 Weeks
+  storage: Pantry
+- name: Salsa (Jar)
+  time: 1-2 Months
+  storage: Pantry
+- name: Salsa
+  time: "–"
+  storage: Pantry
+- name: Homemade Salsa
+  time: "–"
+  storage: Pantry
+- name: Bakery Cake
+  time: 1-2 Days
+  storage: Pantry
+- name: Cake with fresh fruit
+  time: "–"
+  storage: Pantry
+- name: Cake with whipped cream
+  time: "–"
+  storage: Pantry
+- name: 'Fruit Cake '
+  time: "–"
+  storage: Pantry
+- name: Candy Canes
+  time: " 2-3 Years"
+  storage: Past Printed Date
+- name: Candy Starlets
+  time: " 2-3 Years"
+  storage: Past Printed Date
+- name: Christmas Hard Candy (NOT individually wrapped)
+  time: 4-5 Weeks
+  storage: Past Printed Date
+- name: Individually wrapped Hard Candy (Lifesavers,etc.)
+  time: 1-2 Years
+  storage: Past Printed Date
+- name: Gobstoppers
+  time: 'Indefinite '
+  storage: Past Printed Date
+- name: Fireballs
+  time: 'Indefinite '
+  storage: Past Printed Date
+- name: Fresh Cheesecake
+  time: 5-6 Days
+  storage: Refrigerator
+- name: Frozen Cheesecake
+  time: 5-6 Days
+  storage: Refrigerator
+- name: Homemade Cheesecake
+  time: 5-6 Days
+  storage: Refrigerator
+- name: Cheesecake
+  time: 5-7 Days
+  storage: Refrigerator
+- name: Chocolate lasts
+  time: 2-4 Months
+  storage: Pantry
+- name: Chocolate Bars last
+  time: 2-4 Months
+  storage: Pantry
+- name: Chocolate Truffles last
+  time: 1-2 Weeks
+  storage: Pantry
+- name: Belgian Chocolate lasts
+  time: 1-2 Weeks
+  storage: Pantry
+- name: Chocolate Chips last
+  time: 2-4 Months
+  storage: Pantry
+- name: Chocolate Syrup
+  time: 2-3 Years
+  storage: Pantry
+- name: Hershey’s Syrup
+  time: 2-3 Years
+  storage: Pantry
+- name: Hot Fudge
+  time: 6-12 Months
+  storage: Pantry
+- name: Chocolate Syrup
+  time: 1-2 Years
+  storage: Pantry
+- name: Hershey’s Syrup
+  time: 1-2 Years
+  storage: Pantry
+- name: Hot Fudge
+  time: 6-8 Months
+  storage: Pantry
+- name: Bakery Cookies
+  time: 2-3 Days
+  storage: Pantry
+- name: Packaged Cookies (Soft)
+  time: 1-2 Months
+  storage: Pantry
+- name: Packaged Cookies (Hard)
+  time: 1-2 Months
+  storage: Pantry
+- name: Packaged Cookies (Soft)
+  time: 7-10 Days
+  storage: Pantry
+- name: Packaged Cookies (Hard)
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Homemade Cookies (Soft)
+  time: 2-3 Days
+  storage: Pantry
+- name: Homemade Cookies (Hard)
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Bakery Cupcakes
+  time: 1-2 Days
+  storage: Pantry
+- name: Cupcakes with fresh fruit
+  time: 1 Day
+  storage: Pantry
+- name: Cupcakes with whipped cream
+  time: "–"
+  storage: Pantry
+- name: Cupcakes with cream cheese
+  time: 1-2 Days
+  storage: Pantry
+- name: 'Hostess Cupcakes '
+  time: 1-2 Weeks
+  storage: Pantry
+- name: 'Homemade Cupcakes '
+  time: '1-2 Days '
+  storage: Pantry
+- name: Gingerbread Cake
+  time: 5-7 Days
+  storage: Pantry
+- name: Gingerbread Cookies
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Gingerbread House
+  time: 3-4 Weeks
+  storage: Pantry
+- name: GingerSnaps
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Ice Cream
+  time: 2-3 Months
+  storage: Freezer
+- name: Sherbert
+  time: 3-4 Months
+  storage: Freezer
+- name: Ice Cream
+  time: 1-2 Months
+  storage: Freezer
+- name: Sherbert
+  time: 2-3 Months
+  storage: Freezer
+- name: Jello (dry mix)
+  time: Indefinite
+  storage: Pantry
+- name: Unflavored Gelatin
+  time: Indefinite
+  storage: Pantry
+- name: Sealed Pre-packaged Jello
+  time: 3-4 Months
+  storage: Pantry
+- name: Unflavored Gelatin
+  time: Indefinite
+  storage: Pantry
+- name: Dry Jello
+  time: 3-4 Months
+  storage: Pantry
+- name: Prepared Jello
+  time: "–"
+  storage: Pantry
+- name: Jelly Beans
+  time: 1-2 Years
+  storage: Pantry
+- name: Jelly Belly Jelly Beans
+  time: 8 – 12 Months
+  storage: Pantry
+- name: Gummy Candy
+  time: 1 Year
+  storage: Pantry
+- name: Skittles
+  time: 2-3 Years
+  storage: Pantry
+- name: Sour Ropes
+  time: 1 Year
+  storage: Pantry
+- name: Candy Corn
+  time: 1 Year
+  storage: Pantry
+- name: Caramels
+  time: 9-12 Months
+  storage: Pantry
+- name: Gum
+  time: 6-9 Months
+  storage: Pantry
+- name: M&M’s
+  time: 12 Months
+  storage: Pantry
+- name: M&M Peanut
+  time: 6 Months
+  storage: Pantry
+- name: M&M Peanut Butter
+  time: 6 Months
+  storage: Pantry
+- name: M&M Almond
+  time: 6 Months
+  storage: Pantry
+- name: M&M Mint
+  time: 12 Months
+  storage: Pantry
+- name: Jordan Almonds
+  time: 2-4 Months
+  storage: Pantry
+- name: Marshmallows last
+  time: 6-8 Months
+  storage: Pantry
+- name: Marshmallow Fluff lasts
+  time: 6-8 Months
+  storage: Pantry
+- name: Marshmallow Peeps last
+  time: 6-8 Months
+  storage: Pantry
+- name: Marshmallows last
+  time: 2-4 Months
+  storage: Pantry
+- name: Marshmallow fluff lasts
+  time: 2-4 Months
+  storage: Pantry
+- name: Marshmallow Peeps last
+  time: 2-4 Months
+  storage: Pantry
+- name: Nutella
+  time: 1-2 Months
+  storage: Pantry
+- name: Nutella
+  time: 1 Month past the sell-by date, regardless of when it was opened
+  storage: Pantry
+- name: Oreos
+  time: 2-3 Weeks
+  storage: Pantry
+- name: Fruit Pie
+  time: 2-3 Days
+  storage: Fridge
+- name: Pie with fresh fruit
+  time: 1-2 Days
+  storage: Fridge
+- name: Cream Pie
+  time: 2-3 Days
+  storage: Fridge
+- name: Custard Pie
+  time: 2-3 Days
+  storage: Fridge
+- name: Pumpkin Pie
+  time: 2-4 Days
+  storage: Fridge
+- name: Quiche
+  time: 2-4 Days
+  storage: Fridge
+- name: Pot Pie
+  time: 2-4 Days
+  storage: Fridge
+- name: Popsicles
+  time: 6-8 Months
+  storage: Freezer
+- name: Frozen Fruit Bars
+  time: 6-8 Months
+  storage: Freezer
+- name: Vanilla Pudding
+  time: 3-4 Weeks
+  storage: Pantry
+- name: Chocolate Pudding
+  time: 3-4 Weeks
+  storage: Pantry
+- name: Kraft’s Dry Pudding Mix
+  time: 4-5 Weeks
+  storage: Pantry
+- name: Pudding Prepared from Dry Mix
+  time: 1 Day
+  storage: Pantry
+- name: Homemade Pudding
+  time: 1 Day
+  storage: Pantry
+- name: Baking Powder substitute
+  time: 1 teaspoon
+  storage: Amount
+- name: Double-acting Baking Powder substitute
+  time: 1 teaspoon
+  storage: Amount
+- name: Baking Soda substitute
+  time: 1 teaspoon
+  storage: Amount
+- name: Beef broth substitute
+  time: 1 Cup
+  storage: Amount
+- name: Vegetable Broth substitute
+  time: 1 Cup
+  storage: Amount
+- name: Bread Crumb substitute
+  time: 1 Cup
+  storage: Amount
+- name: Panko substitute
+  time: Any
+  storage: Amount
+- name: Brown sugar substitute
+  time: 1 Cup (firmly packed)
+  storage: Amount
+- name: Brown Sugar substitute
+  time: 1 Cup
+  storage: Amount
+- name: Butter substitute
+  time: 1 Cup
+  storage: Amount
+- name: Butter substitute
+  time: 1 Cup
+  storage: Amount
+- name: Mascarpone Substitute
+  time: Equal
+  storage: Amount
+- name: Parmesan substitute
+  time: Equal
+  storage: Amount
+- name: Neufchatel Cheese substitute
+  time: Equal
+  storage: Amount
+- name: Ricotta substitute
+  time: Equal
+  storage: Amount
+- name: Fontina substitute
+  time: Equal
+  storage: Amount
+- name: Goat Cheese substitute
+  time: Equal
+  storage: Amount
+- name: Feta Cheese substitute
+  time: Equal
+  storage: Amount
+- name: Gruyere substitute
+  time: Equal
+  storage: Amount
+- name: Farmer’s Cheese substitute
+  time: Equal
+  storage: Amount
+- name: Cream Cheese substitute
+  time: Equal
+  storage: Amount
+- name: Chicken broth substitute
+  time: 1 Cup
+  storage: Amount
+- name: Beef Broth substitute
+  time: 1 Cup
+  storage: Amount
+- name: Vegetable Broth substitute
+  time: 1 Cup
+  storage: Amount
+- name: Unsweetened Chocolate substitute
+  time: 1 Ounce (or 1 Square)
+  storage: Amount
+- name: Bittersweet Chocolate substitute
+  time: 1 Ounce (or 1 Square)
+  storage: Amount
+- name: Semisweet Chocolate substitute
+  time: 1 Ounce (or 1 Square)
+  storage: Amount
+- name: Semisweet Chocolate Chips substitute
+  time: 6 Ounce package
+  storage: Amount
+- name: German Chocolate substitute
+  time: 6 Ounce package
+  storage: Amount
+- name: White Chocolate substitute
+  time: 1 Ounce
+  storage: Amount
+- name: Natural Unsweetened Cocoa Powder substitute
+  time: 1/4 Cup
+  storage: Amount
+- name: Dutch Processed Cocoa substitute
+  time: 1/4 Cup
+  storage: Amount
+- name: Worcestershire Sauce substitute
+  time: 1 Tablespoon
+  storage: Amount
+- name: Mayonnaise substitute
+  time: 1 Tablespoon
+  storage: Amount
+- name: Ketchup substitute
+  time: 1 Cup
+  storage: Amount
+- name: Dijon Mustard substitute
+  time: 1 Tablespoon
+  storage: Amount
+- name: Capers Substitute
+  time: Any
+  storage: Amount
+- name: Corn Syrup substitute
+  time: 1 Cup
+  storage: Amount
+- name: Corn Syrup substitute
+  time: 1 Cup
+  storage: Amount
+- name: Cornstarch substitute
+  time: 1 Tablespoon
+  storage: Amount
+- name: Sour Cream substitute
+  time: 1 Cup
+  storage: Amount
+- name: Light Cream substitute
+  time: 1 Cup
+  storage: Amount
+- name: Half and Half substitute
+  time: 1 Cup
+  storage: Amount
+- name: Heavy Cream substitute
+  time: 1 Cup
+  storage: Amount
+- name: Whipped Cream substitute
+  time: 1 Cup
+  storage: Amount
+- name: Egg substitute
+  time: 1 Whole
+  storage: Amount
+- name: Egg White substitute
+  time: 1 White
+  storage: Amount
+- name: Egg Yolk substitute
+  time: 1 Yolk
+  storage: Amount
+- name: Vanilla substitute
+  time: 1 teaspoon
+  storage: Amount
+- name: Lemon Extract substitute
+  time: 1 teaspoon
+  storage: Amount
+- name: Peppermint Extract Substitute
+  time: 1 teaspoon
+  storage: Amount
+- name: Almond Extract Substitute
+  time: 1 teaspoon
+  storage: Amount
+- name: Fish Sauce substitute
+  time: 1 teaspoon
+  storage: Amount
+- name: Soy Sauce substitute
+  time: Any
+  storage: Amount
+- name: Bread Flour substitute
+  time: 1 Cup
+  storage: Amount
+- name: Cake Flour substitute
+  time: 1 Cup
+  storage: Amount
+- name: Self-Rising Flour substitute
+  time: 1 Cup
+  storage: Amount
+- name: Whole Wheat Flour substitute
+  time: 1 Cup
+  storage: Amount
+- name: All-purpose Flour substitute
+  time: '1 Cup '
+  storage: Amount
+- name: All-purpose Flour substitute – *for Thickening Only
+  time: 1 Tablespoon
+  storage: Amount
+- name: Butter Cream Frosting substitute
+  time: 1 Cup
+  storage: Amount
+- name: Frosting substitute
+  time: Any
+  storage: Amount
+- name: Honey substitute
+  time: 1 Cup
+  storage: Amount
+- name: Molasses substitute
+  time: Any
+  storage: Amount
+- name: ''
+  time: 2 Cups
+  storage: Amount
+- name: White Rice substitute
+  time: Any
+  storage: Amount
+- name: Shortening substitute
+  time: 1 Cup Solid
+  storage: Amount
+- name: Shortening substitute
+  time: 1 Cup Melted
+  storage: Amount
+- name: Butter substitute*
+  time: 1 Cup
+  storage: Amount
+- name: Anise Seed
+  time: 1 teaspoon
+  storage: Amount
+- name: Apple Pie Spice substitute
+  time: 1 teaspoon
+  storage: Amount
+- name: Allspice substitute
+  time: 1 teaspoon
+  storage: Amount
+- name: Cajun Spice substitute
+  time: '1 Tablespoon '
+  storage: Amount
+- name: Cardamon substitute
+  time: '1 teaspoon '
+  storage: Amount
+- name: Garlic substitute
+  time: 1 clove
+  storage: Amount
+- name: Fresh Ginger Root substitute
+  time: '1 teaspoon '
+  storage: Amount
+- name: Italian Seasoning substitute
+  time: 1 teaspoon
+  storage: Amount
+- name: Mustard substitute (Dry)
+  time: 1 teaspoon
+  storage: Amount
+- name: Poultry Seasoning substitute
+  time: 1 teaspoon
+  storage: Amount
+- name: Pumpkin Pie Spice substitute
+  time: 1 teaspoon
+  storage: Amount
+- name: Saffron Seasoning substitute
+  time: 1 teaspoon
+  storage: Amount
+- name: Star Anise substitute (Ground)
+  time: 1 teaspoon
+  storage: Amount
+- name: Spearmint substitute (Dried)
+  time: 1 Tablespoon
+  storage: Amount
+- name: Buttermilk substitute
+  time: 1 Cup
+  storage: Amount
+- name: Evaporated Milk substitute
+  time: 1 Cup
+  storage: Amount
+- name: Skim Milk substitute
+  time: 1 Cup
+  storage: Amount
+- name: Sweetened Condensed Milk substitute
+  time: 1 Can
+  storage: Amount
+- name: Whole Milk substitute
+  time: 1 Cup
+  storage: Amount
+- name: Coconut Milk substitute
+  time: 1 Cup
+  storage: Amount
+- name: Brown sugar substitute
+  time: 1 Cup (firmly packed)
+  storage: Amount
+- name: Brown Sugar substitute
+  time: 1 Cup
+  storage: Amount
+- name: Vegetable Oil substitute in Baking
+  time: 1 Cup
+  storage: Amount
+- name: Vegetable Oil substitute for Frying
+  time: 1 Cup
+  storage: Amount
+- name: Vegetable Oil substitute for Salads
+  time: Any
+  storage: Amount
+- name: Rice Vinegar substitute
+  time: 1 Tablespoon
+  storage: Amount
+- name: Apple Cider Vinegar substitute
+  time: 1 Tablespoon
+  storage: Amount
+- name: Balsamic Vinegar substitute
+  time: 1 Tablespoon
+  storage: Amount
+- name: Champagne Vinegar substitute
+  time: 1 Tablespoon
+  storage: Amount
+- name: Red Wine Vinegar substitute
+  time: 1 Tablespoon
+  storage: Amount
+- name: White Wine Vinegar substitute
+  time: 1 Tablespoon
+  storage: Amount
+- name: White Vinegar substitute
+  time: 1 Tablespoon
+  storage: Amount
+- name: Malt Vinegar substitute
+  time: 1 Tablespoon
+  storage: Amount
+- name: Sherry Vinegar substitute
+  time: 1 Tablespoon
+  storage: Amount
+- name: Herb Vinegar substitute
+  time: 1 Tablespoon
+  storage: Amount
+- name: Raspberry Vinegar substitute
+  time: 1 Tablespoon
+  storage: Amount
+- name: Beer substitute*
+  time: 1 Cup
+  storage: Amount
+- name: White Wine substitute
+  time: 1 Cup
+  storage: Amount
+- name: Red Wine substitute
+  time: 1/2 Cup
+  storage: Amount
+- name: Marsala Wine substitute
+  time: 1/4 Cup
+  storage: Amount
+- name: Rice Wine substitute
+  time: 1/4 Cup
+  storage: Amount
+- name: Brandy substitute
+  time: 1/4 Cup
+  storage: Amount
+- name: " Rum substitute"
+  time: 1/4 Cup
+  storage: Amount
+- name: Yogurt substitute
+  time: 1 Cup
+  storage: Amount
+- name: Mayonnaise substituteGreek
+  time: 1 Cup
+  storage: Amount

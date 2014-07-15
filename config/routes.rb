@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-
-
-  resources :products
+  resources :products, only: [:edit, :destroy, :update, :new, :show, :create] 
   root :to =>'home#index' #user homepage
 
 

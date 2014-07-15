@@ -1,6 +1,18 @@
 <h1><%= @product.name %> </h1>
-<p>Date Added : <%= @product.created_at %> </p>
-<p>Expiration Date : <%= @product.expiration_date %></p>
-<%= link_to "Back", root_path %>
-<%= link_to "Delete Item", products_path, method: "" %>
+
+<%= form_for @product,url: {action: "update"), html: {class: "update_form"} do |f| %>
+  
+  
+  <p>Date Added : <%= @product.created_at %> </p>
+  <%= f.label :name %>:
+  <%= f.text_field :name %>
+
+  <%= f.label :expiration_date %>
+  <%= f.text_field :expiration_date %>
+
+  <%= link_to "Cancel", root_path %>
+  <%= f.submit "Update Item" %>
+  <%= link_to "Delete Item", product_path(@product), method: "delete" %>
+
+<% end %>
  

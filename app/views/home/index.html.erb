@@ -3,8 +3,9 @@
 <p> List of items </p>
 <ul>
   <% @products.each do |product|%>
-    <li> <a href="/products/<%= product.id %>/edit"><%= product.name %> </a> </li>
+    <li> <a href="/products/<%= product.id %>"><%= product.name %> </a> </li>
     <!--<li> <%= product.expiration_date %> </li> -->
   <% end %> 
+<%= link_to "Add Item", new_product_path %>
 </ul>
   
