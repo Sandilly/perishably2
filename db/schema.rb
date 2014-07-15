@@ -11,11 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140713161545) do
+ActiveRecord::Schema.define(version: 20140715152517) do
 
-  create_table "create_join_table_product_users", force: true do |t|
-    t.string   "user"
-    t.string   "product"
+  create_table "product_users", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.string   "length_of_time"
+    t.date     "exp_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
