@@ -1,17 +1,3 @@
-
-# require 'yaml'
-# require_relative '../app/models/eat_by_date_scraper'
-# require_relative '../app/models/scraper'
-
-# scraper = EatByDateScraper.new("http://www.eatbydate.com")
-# scraper.store_data_in_yaml
-
-# YAML.load(File.read('db/eat_by_seeds.yaml')).values.flatten.each do |p|
-#   product = Product.create(p)
-# end
-
-
-
 makeup_array= []
 scraper = Scraper.new("www.bellasugar.com/When-Throw-Makeup-Away-Guidelines-Cosmetic-Life-Span-1124422")
 scraper.fetch
@@ -33,3 +19,4 @@ makeup_array.each do |element|
   product.expiration_date = element[:expiration]
   product.save
 end
+
