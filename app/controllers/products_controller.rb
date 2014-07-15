@@ -13,6 +13,12 @@ class ProductsController < ApplicationController
   end
 
   def index
+    @products = Product.search(params[:search])
+    if @products == []
+      redirect_to root_path, :notice => "Product not found. Please try again."
+    else
+      render :index
+    end
   end
 
   def edit
@@ -38,7 +44,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-
   end
 
   private
