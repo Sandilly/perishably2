@@ -11,15 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140715152517) do
-
-  create_table "create_join_table_product_users", force: true do |t|
-    t.string   "user"
-    t.string   "product"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "product_users", force: true do |t|
     t.integer  "user_id"
     t.integer  "product_id"
@@ -37,10 +28,17 @@ ActiveRecord::Schema.define(version: 20140715152517) do
     t.string   "storage"
   end
 
+  create_table "sign_ins", force: true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "password"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
