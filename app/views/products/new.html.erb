@@ -2,10 +2,8 @@
 <h1>Here is an autofill box</h1>
 <%= form_for(@product) do |f|%>
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
 <% end %>
-
-
 
 
 

@@ -1,4 +1,4 @@
 
 jQuery ->
 	$('#product_name').autocomplete
-		source: ['foo', 'food', 'four']
+		source: $('#product_name').data('autocomplete-source')

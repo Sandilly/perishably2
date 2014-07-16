@@ -1,6 +1,18 @@
 class ProductsController < ApplicationController
   before_action :login_required
 
+  #for the autofill
+  def product_name
+    Product.try(:name)
+  end
+  def category_name=(name)
+    self.product = Product.find_or_create_by_name(name) if name.present?
+  end
+  
+
+
+  #end of for the autofill
+
   def new
     @product = Product.new
   end
