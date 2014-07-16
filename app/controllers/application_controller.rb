@@ -4,9 +4,6 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery with: :exception
 
-
-  private
-
   def current_user
    @current_user ||=  User.find(session[:user_id]) if session[:user_id]
   end
@@ -16,6 +13,7 @@ class ApplicationController < ActionController::Base
   # def authorize
   #   redirect_to login_url, alert: "Not authorized" if current_user.nil?
   # end
+
   private
 
   def login_required
@@ -27,5 +25,4 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_user
   end
-
 end
