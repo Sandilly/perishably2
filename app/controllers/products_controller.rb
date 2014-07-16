@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :login_required
+
   def new
     @product = Product.new
   end
