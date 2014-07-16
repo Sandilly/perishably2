@@ -3,6 +3,8 @@
 <%= form_for(@product) do |f|%>
     <%= f.label :name %><br />
     <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
+    <%= link_to "Cancel", root_path %>
+    <%= f.submit "Create" %>
 <% end %>
 
 
@@ -15,6 +17,7 @@
     <button class="btn" type="submit"><i class="icon-search"></i></button>
   </div>
 <% end %>
+
 
 <%= form_for @product, url: {action: "create"}, html: {class: "new_form"} do |f| %>
   <%= f.label :name, "Product Name" %>:

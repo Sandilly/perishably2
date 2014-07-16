@@ -11,4 +11,6 @@ class Product < ActiveRecord::Base
 #below are methods for the autofill:
 
 
+#above are methods for the autofill
+
 end
