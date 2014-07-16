@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    redirect_to root_path
+    redirect_to root_path(@product)
   end
 
   def show
@@ -49,6 +49,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :expiration_date)
+    params.require(:product).permit(:name, :time, :storage)
   end
 end
