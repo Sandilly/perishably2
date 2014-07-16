@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'signup', to: 'users#new', as: 'signup' 
+  get 'login', to: 'sessions#new', as: 'login' 
+  get 'logout', to: 'sessions#destroy', as: 'logout' 
+
+
+  resources :sign_ins
+  resources :sessions
 
   resources :products, only: [:edit, :index, :destroy, :update, :new, :show, :create] 
   root :to =>'home#index' #user homepage

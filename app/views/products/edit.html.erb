@@ -1,5 +1,4 @@
 <h1><%= @product.name %> </h1>
-
 <%= form_for @product, url: {action: "update"}, html: {class: "update_form"} do |f| %>
   <p>Date Added : <%= @product.created_at %> </p>
   <p>Name : <%= @product.name %></p>
@@ -14,9 +13,3 @@
   <%= f.submit "Update Item" %> 
 
 <% end %>
-
-
- 
-
-
-
