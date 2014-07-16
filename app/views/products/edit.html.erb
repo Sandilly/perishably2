@@ -1,5 +1,6 @@
 <h1><%= @product.name %> </h1>
 
+<<<<<<< HEAD
 <p>Date Added : <%= @product.created_at %> </p>
 <p>Expiration Date : <%= @product.expiration_date %></p>
 <%= link_to "Back", product_path %>
@@ -20,3 +21,25 @@
   <%= f.submit "Create" %>
 <% end %>
  
+=======
+<%= form_for @product, url: {action: "update"}, html: {class: "update_form"} do |f| %>
+  <p>Date Added : <%= @product.created_at %> </p>
+  <p>Name : <%= @product.name %></p>
+
+  <%= f.label :time%>
+  <%= f.text_field :time%>
+
+  <%= f.label :storage%>
+  <%= f.text_field :storage%>
+
+  <%= link_to "Back", product_path %>
+  <%= f.submit "Update Item" %> 
+
+<% end %>
+
+
+ 
+
+
+
+>>>>>>> 932815761be08a699d14d666603c3de238b4224e

@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :login_required
+
   def new
     @product = Product.new
   end
@@ -6,9 +8,9 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to root_path(@products)
+      redirect_to root_path
     else 
-      redirect_to new_product_path
+      render :new
     end
   end
 
@@ -30,9 +32,9 @@ class ProductsController < ApplicationController
     @product.assign_attributes(product_params)
 
     if @product.save
-      redirect_to root_path(@product)
+      redirect_to root_path
     else
-      redirect_to edit_product_path
+      render :edit
     end
   end
 
@@ -49,6 +51,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :expiration_date)
+    params.require(:product).permit(:name, :time, :storage)
   end
 end
