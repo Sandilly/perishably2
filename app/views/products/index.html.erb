@@ -1,7 +1,12 @@
- <h1> Search Results </h1>
-<% @products.each do |product| %>
-  <div class="product">
-    <h1 class="product-name"><%= link_to product.name, product_path(product) %></h1>
-    <p class="product-time"><%= product.time %></p>
-  </div>
-<% end %> 
+<h1>User's List</h1>
+
+<p> List of Items </p>
+<ul>
+  <% @products.each do |product|%>
+    <li> <a href="/products/<%= product.id %>">
+      <%= product.name %> </a> </li>
+    <!--<li> <%= product.time %> </li> -->
+  <% end %> 
+</br>
+<%= link_to "Add Item", new_product_path %>
+</ul>

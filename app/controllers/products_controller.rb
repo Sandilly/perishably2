@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :login_required
+
   def new
     @product = Product.new
   end
@@ -6,7 +8,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to root_path
+      redirect_to products_path
     else 
       render :new
     end
@@ -30,7 +32,7 @@ class ProductsController < ApplicationController
     @product.assign_attributes(product_params)
 
     if @product.save
-      redirect_to root_path
+      redirect_to products_path
     else
       render :edit
     end
@@ -39,7 +41,7 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    redirect_to root_path
+    redirect_to products_path
   end
 
   def show
