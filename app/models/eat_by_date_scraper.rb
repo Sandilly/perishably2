@@ -1,9 +1,12 @@
+gem 'nokogiri'
+gem 'rest-client', require: "rest_client"
+
 class EatByDateScraper 
 	
 	attr_reader :products_on_one_page, :links, :html, :homepath, :primary_selector, :response, :page, :allstudentlis, :info
 	
-	def initialize homepath 
-		@homepath = homepath #a string starting with "http...""
+	def initialize  
+		@homepath = "http://www.eatbydate.com"
 	end
 
 	def fetch(path)
@@ -17,6 +20,12 @@ class EatByDateScraper
 		noko.css('#primary-menu a').each do |i|
 			item = i.attributes["href"].value
 			@links << item
+		end
+	end
+
+	def ignore_category_called_substitutions
+		@links.delete_if? do |l|
+			l.include?("substitutions")
 		end
 	end
 
@@ -41,8 +50,29 @@ class EatByDateScraper
 		@products_on_one_page
 	end
 
+	def standardize_time(producthashes)
+		producthashes.map do |c|
+			c["time"].gsub(/-\d+/, "")
+		end
+	end
+
+	def delete_rows_without_time(producthashes)
+		producthashes.delete_if do |c|
+			c["time"] == "-" || c["time"].include?("ndef")
+		end
+	end
+
+	def delete_lasts_for(producthashes) 
+		producthashes.map do |c|
+			c["name"].gsub(/(last)s?\s?(for)?/, "")
+		end
+	end
+	
 	def save_a_chart_to_activerecord_db(url)
 		chart = scrape_one_chart(url)
+		chart = standardize_time(chart)
+		chart = delete_rows_without_time(chart)
+		chart = delete_lasts_for(chart)
 		chart.each do |p|
 			product = Product.create(p)
 		end
@@ -50,19 +80,11 @@ class EatByDateScraper
 
 	def save_all_charts_to_active_record
 		get_links_from_home_page
+		ignore_category_called_substitutions
 		@links.each do |l|
 			save_a_chart_to_activerecord_db(l)
 		end
 	end
-
-	# def get_all_products
-	# 	@products_on_all_pages = []
-	# 	@links.each do |url|
-	# 		products_per_page = scrape_one_chart(url)
-	# 		@products_on_all_pages << products_per_page
-	# 	end
-	# 	@products_on_all_pages
-	# end
 
 end
 

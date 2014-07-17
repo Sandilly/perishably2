@@ -1,18 +1,36 @@
 class ProductsController < ApplicationController
   before_action :login_required
 
+  #for the autofill
+
+
+
+
+
+  #end of for the autofill
+
   def new
     @product = Product.new
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = Product.find_or_initialize_by_name(params[:product][:name])
     if @product.save
-      redirect_to products_path
+      redirect_to product_path(@product)
     else 
-      render :new
+      redirect_to products_path
     end
   end
+
+
+  # def create
+  #   @product = Product.new(product_params)
+  #   if @product.save
+  #     redirect_to root_path(@products)
+  #   else 
+  #     redirect_to new_product_path
+  #   end
+  # end
 
   def index
     @products = Product.search(params[:search])
@@ -50,7 +68,13 @@ class ProductsController < ApplicationController
 
   private
 
+<<<<<<< HEAD
   def product_params
     params.require(:product).permit(:name, :time, :storage)
   end
+=======
+  # def product_params
+  #   params.require(:product).permit(:name, :expiration_date)
+  # end
+>>>>>>> search and autofill bar now redirect to show page for pre-existing product
 end
