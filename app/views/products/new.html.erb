@@ -1,6 +1,10 @@
 <h1>Add new items to my list.</h1>
 
 <%= form_for @product, url: {action: "create"}, html: {class: "new_form"} do |f| %>
+
+  <%= f.label :nickname, "Nickname" %>
+  <%= f.text_field :nickname %>
+
   <%= f.label :name, "Product Name" %>:
   <%= f.text_field :name %>
 
@@ -9,6 +13,9 @@
 
   <%= f.label :storage, "Storage:" %>
   <%= f.text_field :storage %>
+
+  <%= f.label :brand, "Brand" %>
+  <%= f.text_field :brand %>
 
   <%= link_to "Cancel", root_path %>
   <%= f.submit "Create" %>

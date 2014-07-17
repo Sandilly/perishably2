@@ -3,6 +3,8 @@
 <%= form_for @product, url: {action: "update"}, html: {class: "update_form"} do |f| %>
   <p>Date Added : <%= @product.created_at %> </p>
   <p>Name : <%= @product.name %></p>
+  <%= f.label :nickname%>
+  <%= f.text_field :nickname%>
 
   <%= f.label :time%>
   <%= f.text_field :time%>
