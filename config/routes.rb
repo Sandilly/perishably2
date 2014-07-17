@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :sessions
 
   resources :products, only: [:edit, :index, :destroy, :update, :new, :show, :create] 
-  root :to =>'home#index' #user homepage
+  root :to =>'sessions#new' #user homepage
 
 
 
