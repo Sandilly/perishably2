@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20140716193016) do
+
 
   create_table "create_join_table_product_users", force: true do |t|
     t.string   "user"
@@ -43,6 +45,7 @@ ActiveRecord::Schema.define(version: 20140716193016) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "phone_number"
   end
 
 end
