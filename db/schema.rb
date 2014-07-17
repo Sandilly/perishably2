@@ -13,13 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140716193016) do
 
-  create_table "create_join_table_product_users", force: true do |t|
-    t.string   "user"
-    t.string   "product"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "product_users", force: true do |t|
     t.integer  "user_id"
     t.integer  "product_id"

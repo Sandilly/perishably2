@@ -7,9 +7,11 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_url, notice: "Thanks for signing up!"
+      redirect_to products_path, notice: "Thanks for signing up!"
     else
       render "new" 
+      flash[:notice] = "Your submission is invalid."
+      
     end
   end
 

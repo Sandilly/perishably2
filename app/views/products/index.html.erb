@@ -1,8 +1,10 @@
+<%= render "layouts/flash_notices" %>
+
 <h1>User's List</h1>
 
 <p> List of Items </p>
 <ul>
-  <% @products.each do |product|%>
+  <% @product_users.each do |product|%>
     <li> <a href="/products/<%= product.id %>">
       <%= product.name %> </a> </li>
     <!--<li> <%= product.time %> </li> -->
