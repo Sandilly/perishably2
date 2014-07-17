@@ -68,13 +68,8 @@ class ProductsController < ApplicationController
 
   private
 
-<<<<<<< HEAD
   def product_params
     params.require(:product).permit(:name, :time, :storage)
   end
-=======
-  # def product_params
-  #   params.require(:product).permit(:name, :expiration_date)
-  # end
->>>>>>> search and autofill bar now redirect to show page for pre-existing product
+
 end
