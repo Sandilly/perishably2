@@ -1,15 +1,22 @@
 
-<h1>Here is an autofill box</h1>
+<h1>Add new items to my list.</h1>
 <%= form_for(@product) do |f|%>
     <%= f.label :name %><br />
     <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
+    <%= f.text_field :time %>
     <%= link_to "Cancel", root_path %>
     <%= f.submit "Create" %>
 <% end %>
 
+<!-- ajax appendto
+either vanilla ajax which is pure js or remote: true which is rails-->
+
+<!-- 
+
 
 
 <h1>Add new items to my list.</h1>
+
 
 <%= form_tag(products_path, :method => "get", class: "navbar-form", id: "search-form") do %>
   <div class="input-append">
@@ -32,3 +39,8 @@
   <%= link_to "Cancel", products_path %>
   <%= f.submit "Create" %>
 <% end %>
+
+
+
+
+ -->

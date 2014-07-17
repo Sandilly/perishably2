@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.find_by_name(params[:product][:name])
+    @product = Product.find_or_initialize_by_name(params[:product][:name])
     if @product.save
       redirect_to product_path(@product)
     else 
