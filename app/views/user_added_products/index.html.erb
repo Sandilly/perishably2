@@ -1,0 +1,13 @@
+<%= render "layouts/flash_notices" %>
+
+<h1><%= @current_user.name.capitalize %>'s List</h1>
+
+<p> List of Items </p>
+<ul>
+  <% @current_user.user_added_products.each do |product|%>
+    <li> <a href="/user_added_products/<%= product.id %>">
+      <%= product.brand %> </a> </li>
+  <% end %>  
+</br>
+<%= link_to "Add Item", new_user_added_product_path %>
+</ul>
