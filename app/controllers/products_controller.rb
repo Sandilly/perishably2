@@ -1,36 +1,18 @@
 class ProductsController < ApplicationController
   before_action :login_required
 
-  #for the autofill
-
-
-
-
-
-  #end of for the autofill
-
   def new
     @product = Product.new
   end
 
   def create
-    @product = Product.find_or_initialize_by_name(params[:product][:name])
+    @product = Product.first_or_initialize(name:params[:product][:name])
     if @product.save
       redirect_to product_path(@product)
     else 
-      redirect_to products_path
+      render :new
     end
   end
-
-
-  # def create
-  #   @product = Product.new(product_params)
-  #   if @product.save
-  #     redirect_to root_path(@products)
-  #   else 
-  #     redirect_to new_product_path
-  #   end
-  # end
 
   def index
     @products = Product.search(params[:search])

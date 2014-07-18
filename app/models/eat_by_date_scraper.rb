@@ -24,8 +24,8 @@ class EatByDateScraper
 	end
 
 	def ignore_category_called_substitutions
-		@links.delete_if? do |l|
-			l.include?("substitutions")
+		@links.delete_if do |l|
+			l.include?("substitutions") || l.include?("substitute")
 		end
 	end
 
@@ -50,29 +50,38 @@ class EatByDateScraper
 		@products_on_one_page
 	end
 
+	def delete_products_without_name_or_time
+
+######
+	end
+
 	def standardize_time(producthashes)
-		producthashes.map do |c|
-			c["time"].gsub(/-\d+/, "")
+		producthashes.map! do |c|
+			if c["time"]
+				c["time"].gsub(/-\d+/, "")
+			end
 		end
+		producthashes
 	end
 
-	def delete_rows_without_time(producthashes)
-		producthashes.delete_if do |c|
-			c["time"] == "-" || c["time"].include?("ndef")
-		end
-	end
+	# def delete_rows_without_time(producthashes)
+	# 	producthashes.delete_if do |c|
+	# 			c["time"] == "-" #|| c["time"].include?("ndef")
+	# 	end
+	# end
 
-	def delete_lasts_for(producthashes) 
-		producthashes.map do |c|
-			c["name"].gsub(/(last)s?\s?(for)?/, "")
-		end
-	end
+	# def delete_lasts_for(producthashes) 
+	# 	producthashes.map do |c|
+	# 		c["name"].gsub(/(last)s?\s?(for)?/, "")
+	# 	end
+	# end
 	
 	def save_a_chart_to_activerecord_db(url)
 		chart = scrape_one_chart(url)
 		chart = standardize_time(chart)
-		chart = delete_rows_without_time(chart)
-		chart = delete_lasts_for(chart)
+		binding.pry
+		#chart = delete_rows_without_time(chart)
+		#chart = delete_lasts_for(chart)
 		chart.each do |p|
 			product = Product.create(p)
 		end
