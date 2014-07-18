@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  has_many :users, through: :product_users
+  
 
   validates :name, presence: true, uniqueness: true
   validates :time, presence: true
