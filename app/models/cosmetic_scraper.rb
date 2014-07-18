@@ -103,6 +103,8 @@ makeup_array.each do |element|
   product = Product.new
   product.name = element[:name]
   product.time = element[:time]
+  # product.nickname = element[":nickname"]
+  # product.brand = element[:brand]
   product.save
 end
 

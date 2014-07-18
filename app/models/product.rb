@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
-  
+
+  attr_accessor :nickname
 
   validates :name, presence: true, uniqueness: true
   validates :time, presence: true
