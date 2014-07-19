@@ -14,7 +14,7 @@ class SendTextController < ApplicationController
     @twilio_client.account.sms.messages.create(
       :from => "+1#{twilio_phone_number}",
       :to => number_to_send_to,
-      :body => "This is a Perishab.ly notification regarding your #{name}, which will expire in #{time}."
+      :body => "This is a Perishab.ly notification regarding your #{@user_added_product.brand}, which will expire in."
       )
   end
 end

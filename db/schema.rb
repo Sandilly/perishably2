@@ -11,27 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140718145432) do
-=======
-ActiveRecord::Schema.define(version: 20140717190433) do
-
-  create_table "create_join_table_product_users", force: true do |t|
-    t.string   "user"
-    t.string   "product"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "product_users", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "product_id"
-    t.string   "length_of_time"
-    t.date     "exp_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
->>>>>>> hanhah_files
 
   create_table "products", force: true do |t|
     t.string   "name"
@@ -39,7 +19,8 @@ ActiveRecord::Schema.define(version: 20140717190433) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "storage"
-<<<<<<< HEAD
+    t.string   "nickname"
+    t.string   "brand"
   end
 
   create_table "user_added_products", force: true do |t|
@@ -51,10 +32,6 @@ ActiveRecord::Schema.define(version: 20140717190433) do
     t.string   "product_details"
     t.string   "brand"
     t.string   "storage"
-=======
-    t.string   "nickname"
-    t.string   "brand"
->>>>>>> hanhah_files
   end
 
   create_table "users", force: true do |t|
