@@ -1,5 +1,5 @@
-gem 'nokogiri'
-gem 'rest-client', require: "rest_client"
+# gem 'nokogiri'
+# gem 'rest-client', require: "rest_client"
 
 class EatByDateScraper 
 	
@@ -56,33 +56,38 @@ class EatByDateScraper
 	end
 
 	def standardize_time(producthashes)
-		producthashes.map! do |c|
-			if c["time"]
-				c["time"].gsub(/-\d+/, "")
-			end
+		results = []
+		producthashes.each do |c|
+			c["time"]=c["time"].gsub(/-\d+/, "")
+			c["time"]=c["time"].gsub(/–\s?\d+/, "") 
+			c["time"]=c["time"].gsub(/[+]/, "") #
+			c["time"]=c["time"].gsub(/[*]/, "") 
+			c["time"]=c["time"].gsub(/(same day)/i, "4 Hours") #
+			results << c 
+		end
+		results
+	end
+
+	def delete_rows_without_time(producthashes)
+		producthashes.delete_if do |c|
+			#this isn't working 
+				c["time"] == "–" || c["time"].include?("ndef") || c["time"] == "Indedinite"|| c["time"] == "-" || c["time"] =="use by date" || c["time"] =="best by date" || c["time"] =="Decades in a wine cellar"
 		end
 		producthashes
 	end
 
-	# def delete_rows_without_time(producthashes)
-	# 	producthashes.delete_if do |c|
-	# 			c["time"] == "-" #|| c["time"].include?("ndef")
-	# 	end
-	# end
-
-	# def delete_lasts_for(producthashes) 
-	# 	producthashes.map do |c|
-	# 		c["name"].gsub(/(last)s?\s?(for)?/, "")
-	# 	end
-	# end
+	def delete_lasts_for(producthashes) 
+		producthashes.each do |c|
+			c["name"].gsub!(/(last)s?\s?(for)?/, "")
+		end
+	end
 	
 	def save_a_chart_to_activerecord_db(url)
-		chart = scrape_one_chart(url)
-		chart = standardize_time(chart)
-		binding.pry
-		#chart = delete_rows_without_time(chart)
-		#chart = delete_lasts_for(chart)
-		chart.each do |p|
+		c = scrape_one_chart(url)
+		c = delete_rows_without_time(c)
+		c = standardize_time(c) 
+		c = delete_lasts_for(c)
+		c.each do |p|
 			product = Product.create(p)
 		end
 	end
