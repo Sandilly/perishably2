@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout' 
 
   resources :users, except: [:new]
-  resources :sign_ins
   resources :sessions
 
   resources :products, only: [:edit, :index, :destroy, :update, :new, :show, :create] 

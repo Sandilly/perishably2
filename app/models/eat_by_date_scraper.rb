@@ -1,6 +1,3 @@
-# gem 'nokogiri'
-# gem 'rest-client', require: "rest_client"
-
 class EatByDateScraper 
 	
 	attr_reader :products_on_one_page, :links, :html, :homepath, :primary_selector, :response, :page, :allstudentlis, :info
@@ -60,9 +57,12 @@ class EatByDateScraper
 		producthashes.each do |c|
 			c["time"]=c["time"].gsub(/-\d+/, "")
 			c["time"]=c["time"].gsub(/–\s?\d+/, "") 
-			c["time"]=c["time"].gsub(/[+]/, "") #
+			c["time"]=c["time"].gsub(/[+]/, "") 
 			c["time"]=c["time"].gsub(/[*]/, "") 
-			c["time"]=c["time"].gsub(/(same day)/i, "4 Hours") #
+			c["time"]=c["time"].gsub(/(same day)/i, "4 Hours") 
+			if c["time"].match(/^(\S+\s){2}/)
+				c["time"] = c["time"].match(/^(\S+\s){2}/)[0]
+			end
 			results << c 
 		end
 		results
@@ -85,7 +85,7 @@ class EatByDateScraper
 	def save_a_chart_to_activerecord_db(url)
 		c = scrape_one_chart(url)
 		c = delete_rows_without_time(c)
-		c = standardize_time(c) 
+		c = standardize_time(c)
 		c = delete_lasts_for(c)
 		c.each do |p|
 			product = Product.create(p)
