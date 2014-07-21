@@ -1,48 +1,16 @@
 
 <h1>Add items to my list.</h1>
 <%= form_for(@product) do |f|%>
-    <%= f.label :name %><br />
-    <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %><br />
-    <%= f.label :time %><br />
+    <%= f.label "Name:" %>
+    <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
+    <%= f.label "Time:" %>
     <%= f.text_field :time %>
-    <%= link_to "Cancel", root_path %>
-    <%= f.submit "Create" %>
+    <%= f.submit "Add Item" %>
 <% end %>
-<!-- 
-should require two letters before autocomplete starts
-
-onclick or onkeyup, 
-
-the ajax request is sent to WHERE, maybe the index page, 
-first let's keep it simple by just using a collection.
-The product is found by name. 
-The product's :time is sent back. 
-Then on is sent to the products index page. 
-
-Meanwhile, on the new products page, a new text_field is added to the form + slideDown: 
-the text_field has a placeholder of the product_time.
-
-onSubmit, the product is added to the a list of products to be submitted, another form with a new button called "Submit all"
-
-
-ajax appendto
-either vanilla ajax which is pure js or remote: true which is rails-->
+ 
+<%= link_to "Cancel", root_path %>
 
 <!-- 
-
-
-
-<h1>Add new items to my list.</h1>
-
-
-<%= form_tag(products_path, :method => "get", class: "navbar-form", id: "search-form") do %>
-  <div class="input-append">
-    <%= text_field_tag :search, params[:search], class: "span2", placeholder: "Search Products" %>
-    <button class="btn" type="submit"><i class="icon-search"></i></button>
-  </div>
-<% end %>
-
-
 <%= form_for @product, url: {action: "create"}, html: {class: "new_form"} do |f| %>
   <%= f.label :name, "Product Name" %>:
   <%= f.text_field :name %>
@@ -55,9 +23,4 @@ either vanilla ajax which is pure js or remote: true which is rails-->
 
   <%= link_to "Cancel", products_path %>
   <%= f.submit "Create" %>
-<% end %>
-
-
-
-
- -->
+<% end %> -->
