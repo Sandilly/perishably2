@@ -11,27 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140718145432) do
+ActiveRecord::Schema.define(version: 20140721041321) do
 
   create_table "products", force: true do |t|
     t.string   "name"
-    t.string   "time"
+    t.string   "unit_of_time_period"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "storage"
-    t.string   "nickname"
-    t.string   "brand"
+    t.string   "number_unit_of_time"
   end
 
   create_table "user_added_products", force: true do |t|
     t.integer  "user_id"
-    t.string   "length_of_time"
+    t.string   "unit_of_time_period"
     t.date     "exp_date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "product_details"
     t.string   "brand"
     t.string   "storage"
+    t.string   "number_unit_of_time"
   end
 
   create_table "users", force: true do |t|

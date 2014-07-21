@@ -11,12 +11,19 @@
   <%= f.text_field :product_details %>
 
   
-  <%= f.label :length_of_time %>
-  <%= f.text_field :length_of_time %>
+  <%= f.label :number_unit_of_time, "Num Time:" %>
+  <%= f.select(:number_unit_of_time, options_for_select(1..7)) %> 
+
+  <%= f.label :unit_of_time_period, "Unit of Time:" %>
+  <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> 
+
   
 
   <%= f.label :storage%>
   <%= f.text_field :storage%>
+
+
+
 
   <%= link_to "Back", user_added_product_path %>
   <%= f.submit "Update Item" %> 
