@@ -38,6 +38,8 @@ gem 'spring',        group: :development
 
 gem 'twilio-ruby', '~> 3.11'
 
+gem 'mail'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
