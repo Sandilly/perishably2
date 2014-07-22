@@ -1,11 +1,15 @@
 class Product < ActiveRecord::Base
 
-  attr_accessor :nickname
-
   validates :name, presence: true, uniqueness: true
-  validates :time, presence: true
+  # validates :unit_of_time_period, presence: true
 
   def self.search(query)
     where("name like ?", "%#{query}%") 
   end
+
+#below are methods for the autofill:
+
+
+#above are methods for the autofill
+
 end

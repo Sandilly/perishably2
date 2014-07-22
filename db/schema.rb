@@ -11,21 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140721210346) do
 
   create_table "product_recipients", force: true do |t|
     t.integer "user_added_product_id"
     t.integer "recipient_id"
   end
+=======
+ActiveRecord::Schema.define(version: 20140721041321) do
+>>>>>>> 794d9f9e2201a2f0eef97bf67bb770ed407588f6
 
   create_table "products", force: true do |t|
     t.string   "name"
-    t.string   "time"
+    t.string   "unit_of_time_period"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "storage"
-    t.string   "nickname"
-    t.string   "brand"
+    t.string   "number_unit_of_time"
   end
 
   create_table "recipients", force: true do |t|
@@ -35,13 +38,14 @@ ActiveRecord::Schema.define(version: 20140721210346) do
 
   create_table "user_added_products", force: true do |t|
     t.integer  "user_id"
-    t.string   "length_of_time"
+    t.string   "unit_of_time_period"
     t.date     "exp_date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "product_details"
     t.string   "brand"
     t.string   "storage"
+    t.string   "number_unit_of_time"
   end
 
   create_table "users", force: true do |t|

@@ -4,6 +4,9 @@ gem 'bcrypt'
 gem 'nokogiri'
 gem 'rest-client', require: "rest_client"
 gem 'mechanize'
+gem 'binding_of_caller'
+gem 'better_errors'
+gem "font-awesome-rails" 
 
 gem 'sqlite3'
 
