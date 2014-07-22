@@ -1,6 +1,8 @@
 <div class="row-fluid borBox inBox well deep">
 
+
   <h1>Log in</h1>
+  <%= render "layouts/flash_notices" %>
 
   <%= form_tag sessions_path do %>
     <div class = "field">
@@ -14,7 +16,7 @@
     </div>
 
     <div class = "actions">
-      <%= submit_tag "Log in", class: "btn btn-info"%> 
+      <%= submit_tag "LOG IN", class: "btn btn-info"%> 
     </div>
     
     <%= link_to "Sign Up", signup_path %>

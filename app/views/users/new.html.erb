@@ -1,35 +1,39 @@
-<h1>Sign Up</h1>
+<div class="row-fluid borBox inBox well deep">
+
+  <h1>Sign Up</h1>
+  <%= render "layouts/flash_notices" %>
 
 
-<%= form_for(@user, :html => {:class => 'signup_form'}) do |f| %>
+  <%= form_for(@user, :html => {:class => 'signup_form'}) do |f| %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+      
+     <div class="field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div> 
     
-   <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div> 
-  
-  <div class="field">
-    <%= f.label :phone_number %>
-    <%= f.telephone_field :phone_number %>
-  </div>
+    <div class="field">
+      <%= f.label :phone_number %>
+      <%= f.telephone_field :phone_number %>
+    </div>
 
-  <%= f.submit %>
-  
-<% end %>
+    <%= f.submit "SIGN UP!", :class => "btn btn-info"%>
+    
+  <% end %>
 
-<%= link_to "Log In", login_path %>
+  <%= link_to "Log In", login_path%>
+</div>
