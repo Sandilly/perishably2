@@ -10,8 +10,9 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
+  
 
-ActiveRecord::Schema.define(version: 20140723150742) do\
+ActiveRecord::Schema.define(version: 20140723150742) do
 
   create_table "emails", force: true do |t|
     t.string   "name"
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 20140723150742) do\
     t.string   "name"
     t.string   "storage"
     t.string   "number_unit_of_time"
+    t.date     "notification_date"
   end
 
   create_table "users", force: true do |t|

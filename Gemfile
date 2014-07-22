@@ -6,6 +6,7 @@ gem 'rest-client', require: "rest_client"
 gem 'mechanize'
 gem 'binding_of_caller'
 gem 'better_errors'
+gem 'bootstrap-sass', '~> 3.2.0'
 gem "font-awesome-rails" 
 
 gem 'sqlite3'

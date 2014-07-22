@@ -6,6 +6,7 @@
 <p>Product Details: <%= @user_product.product_details %></p>
 <p>Date Added : <%= @user_product.created_at %> </p>
 <p>Expiration Date : <%= @user_product.exp_date %></p>
+<<<<<<< HEAD
 
 <p>Notify Me <%= @user_product.exp_date%></p>
 <p>Notify Friends <%= @user_product.exp_date%></p>
@@ -20,6 +21,17 @@
   <%= f.submit %>
 <% end %>
 
+=======
+
+<p>Notification Date : <%= @user_product.notification_date %></p>
+
+<%= select_tag(:notify_num, '<option value="1">Lisbon</option>...') %>
+
+<div class="progress progress-striped active">
+  <div class="bar" style="width: 80%;"></div>
+</div>
+
+>>>>>>> abaad26... working on notification day and form
 <%= link_to "Back", user_added_products_path %>
 <%= link_to "Edit", edit_user_added_product_path(@user_product) %>
 <%= link_to 'Destroy', @user_product, :confirm => 'Are you sure?', :method => :delete %>

@@ -1,7 +1,9 @@
-<%= render "layouts/flash_notices" %>
+<div class="light deep">
+  <%= render "layouts/flash_notices" %>
 
-<h1><%= @current_user.name.capitalize %>'s List</h1>
+  <h1><%= @current_user.name.capitalize %>'s List</h1>
 
+<<<<<<< HEAD
 <p> List of Items </p>
 <ul>
   <% @current_user.user_added_products.each do |product|%>
@@ -10,3 +12,16 @@
 </br>
 <%= link_to "Add Item", new_user_added_product_path %>
 </ul>
+=======
+  <p> List of Items </p>
+  <ul>
+    <% @current_user.user_added_products.each do |product|%>
+      <li> <a href="/user_added_products/<%= product.id %>">
+        <%= product.brand %> </a> </li>
+    <% end %>  
+  </br>
+  <%= link_to "Add Item", new_user_added_product_path, class: "btn btn-info" %>
+  </ul>
+  <span class="fa fa-camera-retro">Here</span>
+</div>
+>>>>>>> abaad26... working on notification day and form

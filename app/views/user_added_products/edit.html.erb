@@ -15,20 +15,10 @@
   <%= f.select(:number_unit_of_time, options_for_select(1..7)) %> 
 
   <%= f.label :unit_of_time_period, "Unit of Time:" %>
-  <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> 
-
-
+  <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %>
   
-  <%= select_tag "Num time", options_for_select(1..7) %>
-  <%= select_tag "Time value", options_for_select(["Day(s) before exp. date", "Week(s) before exp. date", "Month(s) before exp. date", "Year(s) before exp. date" ]) %>
-
-  
-
   <%= f.label :storage%>
   <%= f.text_field :storage%>
-
-
-
 
   <%= link_to "Back", user_added_product_path %>
   <%= f.submit "Update Item" %> 
