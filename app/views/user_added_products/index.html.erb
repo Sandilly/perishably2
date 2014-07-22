@@ -5,8 +5,7 @@
 <p> List of Items </p>
 <ul>
   <% @current_user.user_added_products.each do |product|%>
-    <li> <a href="/user_added_products/<%= product.id %>">
-      <%= product.brand %> </a> </li>
+    <li><%= link_to "#{product.name}", user_added_product_path(product) %></li>
   <% end %>  
 </br>
 <%= link_to "Add Item", new_user_added_product_path %>

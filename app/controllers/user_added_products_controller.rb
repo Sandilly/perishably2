@@ -73,7 +73,7 @@ class UserAddedProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:user_added_product).permit(:brand, :product_details, :unit_of_time_period, :number_unit_of_time,:storage)
+    params.require(:user_added_product).permit(:name, :product_details, :unit_of_time_period, :number_unit_of_time,:storage)
   end
 
 end

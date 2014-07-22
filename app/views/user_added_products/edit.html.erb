@@ -1,11 +1,11 @@
-<h1><%= @user_product.brand %> </h1>
+<h1><%= @user_product.name %> </h1>
 
 <%= form_for @user_product, url: {action: "update"}, html: {class: "update_form"} do |f| %>
   <p>Date Added : <%= @user_product.created_at %> </p>
   
   
-  <%= f.label :brand %>
-  <%= f.text_field :brand%>
+  <%= f.label :name %>
+  <%= f.text_field :name%>
 
   <%= f.label :product_details %>
   <%= f.text_field :product_details %>

@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20140721210346) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "product_details"
-    t.string   "brand"
+    t.string   "name"
     t.string   "storage"
     t.string   "number_unit_of_time"
   end
