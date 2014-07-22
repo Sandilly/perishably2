@@ -1,22 +1,11 @@
-<h1>Add new items to my list.</h1>
 
-<%= form_tag(products_path, :method => "get", class: "navbar-form", id: "search-form") do %>
-  <div class="input-append">
-    <%= text_field_tag :search, params[:search], class: "span2", placeholder: "Search Products" %>
-    <button class="btn" type="submit"><i class="icon-search"></i></button>
-  </div>
+<h1>Add items to my list.</h1>
+<%= form_for(@product) do |f|%>
+    <%= f.label "Name:" %>
+    <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
+    <%= f.label "Time:" %>
+    <%= f.text_field :time %>
+    <%= f.submit "Add Item" %>
 <% end %>
-
-<%= form_for @product, url: {action: "create"}, html: {class: "new_form"} do |f| %>
-  <%= f.label :name, "Product Name" %>:
-  <%= f.text_field :name %>
-
-  <%= f.label :time, "Length of Time:" %>
-  <%= f.text_field :time %>
-
-  <%= f.label :storage, "Storage:" %>
-  <%= f.text_field :storage %>
-
-  <%= link_to "Cancel", products_path %>
-  <%= f.submit "Create" %>
-<% end %>
+ 
+<%= link_to "Cancel", root_path %>

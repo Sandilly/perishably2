@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+
   before_action :login_required
 
   def new
@@ -6,21 +7,26 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = Product.new(name:params[:product][:name])
+    # @product.time = 
     if @product.save
-      redirect_to products_path
+      render :new, notice: "Item added"
+      redirect_to product_path(@product) 
+      #should flash"product added" and go to the user's products page
     else 
-      render :new
+      render :new, notice: "Try again."
     end
+
   end
 
   def index
-    @products = Product.search(params[:search])
-    if @products == []
-      redirect_to root_path, :notice => "Product not found. Please try again."
-    else
-      render :index
+    @products = Product.all
+    
+    respond_to do |format|
+      format.html
+      format.json {render json: @products}
     end
+
   end
 
   def edit
@@ -45,12 +51,20 @@ class ProductsController < ApplicationController
   end
 
   def show
+
     @product = Product.find(params[:id])
   end
 
+  def search 
+    @product = Product.find_by(name: params[:name])
+    respond_to do |format|
+      format.json {render json: @product}
+    end
+  end
   private
 
   def product_params
     params.require(:product).permit(:name, :time, :storage)
   end
+
 end

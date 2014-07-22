@@ -3,12 +3,17 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login' 
   get 'logout', to: 'sessions#destroy', as: 'logout' 
 
+  get 'products/search/:name', to: 'products#search'
+
   resources :users, except: [:new]
+
   resources :sign_ins
+
   resources :sessions
 
   resources :products, only: [:edit, :index, :destroy, :update, :new, :show, :create] 
-  root :to =>'sessions#new' #user homepage
+  resources :user_added_products , only: [:edit, :index, :destroy, :update, :new, :show, :create] 
+  root :to =>'sessions#new' #login page
 
 
 
@@ -19,6 +24,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   # Example of regular route:
+  
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
