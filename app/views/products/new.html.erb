@@ -1,0 +1,11 @@
+
+<h1>Add items to my list.</h1>
+<%= form_for(@product) do |f|%>
+    <%= f.label "Name:" %>
+    <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
+    <%= f.label "Time:" %>
+    <%= f.text_field :time %>
+    <%= f.submit "Add Item" %>
+<% end %>
+ 
+<%= link_to "Cancel", root_path %>

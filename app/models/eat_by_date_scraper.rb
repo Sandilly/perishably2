@@ -2,8 +2,8 @@ class EatByDateScraper
 	
 	attr_reader :products_on_one_page, :links, :html, :homepath, :primary_selector, :response, :page, :allstudentlis, :info
 	
-	def initialize homepath 
-		@homepath = homepath #a string starting with "http...""
+	def initialize  
+		@homepath = "http://www.eatbydate.com"
 	end
 
 	def fetch(path)
@@ -17,6 +17,12 @@ class EatByDateScraper
 		noko.css('#primary-menu a').each do |i|
 			item = i.attributes["href"].value
 			@links << item
+		end
+	end
+
+	def ignore_category_called_substitutions
+		@links.delete_if do |l|
+			l.include?("substitutions") || l.include?("substitute")
 		end
 	end
 
@@ -41,28 +47,58 @@ class EatByDateScraper
 		@products_on_one_page
 	end
 
+	def delete_products_without_name_or_time
+
+######
+	end
+
+	def standardize_time(producthashes)
+		results = []
+		producthashes.each do |c|
+			c["time"]=c["time"].gsub(/-\d+/, "")
+			c["time"]=c["time"].gsub(/–\s?\d+/, "") 
+			c["time"]=c["time"].gsub(/[+]/, "") 
+			c["time"]=c["time"].gsub(/[*]/, "") 
+			c["time"]=c["time"].gsub(/(same day)/i, "4 Hours") 
+			if c["time"].match(/^(\S+\s){2}/)
+				c["time"] = c["time"].match(/^(\S+\s){2}/)[0]
+			end
+			results << c 
+		end
+		results
+	end
+
+	def delete_rows_without_time(producthashes)
+		producthashes.delete_if do |c|
+			#this isn't working 
+				c["time"] == "–" || c["time"].include?("ndef") || c["time"] == "Indedinite"|| c["time"] == "-" || c["time"] =="use by date" || c["time"] =="best by date" || c["time"] =="Decades in a wine cellar"
+		end
+		producthashes
+	end
+
+	def delete_lasts_for(producthashes) 
+		producthashes.each do |c|
+			c["name"].gsub!(/(last)s?\s?(for)?/, "")
+		end
+	end
+	
 	def save_a_chart_to_activerecord_db(url)
-		chart = scrape_one_chart(url)
-		chart.each do |p|
+		c = scrape_one_chart(url)
+		c = delete_rows_without_time(c)
+		c = standardize_time(c)
+		c = delete_lasts_for(c)
+		c.each do |p|
 			product = Product.create(p)
 		end
 	end
 
 	def save_all_charts_to_active_record
 		get_links_from_home_page
+		ignore_category_called_substitutions
 		@links.each do |l|
 			save_a_chart_to_activerecord_db(l)
 		end
 	end
-
-	# def get_all_products
-	# 	@products_on_all_pages = []
-	# 	@links.each do |url|
-	# 		products_per_page = scrape_one_chart(url)
-	# 		@products_on_all_pages << products_per_page
-	# 	end
-	# 	@products_on_all_pages
-	# end
 
 end
 

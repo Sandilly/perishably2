@@ -6,4 +6,10 @@ class Product < ActiveRecord::Base
   def self.search(query)
     where("name like ?", "%#{query}%") 
   end
+
+#below are methods for the autofill:
+
+
+#above are methods for the autofill
+
 end
