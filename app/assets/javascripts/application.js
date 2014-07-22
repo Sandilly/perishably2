@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= bootstrap
+//= require bootstrap.min
+//= jquery-1.7.2
+//= main

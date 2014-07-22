@@ -1,7 +1,0 @@
-<h1> Search Results </h1>
-<% @products.each do |product| %>
-  <div class="product">
-    <h1 class="product-name"><%= link_to product.name, product_path(product) %></h1>
-    <p class="product-time"><%= product.time %></p>
-  </div>
-<% end %>

@@ -1,8 +1,7 @@
 class Product < ActiveRecord::Base
-  has_many :users
 
   validates :name, presence: true, uniqueness: true
-  validates :time, presence: true
+  # validates :unit_of_time_period, presence: true
 
   def self.search(query)
     where("name like ?", "%#{query}%") 

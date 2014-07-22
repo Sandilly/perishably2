@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
 gem 'pry'
-
-gem 'pry'
 gem 'bcrypt'
 gem 'nokogiri'
 gem 'rest-client', require: "rest_client"
 gem 'mechanize'
+gem 'binding_of_caller'
+gem 'better_errors'
+gem "font-awesome-rails" 
 
 gem 'sqlite3'
 
@@ -37,6 +38,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+
+gem 'twilio-ruby', '~> 3.11'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
