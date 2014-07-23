@@ -44,6 +44,8 @@ gem 'twilio-ruby', '~> 3.11'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'whenever', :require => false
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

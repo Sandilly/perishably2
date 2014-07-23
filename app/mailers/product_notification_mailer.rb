@@ -6,4 +6,10 @@ class ProductNotificationMailer < ActionMailer::Base
 
     mail(:to => @product.user.email, :subject => "Perishably - Product Expiration Notice")
   end
+
+  def test_email_for(email)
+    @email = email
+
+    mail(to: @email, :subject => "You're getting an email a minute.")
+  end
 end

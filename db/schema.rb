@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140723150742) do
+ActiveRecord::Schema.define(version: 20140723150742) do\
+  create_table "emails", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "friends", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "product_recipients", force: true do |t|
     t.integer "user_added_product_id"
@@ -52,6 +65,7 @@ ActiveRecord::Schema.define(version: 20140723150742) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "phone_number"
+    t.boolean  "notify"
   end
 
 end
