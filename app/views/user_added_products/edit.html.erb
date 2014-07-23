@@ -17,11 +17,53 @@
   <%= f.label :unit_of_time_period, "Unit of Time:" %>
   <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %>
   
+  <%= link_to 'My product has an expiration date', '#',
+        :onclick => 'select_exp_date()' %>
+
   <%= f.label :storage%>
   <%= f.text_field :storage%>
+
+  <p> Notify by: </p>
+  
+  <%= radio_button_tag(:notify_by, "email") %>
+  <%= label_tag(:notify_by_email, "Email") %>
+  <%= radio_button_tag(:notify_by, "text") %>
+  <%= label_tag(:notify_by_text, "Text") %>
+  <%= radio_button_tag(:notify_by, "Phone Call") %>
+  <%= label_tag(:notify_by, "Phone Call") %>
+
+  <%= radio_button_tag(:notify_day, "before") %>
+  <%= label_tag(:notify_before, "Notify me BEFORE expiration date.") %>
+
+  <%= select_tag(:notify_num, options_for_select(1..7)) %>
+  <%= select_tag(:notify_date_type, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %>
+  
+  <%= radio_button_tag(:notify_day, "adult") %>
+  <%= label_tag(:age_adult, "Notify me ON the day of expiration date.") %> <br>
+
+  <%= link_to 'Add people to notifications', '#',
+        :onclick => 'add_ppl_to_notification()' %>
+
+  <div id="add_ppl">
+  </div>
 
   <%= link_to "Back", user_added_product_path %>
   <%= f.submit "Update Item" %> 
 
 <% end %>
 
+
+<script type="text/javascript">
+  function select_exp_date(){
+    alert("hi");
+  };
+
+  function add_ppl_to_notification(){
+    // $('#add_ppl').append("<input id='recipent_email' name='recipent[email]' type='text' value='Enter recipient's email");
+    // $("#create_reminder_dialog").click(function() {
+    // $('#new_reminder_dialog').dialog('open');
+    // return false;
+});
+
+  };
+</script>

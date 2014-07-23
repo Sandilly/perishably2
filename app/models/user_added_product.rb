@@ -27,11 +27,17 @@ class UserAddedProduct < ActiveRecord::Base
       self.exp_date = self.unit_of_time_period
     end
 
-    def set_notification_date
 
-      notify
-      self.notification_date = self.exp_date + 3.days
+    def set_notification_date
+      # notification_num = params[:notify_num]
+      # notification_date_type = params[:notify_date_type]
+      self.notification_date = self.exp_date - 3.days
+
+    
+
     end
+
+
   end
 
 
