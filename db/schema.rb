@@ -11,12 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140723144821) do
+ActiveRecord::Schema.define(version: 20140723150742) do
 
   create_table "product_recipients", force: true do |t|
     t.integer "user_added_product_id"
     t.integer "recipient_id"
-    t.integer "phone_number"
   end
 
   create_table "products", force: true do |t|
@@ -29,8 +28,9 @@ ActiveRecord::Schema.define(version: 20140723144821) do
   end
 
   create_table "recipients", force: true do |t|
-    t.string "name"
-    t.string "email"
+    t.string  "name"
+    t.string  "email"
+    t.integer "phone_number"
   end
 
   create_table "user_added_products", force: true do |t|
