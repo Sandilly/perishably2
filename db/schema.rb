@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140723150742) do
   create_table "product_recipients", force: true do |t|
     t.integer "user_added_product_id"
     t.integer "recipient_id"
+    t.integer "phone_number"
   end
 
   create_table "products", force: true do |t|
