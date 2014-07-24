@@ -14,8 +14,7 @@ $(function() {
 	});
 });
 
-//change time variable into unit and number
-//turn it into four weeks from today
+//use sandy's method to turn it into four weeks from today
 //fill in the id with the date AJAX-requested above. .datepicker('setDate', '07/30/2014')
 //In the controller #create, 
 //make use of the calendar date.
