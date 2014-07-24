@@ -1,35 +1,37 @@
 <h1><%= @user_product.name %> </h1>
 
 <%= form_for @user_product, url: {action: "update"}, html: {class: "update_form"} do |f| %>
-  <p>Date Added : <%= @user_product.created_at %> </p>
+  <div class="field">Date Added : <%= @user_product.created_at %> </div>
   
   
-  <%= f.label :name %>
-  <%= f.text_field :name%>
+    <%= f.label :name %>
+    <%= f.text_field :name%>
 
-  <%= f.label :product_details %>
-  <%= f.text_field :product_details %>
-
+    <%= f.label :product_details %>
+    <%= f.text_field :product_details %>
   
-  <%= f.label :number_unit_of_time, "Num Time:" %>
-  <%= f.select(:number_unit_of_time, options_for_select(1..7)) %> 
+    <%= f.label :number_unit_of_time, "Num Time:" %>
+    <%= f.select(:number_unit_of_time, options_for_select(1..7)) %> 
 
-  <%= f.label :unit_of_time_period, "Unit of Time:" %>
-  <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> 
+    <%= f.label :unit_of_time_period, "Unit of Time:" %>
+    <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> 
 
+    <%= select_tag "Num time", options_for_select(1..7) %>
+    <%= select_tag "Time value", options_for_select(["Day(s) before exp. date", "Week(s) before exp. date", "Month(s) before exp. date", "Year(s) before exp. date" ]) %>
 
-  
-  <%= select_tag "Num time", options_for_select(1..7) %>
-  <%= select_tag "Time value", options_for_select(["Day(s) before exp. date", "Week(s) before exp. date", "Month(s) before exp. date", "Year(s) before exp. date" ]) %>
-
-  
-
-  <%= f.label :storage%>
-  <%= f.text_field :storage%>
-
-
-
-
+    <%= f.label :storage%>
+    <%= f.text_field :storage%>
+  <div class="field">
+    <h2>Recipient</h2>
+  <%= f.fields_for(:recipients, Recipient.new) do |recipient_field| %>
+     <%= recipient_field.label :name %>
+     <%= recipient_field.text_field :name %>
+     <%= recipient_field.label :email %>
+     <%= recipient_field.text_field :email %>
+     <%= recipient_field.label :phone_number %>
+     <%= recipient_field.text_field :phone_number %>
+  <% end%>
+</div>
   <%= link_to "Back", user_added_product_path %>
   <%= f.submit "Update Item" %> 
 

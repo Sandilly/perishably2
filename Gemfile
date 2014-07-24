@@ -7,9 +7,9 @@ gem 'mechanize'
 gem 'binding_of_caller'
 gem 'better_errors'
 gem "font-awesome-rails" 
-
+gem 'pry-nav'
 gem 'sqlite3'
-
+gem 'validates_formatting_of'
 group :production do
   gem 'pg'
 end

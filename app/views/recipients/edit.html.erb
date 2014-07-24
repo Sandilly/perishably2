@@ -1,0 +1,12 @@
+<h1><%= @recipient.name.capitalize %>'s List</h1>
+<div class="field">
+  <% @recipients_stuff.each do |recipient_stuff| %>
+    <div class="field">Product<%= recipient_stuff.name.capitalize %></div>
+    <div class="field">Main User<%= User.find(recipient_stuff.user_id).name %></div>
+    <div class="field">Main User ID<%= User.find(recipient_stuff.user_id).id %></div>
+    <div class="field">Expiration Date<%= recipient_stuff.exp_date %></div>
+  <%end%>
+  <%= link_to "Back", recipient_user_added_product_path %>
+  <%= f.submit "Update Recipient" %> 
+  
+</div>

@@ -1,6 +1,8 @@
 class UserAddedProduct < ActiveRecord::Base
   belongs_to :user
+  has_many :product_recipients
   has_many :recipients, through: :product_recipients
+  accepts_nested_attributes_for :recipients
 
   # def exp_date(user_found)
   #   @time_add = @user_product.number_unit_of_time.to_i

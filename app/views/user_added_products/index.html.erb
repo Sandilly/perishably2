@@ -4,8 +4,8 @@
 
 <p> List of Items </p>
 <ul>
-  <% @current_user.user_added_products.each do |product|%>
-    <li><%= link_to "#{product.name}", user_added_product_path(product) %></li>
+  <% @products.each do |product|%>
+    <li><%= link_to "#{product.name}".capitalize, user_added_product_path(product) %></li>
   <% end %>  
 </br>
 <%= link_to "Add Item", new_user_added_product_path %>
