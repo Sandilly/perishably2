@@ -7,8 +7,8 @@ gem 'mechanize'
 gem 'binding_of_caller'
 gem 'better_errors'
 gem 'bootstrap-sass', '~> 3.2.0'
-gem 'font-awesome-rails'
 gem "calendar_date_select"
+gem "font-awesome-rails" 
 gem 'pry-nav'
 gem 'sqlite3'
 gem 'validates_formatting_of'
@@ -30,7 +30,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+# gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

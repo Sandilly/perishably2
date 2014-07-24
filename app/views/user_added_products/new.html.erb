@@ -2,6 +2,13 @@
 <h1><i class="fa fa-plus small-i"></i><i class="fa fa-list-ol"></i> &nbsp;Add items to my list.</h1>
 <%= form_for(@user_product) do |f|%>
 
+    <%= f.label "Name:" %>
+    <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
+    <%= f.label "Time:" %>
+    <%= f.text_field :unit_of_time_period %>
+    <%= f.label "Date of Expiration:" %>
+    <%= f.text_field :exp_date , :id => "datepicker" %>
+
     <div class = "light well">
         <%= f.label "Name:" %>
         <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
@@ -15,8 +22,10 @@
         <%= f.label :unit_of_time_period, "Unit of Time:" %>
         <%= f.select(:unit_of_time_period, options_for_select(["Day", "Week", "Month", "Year" ])) %> <br> 
 
+    		<%= f.label "Date of Expiration:" %>
+    		<%= f.text_field :exp_date , :id => "datepicker" %>
         <%= f.label :storage, "Storage:" %>
-    <%= f.text_field :storage %>
+    		<%= f.text_field :storage %>
     </div>
 
     <div class = "light well">
@@ -43,17 +52,10 @@
     </div>
   </div>
 
-
-
-    <%= f.label "Name:" %>
-    <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
-    <%= f.label "Time:" %>
-    <%= f.text_field :unit_of_time_period %>
-
-    <%= f.label "Date of Expiration:" %>
-    <%= f.text_field :exp_date , :id => "datepicker" %>
     <%= f.submit "Add Item", class: "btn btn-info round2" %>
 <% end %>
  
 <%= link_to "<i class='fa fa-times'></i> Cancel".html_safe, user_added_products_path, class: "btn btn-inverse round2" %>
+<%= link_to "Cancel", root_path %>
+
 

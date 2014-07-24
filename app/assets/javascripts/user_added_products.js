@@ -1,7 +1,9 @@
 $(function() {
+	console.log("hello");
 	return $("#user_added_product_name").autocomplete({
 		source: $("#user_added_product_name").data("autocomplete-source"),
 		minLength: 3,
+
 		select: function(event, object) {
 			var url = '/products/search/' + object.item.label;
 			console.log(url);
