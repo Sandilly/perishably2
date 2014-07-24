@@ -1,0 +1,2 @@
+ProductNotificationMailer
+FriendNotificationMailer
