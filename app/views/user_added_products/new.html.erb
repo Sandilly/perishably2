@@ -5,8 +5,12 @@
     <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
     <%= f.label "Time:" %>
     <%= f.text_field :unit_of_time_period %>
+    <%= f.label "Date of Expiration:" %>
+    <%= f.text_field :exp_date , :id => "datepicker" %>
 
     <%= f.submit "Add Item" %>
 <% end %>
  
 <%= link_to "Cancel", root_path %>
+
+
