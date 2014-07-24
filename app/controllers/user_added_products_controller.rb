@@ -13,19 +13,17 @@ class UserAddedProductsController < ApplicationController
     @time_type = @user_product.unit_of_time_period.split(" ")[1]
 
     @current_date = DateTime.now
-    
-    if @time_type =~ /\bday(s|\(s\))?/i
+    if @time_type =~ /\bday(|\(s\))?/i
       @user_product.exp_date = @current_date + @time_add.days
-    elsif @time_type =~ /\bweek(s|\(s\)?)/i
+    elsif @time_type =~ /\bweek(|\(s\)?)/i
       @user_product.exp_date = @current_date + @time_add.weeks
-    elsif @time_type =~ /\bmonth(s|\(s\)?)/i
+    elsif @time_type =~ /\bmonth(|\(s\)?)/i
       @user_product.exp_date = @current_date + @time_add.months
-    elsif @time_type =~ /\byear(s|\(s\)?)/i
+    elsif @time_type =~ /\byear(|\(s\)?)/i
       @user_product.exp_date = @current_date + @time_add.years
     else
       @user_product.exp_date = @user_product.unit_of_time_period
     end
-
     if @user_product.save
       current_user.user_added_products << @user_product
       ProductNotificationMailer.notification_for(@user_product).deliver
@@ -63,6 +61,7 @@ class UserAddedProductsController < ApplicationController
 
   def show
     @user_product = UserAddedProduct.find(params[:id])
+    @friend = Friend.new
   end
 
   private
@@ -72,3 +71,5 @@ class UserAddedProductsController < ApplicationController
   end
 
 end
+
+

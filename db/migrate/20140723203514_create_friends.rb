@@ -3,8 +3,7 @@ class CreateFriends < ActiveRecord::Migration
     create_table :friends do |t|
       t.string :name
       t.string :email
-
-      t.timestamps
+      t.belongs_to :user, index: true
     end
   end
 end

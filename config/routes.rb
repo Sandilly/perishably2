@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :sessions
 
+  resources :friends
+
   resources :products, only: [:edit, :index, :destroy, :update, :new, :show, :create] 
   resources :user_added_products , only: [:edit, :index, :destroy, :update, :new, :show, :create] 
   root :to =>'sessions#new' #login page

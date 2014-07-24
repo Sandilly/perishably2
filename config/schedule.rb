@@ -3,10 +3,10 @@
 # It's helpful, but not entirely necessary to understand cron before proceeding.
 # http://en.wikipedia.org/wiki/Cron
 
-every 1.minute do
-  # runner "MyModel.task_to_run_at_seven_thirty_in_the_morning"
-  rake "cron:test_msg"
-end
+# every 1.day do
+#   # runner "MyModel.task_to_run_at_seven_thirty_in_the_morning"
+#   rake "cron:test_msg"
+# end
 
 # Example:
 #

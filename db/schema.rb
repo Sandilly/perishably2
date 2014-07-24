@@ -12,6 +12,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20140723150742) do\
+
   create_table "emails", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -20,11 +21,12 @@ ActiveRecord::Schema.define(version: 20140723150742) do\
   end
 
   create_table "friends", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "name"
+    t.string  "email"
+    t.integer "user_id"
   end
+
+  add_index "friends", ["user_id"], name: "index_friends_on_user_id"
 
   create_table "product_recipients", force: true do |t|
     t.integer "user_added_product_id"
