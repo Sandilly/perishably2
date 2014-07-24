@@ -6,18 +6,14 @@ Rails.application.routes.draw do
   get 'products/search/:name', to: 'products#search'
 
   resources :users, except: [:new]
-
+  resources :user_added_products do 
+    resources :recipients
+  end
   resources :sign_ins
-
-  resources :sessions
-
-  resources :friends
+  resources :sessions 
 
   resources :products, only: [:edit, :index, :destroy, :update, :new, :show, :create] 
-  resources :user_added_products , only: [:edit, :index, :destroy, :update, :new, :show, :create] 
   root :to =>'sessions#new' #login page
-
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

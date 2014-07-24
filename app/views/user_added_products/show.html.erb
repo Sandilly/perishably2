@@ -1,4 +1,3 @@
-
 <h1>&nbsp;<%= @user_product.name %> </h1>
 <div class ="light well">
     <p>Product Details: <%= @user_product.product_details %></p>
@@ -39,3 +38,37 @@
   </div>
 
 
+<h1><%= @user_product.name %> </h1>
+
+<div class="field">
+  Name: <%= @user_product.name %>
+</div>
+<div class="field">
+  Time of Exp: <%= @user_product.number_unit_of_time %> <%= @user_product.unit_of_time_period %>
+</div>
+<div class="field">
+Storage Type : <%= @user_product.storage %>
+</div>
+<div class="field">
+  Product Details: <%= @user_product.product_details %>
+</div>
+<div class="field">
+  Date Added : <%= @user_product.created_at %> 
+</div>
+<div class="field">
+  Expiration Date : <%= @exp_date %>
+</div>
+
+<div class="field"> 
+  Notify : <% @user_product.recipients.each do |recipient| %> 
+  <%= link_to recipient.name.capitalize, user_added_product_recipient_path(@user_product, recipient) %>
+  <%= recipient.email%> 
+  <%= recipient.phone_number %>
+  <% end %>
+</div>
+
+<div class="field">
+  Notify Me <%= @user_product.exp_date%></div>
+<%= link_to "Back", user_added_products_path %>
+<%= link_to "Edit", edit_user_added_product_path(@user_product) %>
+<%= link_to 'Destroy', @user_product, :confirm => 'Are you sure?', :method => :delete %>

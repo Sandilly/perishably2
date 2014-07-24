@@ -22,3 +22,12 @@
 <div class="light well">
   No Notifications sent
 </div>
+
+<p> List of Items </p>
+<ul>
+  <% @products.each do |product|%>
+    <li><%= link_to "#{product.name}".capitalize, user_added_product_path(product) %></li>
+  <% end %>  
+</br>
+<%= link_to "Add Item", new_user_added_product_path %>
+</ul>

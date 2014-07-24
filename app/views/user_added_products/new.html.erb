@@ -1,6 +1,7 @@
 
 <h1><i class="fa fa-plus small-i"></i><i class="fa fa-list-ol"></i> &nbsp;Add items to my list.</h1>
 <%= form_for(@user_product) do |f|%>
+
     <div class = "light well">
         <%= f.label "Name:" %>
         <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
@@ -43,6 +44,13 @@
   </div>
 
     <%= f.submit "Add Item", class: "btn btn-info round2" %>
+
+    <%= f.label "Name:" %>
+    <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
+    <%= f.label "Time:" %>
+    <%= f.text_field :unit_of_time_period %>
+    <%= f.submit "Add Item" %> 
+
 <% end %>
  
 <%= link_to "<i class='fa fa-times'></i> Cancel".html_safe, user_added_products_path, class: "btn btn-inverse round2" %>

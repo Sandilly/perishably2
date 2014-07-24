@@ -1,8 +1,10 @@
 class UserAddedProduct < ActiveRecord::Base
   belongs_to :user
+  has_many :product_recipients
   has_many :recipients, through: :product_recipients
   before_save :set_expiration_date, :set_notification_date
   validates :name, :presence => true
+  accepts_nested_attributes_for :recipients
 
   #before_save :set_expiration_date #, :set_notification_date
 
@@ -76,6 +78,7 @@ class UserAddedProduct < ActiveRecord::Base
 
 
   end
+
 
 
   # def exp_date(user_found)

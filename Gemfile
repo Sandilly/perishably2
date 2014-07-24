@@ -6,12 +6,17 @@ gem 'rest-client', require: "rest_client"
 gem 'mechanize'
 gem 'binding_of_caller'
 gem 'better_errors'
+<<<<<<< HEAD
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'font-awesome-rails'
 gem "calendar_date_select"
 
+=======
+gem "font-awesome-rails" 
+gem 'pry-nav'
+>>>>>>> 5af7edf... more routing fixed
 gem 'sqlite3'
-
+gem 'validates_formatting_of'
 group :production do
   gem 'pg'
 end

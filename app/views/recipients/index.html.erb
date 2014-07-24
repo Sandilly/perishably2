@@ -1,0 +1,12 @@
+<%= render "layouts/flash_notices" %>
+
+<h1><%= @recipient.name.capitalize %>'s List</h1>
+
+<p> List of Items </p>
+<ul>
+  <% @recipient.products do |product|%>
+    <li><%= link_to "#{product.name}", user_added_product_path(product) %></li>
+  <% end %>  
+</br>
+<%= link_to "Add Item", new_user_added_product_path %>
+</ul>
