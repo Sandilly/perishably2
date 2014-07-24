@@ -2,6 +2,9 @@ class UserAddedProduct < ActiveRecord::Base
   belongs_to :user
   has_many :recipients, through: :product_recipients
   before_save :set_expiration_date, :set_notification_date
+  validates :name, :presence => true
+
+  #before_save :set_expiration_date #, :set_notification_date
 
   def notify
     if self.user.notify?
@@ -10,31 +13,65 @@ class UserAddedProduct < ActiveRecord::Base
   end
 
   def set_expiration_date
+    
     time_add = self.number_unit_of_time.to_i
     time_type = self.unit_of_time_period
-
-    product_exp = self.created_at
     
-    if time_type =~ /\bday(s|\(s\))?/i
-      self.exp_date = product_exp + time_add.days
-    elsif time_type =~ /\bweek(s|\(s\)?)/i
-      self.exp_date = product_exp + time_add.weeks
-    elsif time_type =~ /\bmonth(s|\(s\)?)/i
-      self.exp_date = product_exp + time_add.months
-    elsif time_type =~ /\byear(s|\(s\)?)/i
-      self.exp_date = product_exp + time_add.years
+    # product_date_now = DateTime.now
+
+    # product_date_now = self.created_at || DateTime.now
+    
+    if time_type =~ /\bday(|\(s\))?/i
+      self.exp_date = product_date_now + time_add.days
+    elsif time_type =~ /\bweek(|\(s\)?)/i
+      self.exp_date = product_date_now + time_add.weeks
+    elsif time_type =~ /\bmonth(|\(s\)?)/i
+      self.exp_date = product_date_now + time_add.months
+    elsif time_type =~ /\byear(|\(s\)?)/i
+      self.exp_date = product_date_now + time_add.years
     else
       self.exp_date = self.unit_of_time_period
     end
+  end
 
+  def product_date_now
+    if self.persisted?
+      self.created_at 
+    else
+      DateTime.now
+    end
+  end
+
+   def product_date_exp
+
+    if self.persisted?
+      self.exp_date
+    else
+      set_expiration_date
+    end
+    end
 
     def set_notification_date
       # notification_num = params[:notify_num]
       # notification_date_type = params[:notify_date_type]
       self.notification_date = self.exp_date - 3.days
-
+    end
     
 
+  def set_notification_date(unit, date_type)
+    time_add = unit.to_i
+    time_type = date_type
+    
+    if time_type =~ /\bday(|\(s\))?/i
+      self.notification_date = product_date_exp - time_add.days
+    elsif time_type =~ /\bweek(|\(s\)?)/i
+      self.notification_date = product_date_exp - time_add.weeks
+    elsif time_type =~ /\bmonth(|\(s\)?)/i
+      self.notification_date = product_date_exp - time_add.months
+    elsif time_type =~ /\byear(|\(s\)?)/i
+      self.notification_date = product_date_exp - time_add.years
+    else
+      self.notification_date = product_date_exp
     end
 
 
@@ -62,3 +99,17 @@ class UserAddedProduct < ActiveRecord::Base
 
   
 end
+
+
+
+# product_date_now + time_add.days
+# product_date_now.+(time_add.days)
+# product_date_now.send(:+, time_add.days)
+# product_date_now.send(:+, time_add.send(:days))
+
+# def change_days(operator, unit_of_time)
+#   product_date_now.send(operator, time_add.send(unit_of_time))
+# end
+
+# change_days(:+, :days)
+# change_days(:-, :weeks)

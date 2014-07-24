@@ -16,4 +16,6 @@
  *= require bootstrap
  *= require bootstrap.min 
  *= require style
+ *= require font-awesome
+ *= require perishably
  */

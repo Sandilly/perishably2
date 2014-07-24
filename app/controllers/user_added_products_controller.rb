@@ -8,6 +8,8 @@ class UserAddedProductsController < ApplicationController
 
   def create
     @user_product = UserAddedProduct.new(product_params)
+    @user_product.set_expiration_date
+    @user_product.set_notification_date(params[:notify_num], params[:notify_date_type])
 
     @time_add = @user_product.unit_of_time_period.split(" ")[0].to_i
     @time_type = @user_product.unit_of_time_period.split(" ")[1]
@@ -45,6 +47,9 @@ class UserAddedProductsController < ApplicationController
   def update
     @user_product = UserAddedProduct.find(params[:id])
     @user_product.assign_attributes(product_params)
+    @user_product.set_expiration_date
+    @user_product.set_notification_date(params[:notify_num], params[:notify_date_type])
+    
 
     if @user_product.save
       redirect_to user_added_product_path
@@ -62,12 +67,13 @@ class UserAddedProductsController < ApplicationController
   def show
     @user_product = UserAddedProduct.find(params[:id])
     @friend = Friend.new
+    @time_left = @user_product.exp_date / @user_product.notification_date
   end
 
   private
 
   def product_params
-    params.require(:user_added_product).permit(:name, :product_details, :unit_of_time_period, :number_unit_of_time,:storage)
+    params.require(:user_added_product).permit(:name, :product_details, :unit_of_time_period, :number_unit_of_time, :storage)
   end
 
 end

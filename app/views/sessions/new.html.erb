@@ -1,4 +1,4 @@
-<h1>Log in</h1>
+<h1> <!-- <i class="fa fa-arrow-circle-right"></i> -->Log in</h1>
 <div class="light well">
   
  
@@ -16,8 +16,10 @@
     </div>
 
     <div class = "actions">
-      <%= submit_tag "Log in", class: "btn btn-inverse round2"%> 
+      <%= submit_tag nil, class: "btn btn-info round2"  do %> 
+      <% end %>
     </div>
+
     
     <%= link_to "Sign Up", signup_path %>
   <% end %>

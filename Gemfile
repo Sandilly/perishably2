@@ -7,7 +7,8 @@ gem 'mechanize'
 gem 'binding_of_caller'
 gem 'better_errors'
 gem 'bootstrap-sass', '~> 3.2.0'
-gem "font-awesome-rails" 
+gem 'font-awesome-rails'
+gem "calendar_date_select"
 
 gem 'sqlite3'
 

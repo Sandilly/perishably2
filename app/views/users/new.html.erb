@@ -1,6 +1,6 @@
-<div class="row-fluid borBox inBox well deep">
+<h1>Sign Up</h1>
+<div class="light well">
 
-  <h1>Sign Up</h1>
   <%= render "layouts/flash_notices" %>
 
 
@@ -29,9 +29,10 @@
     <div class="field">
       <%= f.label :phone_number %>
       <%= f.telephone_field :phone_number %>
-    </div>
+    </div>  
+    <%= link_to " Bang", '#', class: 'fa fa-camera-retro btn btn-info round2' %>
 
-    <%= f.submit "Sign up", :class => "btn btn-info round2"%>
+    <%= f.submit(content_tag(:i, "Bang").html_safe, :class => "btn btn-info round2")%>
     
   <% end %>
 

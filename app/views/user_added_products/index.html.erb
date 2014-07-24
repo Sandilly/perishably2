@@ -1,27 +1,24 @@
-<div class="light deep">
-  <%= render "layouts/flash_notices" %>
+<h1>
+  <i class="fa fa-list-alt"></i> <%= @current_user.name.capitalize %>'s List
+</h1>
 
-  <h1><%= @current_user.name.capitalize %>'s List</h1>
-
-<<<<<<< HEAD
-<p> List of Items </p>
-<ul>
-  <% @current_user.user_added_products.each do |product|%>
-    <li><%= link_to "#{product.name}", user_added_product_path(product) %></li>
-  <% end %>  
-</br>
-<%= link_to "Add Item", new_user_added_product_path %>
-</ul>
-=======
   <p> List of Items </p>
+<div class="light well">
+  <%= render "layouts/flash_notices" %>
+  <p> My Products </p>
   <ul>
     <% @current_user.user_added_products.each do |product|%>
-      <li> <a href="/user_added_products/<%= product.id %>">
-        <%= product.brand %> </a> </li>
+      <li> 
+        <a href="/user_added_products/<%= product.id %>">
+          <i class="fa fa-check-square-o"></i><%= product.name%> 
+        </a> 
+      </li>
     <% end %>  
-  </br>
-  <%= link_to "Add Item", new_user_added_product_path, class: "btn btn-info" %>
   </ul>
-  <span class="fa fa-camera-retro">Here</span>
 </div>
->>>>>>> abaad26... working on notification day and form
+
+<%= link_to "<i class='fa fa-plus'></i> &nbsp;Add Item".html_safe, new_user_added_product_path, class: "btn btn-info round2" %>
+
+<div class="light well">
+  No Notifications sent
+</div>

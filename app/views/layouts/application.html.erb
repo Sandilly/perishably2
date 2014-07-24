@@ -10,12 +10,30 @@
     <div id = "container" class= "container-fluid">
       <div id = "user_header">
         <% if current_user %> 
-          <div class ="navbar navbar-fixed-top">
-            <div class ="navbar-inner">
-              <h2> PERISHAB.LY </h2>
-              Logged in as <%= current_user.email %>
-              <div class="pull-right clearfix:after">
-                <%= link_to "SIGN OUT", logout_path, class: "btn btn-inverse round2" %>
+          <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+              <div class="container-fluid">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </a>
+                <a class="brand main" style="left: 836px; position: absolute;">Perishab.ly</a>
+                <div class="nav-collapse">
+                      <ul class="nav pull-left">
+                        <li>Logged in as <%= current_user.email %> </li>
+                    <!-- <li class="smooth"><a href="#topLink" class="smooth">Home</a></li>
+                    <li><a href="#showcase" class="smooth">Showcase</a></li>
+                    <li><a href="#features" class="smooth">Features</a></li>
+                    <li><a href="#newElements" class="smooth">Elements</a></li>
+                    <li><a href="#contactFooter" class="snooth">Contact</a></li> -->
+                    
+                  </ul>
+                  <div class="pull-right">
+                    <%= link_to "<i class='fa fa-sign-in'></i> &nbsp;Logout".html_safe, logout_path, class: "btn btn-info round2" %>
+                  </div>
+                    </div>
+                
               </div>
             </div>
           </div>
@@ -26,6 +44,9 @@
         
         <%= yield %>
       </div>
+
+
     </div>
+    <footer>Perishb.ly &copy; 2014</footer>
   </body>
 </html>

@@ -1,12 +1,51 @@
 
-<h1>Add items to my list.</h1>
+<h1><i class="fa fa-plus small-i"></i><i class="fa fa-list-ol"></i> &nbsp;Add items to my list.</h1>
 <%= form_for(@user_product) do |f|%>
-    <%= f.label "Name:" %>
-    <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
-    <%= f.label "Time:" %>
-    <%= f.text_field :unit_of_time_period %>
+    <div class = "light well">
+        <%= f.label "Name:" %>
+        <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
 
-    <%= f.submit "Add Item" %>
+        <%= f.label :product_details %>
+        <%= f.text_field :product_details %>
+
+        <%= f.label :number_unit_of_time, "Num Time:" %>
+        <%= f.select(:number_unit_of_time, options_for_select(1..7)) %> 
+
+        <%= f.label :unit_of_time_period, "Unit of Time:" %>
+        <%= f.select(:unit_of_time_period, options_for_select(["Day", "Week", "Month", "Year" ])) %> <br> 
+
+        <%= f.label :storage, "Storage:" %>
+    <%= f.text_field :storage %>
+    </div>
+
+    <div class = "light well">
+  
+    <%= check_box_tag(:notify_email) %>
+    <%= label_tag(:notify_email, "Email") %>
+
+    <%= check_box_tag(:notify_text) %>
+    <%= label_tag(:notify_text, "Text") %>
+
+    <%= radio_button_tag(:notify_day, "before") %>
+    <%= label_tag(:notify_before, "Notify me BEFORE expiration date.") %>
+
+    <%= select_tag(:notify_num, options_for_select(1..7)) %>
+    <%= select_tag(:notify_date_type, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br >
+    
+    <%= radio_button_tag(:notify_day, "day_of") %>
+    <%= label_tag(:notify_date_type, "Notify me ON the day of expiration date.") %> <br>
+
+    <%= link_to 'Add people to notifications', '#',
+          :onclick => 'add_ppl_to_notification()' %>
+
+    <div id="add_ppl">
+    </div>
+  </div>
+
+    <%= f.submit "Add Item", class: "btn btn-info round2" %>
 <% end %>
  
-<%= link_to "Cancel", root_path %>
+<%= link_to "<i class='fa fa-times'></i> Cancel".html_safe, user_added_products_path, class: "btn btn-inverse round2" %>
+
+<script>
+</script>

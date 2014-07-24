@@ -1,8 +1,11 @@
-@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,100);
+/*@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,100);*/
 body{
 	/*background-color:rgb(240,240,240);*/
-	font-family: 'Alegreya Sans SC', sans-serif;
+	/*font-family: 'Alegreya Sans SC', sans-serif;*/
+	font-family: 'helvetica';
 	background-color: #f1f1f1;
+	background-image:url('food.png');
+	background-repeat:repeat;
 	overflow-x:hidden;
 }
 
@@ -164,7 +167,7 @@ h2.hBig{
 	background-repeat:repeat;
 	background-image:url('noise4.png');
 	margin: 10% auto;
-    width: 30%;
+    /*width: 30%;*/
     text-align: center;
 }
 .well.trans{
