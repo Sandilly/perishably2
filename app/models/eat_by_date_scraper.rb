@@ -68,6 +68,7 @@ class EatByDateScraper
 	 		c["time"] = c["time"].split
 	 		c[:number_unit_of_time] = c["time"][0].downcase
 	    c[:unit_of_time_period] = c["time"][1].capitalize
+	    c.delete("time")
 	  end
 		producthashes
 	end
