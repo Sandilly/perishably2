@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140723203514) do
+ActiveRecord::Schema.define(version: 20140725144534) do
 
   create_table "friends", force: true do |t|
     t.string  "name"
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 20140723203514) do
     t.string   "storage"
     t.string   "number_unit_of_time"
     t.date     "notification_date"
+    t.boolean  "notify_by_email"
+    t.boolean  "notify_by_text"
   end
 
   create_table "users", force: true do |t|
@@ -61,7 +63,6 @@ ActiveRecord::Schema.define(version: 20140723203514) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "phone_number"
-    t.boolean  "notify"
   end
 
 end

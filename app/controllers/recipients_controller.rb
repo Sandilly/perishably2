@@ -6,6 +6,17 @@ class RecipientsController < ApplicationController
       @recipient = Recipient.new
   end
 
+  def create
+    @product = UserAddedProduct.find(params[:recipient][:user_added_product_id])
+    @recipient = Recipient.new(recipient_params)
+    # render text: params[:friend]
+    if @recipient.save
+      current_user.recipients << @recipient
+      redirect_to user_added_products_path, notice:  "#{@recipient.name} will be notified on #{@product.exp_date.strftime("%B %d, %Y")} about #{@product.name}"
+    else 
+      render "user_added_products/show"
+    end
+  end  
   # def create
   #     user_product = UserAddedProduct.find(params[:user_added_product_id])
   #     binding.pry
