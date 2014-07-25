@@ -8,6 +8,11 @@ class UserAddedProductsController < ApplicationController
 
   def create
     @user_product = UserAddedProduct.new(product_params)
+    #get the name
+    #get the expiration date
+    #get the storage
+    #get details
+    #save
     @user_product.set_expiration_date
     @user_product.set_notification_date(params[:notify_num], params[:notify_date_type])
 
@@ -91,7 +96,7 @@ class UserAddedProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:user_added_product).permit(:name, :product_details, :unit_of_time_period, :number_unit_of_time,:storage, :recipients_attributes =>[:name, :email, :phone_number])
+    params.require(:user_added_product).permit(:name, :exp_date, :product_details, :unit_of_time_period, :number_unit_of_time,:storage, :recipients_attributes =>[:name, :email, :phone_number])
   end
 
   def recipient_params
