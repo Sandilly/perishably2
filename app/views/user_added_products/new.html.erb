@@ -4,18 +4,13 @@
 
     <%= f.label "Name:" %>
     <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
-    <%= f.label "Time:" %>
-    <%= f.text_field :unit_of_time_period %>
-    <%= f.label "Date of Expiration:" %>
-    <%= f.text_field :exp_date , :id => "datepicker" %>
-
     <div class = "light well">
 
         <%= f.label :product_details %>
         <%= f.text_field :product_details %>
 
         <%= f.label :number_unit_of_time, "Num Time:" %>
-        <%= f.select(:number_unit_of_time, options_for_select(1..7)) %> 
+        <%= f.select(:number_unit_of_time, options_for_select(1..10)) %> 
 
         <%= f.label :unit_of_time_period, "Unit of Time:" %>
         <%= f.select(:unit_of_time_period, options_for_select(["Day", "Week", "Month", "Year" ])) %> <br> 
