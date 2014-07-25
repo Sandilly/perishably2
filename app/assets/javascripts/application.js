@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery-ui
+//= require moment
 //= require turbolinks
 //= require bootstrap
 //= require main

@@ -10,7 +10,9 @@ $(function() {
 			$.getJSON(url, function(data) {
 				$('#user_added_product_unit_of_time_period').val(data.unit_of_time_period);
 				$('#user_added_product_number_unit_of_time').val(data.number_unit_of_time);
-				$('#datepicker').val(data.exp_date);		
+				var moment = moment().add(data.unit_of_time_period, data.number_unit_of_time).fromNow();
+				console.log(moment); //.format('MMM. d, YYYY')
+				//$('#datepicker').val(moment);		
 			});
 		}
 	});
