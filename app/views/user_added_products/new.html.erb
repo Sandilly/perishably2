@@ -10,8 +10,6 @@
     <%= f.text_field :exp_date , :id => "datepicker" %>
 
     <div class = "light well">
-        <%= f.label "Name:" %>
-        <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
 
         <%= f.label :product_details %>
         <%= f.text_field :product_details %>
