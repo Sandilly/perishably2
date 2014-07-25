@@ -1,4 +1,4 @@
-<h1><i class="fa fa-pencil-square-o"></i>&nbsp;<%= @user_product.name %> </h1>
+<h1><i class="fa fa-pencil-square-o"></i>&nbsp;<%= @user_product.name.capitalize %> </h1>
 
 <%= form_for @user_product, url: {action: "update"}, html: {class: "update_form"} do |f| %>
   <div class="field">Date Added : <%= @user_product.created_at %> </div>
@@ -44,11 +44,11 @@
     
     <%= radio_button_tag(:notify_day, "day_of") %>
     <%= label_tag(:notify_date_type, "Notify me ON the day of expiration date.") %> <br>
-
+<div id="add_ppl">
     <%= link_to 'Add people to notifications', '#',
           :onclick => 'add_ppl_to_notification()' %>
 
-    <div id="add_ppl">
+    
     </div>
   </div>
   <%= link_to "<i class='fa fa-chevron-circle-left'></i> &nbsp;Back".html_safe, user_added_product_path, class: "btn btn-info round2" %>
