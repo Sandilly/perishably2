@@ -9,9 +9,7 @@
   <ul>
     <% @products.each do |product|%>
       <li> 
-        <a href="/user_added_products/<%= product.id %>">
-          <i class="fa fa-check-square-o"></i><%= product.name%> 
-        </a> 
+        <%= link_to "#{product.name}", user_added_product_path(product) %>
       </li>
     <% end %>  
   </ul>
@@ -19,10 +17,4 @@
 <div class="light well">
   No Notifications sent
 </div>
-<ul>
-  <% @products.each do |product|%>
-    <li><%= link_to "#{product.name}".capitalize, user_added_product_path(product) %></li>
-  <% end %>  
-</br>
-</ul>
 <%= link_to "<i class='fa fa-plus'></i> &nbsp;Add Item".html_safe, new_user_added_product_path, class: "btn btn-info round2" %>
