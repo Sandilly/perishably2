@@ -2,7 +2,6 @@ class UserAddedProduct < ActiveRecord::Base
   belongs_to :user
   has_many :product_recipients
   has_many :recipients, through: :product_recipients
-  before_save :set_expiration_date, :set_notification_date
   validates :name, :presence => true
   accepts_nested_attributes_for :recipients
 
@@ -44,21 +43,13 @@ class UserAddedProduct < ActiveRecord::Base
     end
   end
 
-   def product_date_exp
-
+  def product_date_exp
     if self.persisted?
       self.exp_date
     else
       set_expiration_date
     end
-    end
-
-    def set_notification_date
-      # notification_num = params[:notify_num]
-      # notification_date_type = params[:notify_date_type]
-      self.notification_date = self.exp_date - 3.days
-    end
-    
+  end
 
   def set_notification_date(unit, date_type)
     time_add = unit.to_i

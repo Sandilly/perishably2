@@ -10,22 +10,9 @@ class UserAddedProductsController < ApplicationController
     @user_product = UserAddedProduct.new(product_params)
     @user_product.set_expiration_date
     @user_product.set_notification_date(params[:notify_num], params[:notify_date_type])
-    @time_add = @user_product.unit_of_time_period.split(" ")[0].to_i
-    @time_type = @user_product.unit_of_time_period.split(" ")[1]
-    @current_date = DateTime.now
-    if @time_type =~ /\bday(|\(s\))?/i
-      @user_product.exp_date = @current_date + @time_add.days
-    elsif @time_type =~ /\bweek(|\(s\)?)/i
-      @user_product.exp_date = @current_date + @time_add.weeks
-    elsif @time_type =~ /\bmonth(|\(s\)?)/i
-      @user_product.exp_date = @current_date + @time_add.months
-    elsif @time_type =~ /\byear(|\(s\)?)/i
-      @user_product.exp_date = @current_date + @time_add.years
-    else
-      @user_product.exp_date = @user_product.unit_of_time_period
-    end
+    binding.pry
     if @user_product.save
-      @current_user.user_added_products << @user_product
+      current_user.user_added_products << @user_product
       ProductNotificationMailer.notification_for(@user_product).deliver
       redirect_to user_added_products_path
     else 
