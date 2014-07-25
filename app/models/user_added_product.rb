@@ -1,7 +1,6 @@
 class UserAddedProduct < ActiveRecord::Base
   belongs_to :user
-  has_many :product_recipients
-  has_many :recipients, through: :product_recipients
+  has_many :recipients
   validates :name, :presence => true
   accepts_nested_attributes_for :recipients
 
@@ -66,10 +65,14 @@ class UserAddedProduct < ActiveRecord::Base
     else
       self.notification_date = product_date_exp
     end
-
-
   end
 
+  def time_from_expiration
+    binding.pry
+    if DateTime.now < self.exp_date
+      ( (self.exp_date - DateTime.now).to_i / (self.notification_date - DateTime.now).to_i )
+    end
+  end
 
 
   # def exp_date(user_found)
