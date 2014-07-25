@@ -13,6 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20140723203514) do
 
+  create_table "emails", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "friends", force: true do |t|
     t.string  "name"
     t.string  "email"
@@ -24,7 +31,6 @@ ActiveRecord::Schema.define(version: 20140723203514) do
   create_table "product_recipients", force: true do |t|
     t.integer "user_added_product_id"
     t.integer "recipient_id"
-    t.integer "phone_number"
   end
 
   create_table "products", force: true do |t|
