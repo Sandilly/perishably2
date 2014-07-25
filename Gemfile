@@ -8,10 +8,6 @@ gem 'binding_of_caller'
 gem 'better_errors'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem "calendar_date_select"
-<<<<<<< HEAD
-
-=======
->>>>>>> 064d9337ed6be6cce959ef126c73dd073274a2af
 gem "font-awesome-rails" 
 gem 'pry-nav'
 gem 'sqlite3'
