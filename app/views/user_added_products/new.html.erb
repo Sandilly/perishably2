@@ -15,10 +15,13 @@
         <%= f.label :unit_of_time_period, "Unit of Time:" %>
         <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br> 
 
-    		<%= f.label "Date of Expiration:" %>
-    		<%= f.text_field :exp_date , :id => "datepicker" %>
+		<%= f.label "Date of Expiration:" %>
+        <p id="expDate"></p> 
+        <%= link_to "Product has it's own expiration date",id: "ownExpDate" %>
+		<%= f.text_field :exp_date , :id => "datepicker" %>
+        
         <%= f.label :storage, "Storage:" %>
-    		<%= f.text_field :storage %>
+    	<%= f.text_field :storage %>
     </div>
 
     <div class = "light well">

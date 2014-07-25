@@ -12,7 +12,9 @@ $(function() {
 				$('#user_added_product_number_unit_of_time').val(data.number_unit_of_time);
 				var date =	moment().add(data.unit_of_time_period.replace("(s)", ""), data.number_unit_of_time).format('YYYY-MM-DD');
 				console.log(date);
-				$('#datepicker').val(date);		
+				showExpDate();
+
+					// $('#datepicker').val(date);	
 			});
 		}
 	});
@@ -25,3 +27,9 @@ $(function() {
 		}
 		);
 });
+
+function showExpDate(){
+	// $('#expDate').html(date);
+	// $('#datepicker').hide();
+	alert("hello");
+};
