@@ -11,7 +11,6 @@ gem "calendar_date_select"
 gem "font-awesome-rails" 
 gem 'pry-nav'
 gem 'sqlite3'
-gem 'validates_formatting_of'
 group :production do
   gem 'pg'
 end
@@ -42,6 +41,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'twilio-ruby', '~> 3.11'
+
+gem 'validates_formatting_of'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
