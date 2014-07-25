@@ -47,11 +47,6 @@ class EatByDateScraper
 		@products_on_one_page
 	end
 
-	def delete_products_without_name_or_time
-
-######
-	end
-
 	def standardize_time(producthashes)
 		results = []
 		producthashes.each do |c|
@@ -66,6 +61,15 @@ class EatByDateScraper
 			results << c 
 		end
 		results
+	end
+
+	def split_time(producthashes)
+	 	producthashes.map do |c|
+	 		c["time"] = c["time"].split
+	 		c[:number_unit_of_time] = c["time"][0].downcase
+	    c[:unit_of_time_period] = c["time"][1].capitalize
+	  end
+		producthashes
 	end
 
 	def delete_rows_without_time(producthashes)
@@ -86,6 +90,7 @@ class EatByDateScraper
 		c = scrape_one_chart(url)
 		c = delete_rows_without_time(c)
 		c = standardize_time(c)
+		c = split_time(c)
 		c = delete_lasts_for(c)
 		c.each do |p|
 			product = Product.create(p)
