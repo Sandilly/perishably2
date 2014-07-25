@@ -66,8 +66,12 @@ class EatByDateScraper
 	def split_time(producthashes)
 	 	producthashes.map do |c|
 	 		c["time"] = c["time"].split
-	 		c[:number_unit_of_time] = c["time"][0].downcase
-	    c[:unit_of_time_period] = c["time"][1].capitalize
+	 		if c["time"][0]
+	 			c[:number_unit_of_time] = c["time"][0]
+	 		end
+	    if c["time"][1]
+	    	c[:unit_of_time_period] = c["time"][1].capitalize
+	    end
 	    c.delete("time")
 	  end
 		producthashes

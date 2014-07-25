@@ -13,13 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140723203514) do
 
-  create_table "emails", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "friends", force: true do |t|
     t.string  "name"
     t.string  "email"
