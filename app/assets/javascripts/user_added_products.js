@@ -11,7 +11,6 @@ $(function() {
 				$('#user_added_product_unit_of_time_period').val(data.unit_of_time_period);
 				$('#user_added_product_number_unit_of_time').val(data.number_unit_of_time);
 				var date =	moment().add(data.unit_of_time_period, data.number_unit_of_time).format('MM/DD/YYYY');
-				debugger;
 				console.log(date);
 				$('#datepicker').val(date);		
 			});
