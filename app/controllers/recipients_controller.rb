@@ -11,7 +11,7 @@ class RecipientsController < ApplicationController
     @recipient = Recipient.new(recipient_params)
     if @recipient.save
       current_user.recipients << recipient
-      redirect_to user_added_products_path, notice:  "#{@recipient.name}.capitalize will be notified on #{@product.exp_date.strftime("%B %d, %Y")} about #{@user_product.name}."
+      redirect_to user_added_products_path, notice:  "#{@recipient.name}.capitalizes will be notified on #{@product.exp_date.strftime("%B %d, %Y")} about #{@user_product.name}."
     else 
       render "user_added_products/show"
     end
@@ -20,13 +20,6 @@ class RecipientsController < ApplicationController
   def show
     @recipients_stuff = @recipient.user_added_products
   end
-
-  # def search 
-  #   @recipient = Recipient.find_by(id: params[:id])
-  #   respond_to do |format|
-  #     format.json {render json: @recipient}
-  #   end
-  # end
 
   private
   
