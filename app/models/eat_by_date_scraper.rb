@@ -35,52 +35,72 @@ class EatByDateScraper
 			tablenoko.css('tr').each do |tr| 
 
 			#break if tr.css('th') && tr.css('th')[0].text == "(Opened)"
-				unless tr.css('td')[0] == nil || tr.css('td')[0].text == ""
-					product = {}
-					product["name"] = tr.css('strong').text
-					product["time"] = tr.css('td')[1].text
-					product["storage"] = storage_default
-					@products_on_one_page << product
-				end
+			unless tr.css('td')[0] == nil || tr.css('td')[0].text == ""
+				product = {}
+				product["name"] = tr.css('strong').text
+				product["time"] = tr.css('td')[1].text
+				product["storage"] = storage_default
+				@products_on_one_page << product
 			end
 		end
-		@products_on_one_page
 	end
+	@products_on_one_page
+end
 
-	def standardize_time(producthashes)
-		results = []
-		producthashes.each do |c|
-			c["time"]=c["time"].gsub(/-\d+/, "")
-			c["time"]=c["time"].gsub(/–\s?\d+/, "") 
-			c["time"]=c["time"].gsub(/[+]/, "") 
-			c["time"]=c["time"].gsub(/[*]/, "") 
-			c["time"]=c["time"].gsub(/(same day)/i, "4 Hours") 
-			if c["time"].match(/^(\S+\s){2}/)
-				c["time"] = c["time"].match(/^(\S+\s){2}/)[0]
-			end
-			results << c 
+def standardize_time(producthashes)
+	results = []
+	producthashes.each do |c|
+		c["name"].strip!
+		c["time"]=c["time"].gsub(/-\d+/, "")
+		c["time"]=c["time"].gsub(/–\s?\d+/, "") 
+		c["time"]=c["time"].gsub(/[+]/, "") 
+		c["time"]=c["time"].gsub(/[*]/, "") 
+		c["time"]=c["time"].gsub(/(same day)/i, "4 Hours") 
+		if c["time"].match(/^(\S+\s){2}/)
+			c["time"] = c["time"].match(/^(\S+\s){2}/)[0]
 		end
-		results
-	end
 
-	def split_time(producthashes)
-	 	producthashes.map do |c|
-	 		c["time"] = c["time"].split
-	 		if c["time"][0]
-	 			c[:number_unit_of_time] = c["time"][0]
-	 		end
-	    if c["time"][1]
-	    	c[:unit_of_time_period] = c["time"][1].capitalize
-	    end
-	    c.delete("time")
-	  end
-		producthashes
+		if c["time"]=~ /Year$/
+			c["time"] = c["time"].gsub("Year", "Year(s)")
+		elsif c["time"]=~ /Years$/
+			c["time"] = c["time"].gsub("Years", "Year(s)")
+		elsif c["time"]=~ /Day$/
+			c["time"] = c["time"].gsub("Day", "Day(s)")
+		elsif c["time"]=~ /Days$/
+			c["time"] = c["time"].gsub("Days", "Day(s)")
+		elsif c["time"]=~ /Month$/
+			c["time"] = c["time"].gsub("Month", "Month(s)")
+		elsif c["time"]=~ /Months$/
+			c["time"] = c["time"].gsub("Months", "Month(s)")
+		elsif c["time"]=~ /Week$/
+			c["time"] = c["time"].gsub("Week", "Week(s)")
+		elsif c["time"]=~ /Weeks$/
+			c["time"] = c["time"].gsub("Weeks", "Week(s)")
+		end
+		results << c
 	end
+	results
 
-	def delete_rows_without_time(producthashes)
-		producthashes.delete_if do |c|
+end
+
+def split_time(producthashes)
+	producthashes.map do |c|
+		c["time"] = c["time"].split
+		if c["time"][0]
+			c[:number_unit_of_time] = c["time"][0]
+		end
+		if c["time"][1]
+			c[:unit_of_time_period] = c["time"][1].capitalize
+		end
+		c.delete("time")
+	end
+	producthashes
+end
+
+def delete_rows_without_time(producthashes)
+	producthashes.delete_if do |c|
 			#this isn't working 
-				c["time"] == "–" || c["time"].include?("ndef") || c["time"] == "Indedinite"|| c["time"] == "-" || c["time"] =="use by date" || c["time"] =="best by date" || c["time"] =="Decades in a wine cellar"
+			c["time"] == "–" || c["time"].include?("ndef") || c["time"] == "Indedinite"|| c["time"] == "-" || c["time"] =="use by date" || c["time"] =="best by date" || c["time"] =="Decades in a wine cellar"
 		end
 		producthashes
 	end
