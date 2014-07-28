@@ -24,7 +24,7 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.day, :at => '3:30 pm' do 
-	rake twilio:send_text
+every 1.minute do #, :at => '4:00 pm' do 
+	rake "twilio:send_text"
 	#rake cron:test_msg
 end

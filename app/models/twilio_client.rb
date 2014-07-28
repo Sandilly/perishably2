@@ -3,9 +3,9 @@ class TwilioClient
   TOKEN = "268e317d14042838279b53112e67157b"
   TWILIO_NUMBER = "+16464801969"
     
-  def initialize(user, product)
+  def initialize(user, item)
     @user = user
-    @product = product
+    @item = item
   end
 
   def send_text
@@ -14,7 +14,7 @@ class TwilioClient
     twilio_client.account.sms.messages.create(
       :from => TWILIO_NUMBER,
       :to => @user.phone_number,
-      :body => "This is a Perishab.ly notification regarding your #{@product.brand.downcase}, which will expire in #{@product.length_of_time.downcase}."
+      :body => "This is a Perishab.ly notification regarding your #{@item.name.downcase}, which expires on #{@item.exp_date}."
       )
   end
 end

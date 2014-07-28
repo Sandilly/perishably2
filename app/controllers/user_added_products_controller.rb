@@ -18,7 +18,6 @@ class UserAddedProductsController < ApplicationController
     else 
       render :new
     end
-
   end
 
   def index
