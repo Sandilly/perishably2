@@ -1,5 +1,5 @@
 class UserAddedProductsController < ApplicationController
-  
+
   before_action :login_required
 
   def new
@@ -7,31 +7,11 @@ class UserAddedProductsController < ApplicationController
   end
 
   def create
-    @user_product = UserAddedProduct.new(product_params)
-    #get the name
-    #get the expiration date
-    #get the storage
-    #get details
-    #save
-    @user_product.set_expiration_date
-    @user_product.set_notification_date(params[:notify_num], params[:notify_date_type])
-    @time_add = @user_product.unit_of_time_period.split(" ")[0].to_i
-    @time_type = @user_product.unit_of_time_period.split(" ")[1]
-    @current_date = DateTime.now
-    if @time_type =~ /\bday(|\(s\))?/i
-      @user_product.exp_date = @current_date + @time_add.days
-    elsif @time_type =~ /\bweek(|\(s\)?)/i
-      @user_product.exp_date = @current_date + @time_add.weeks
-    elsif @time_type =~ /\bmonth(|\(s\)?)/i
-      @user_product.exp_date = @current_date + @time_add.months
-    elsif @time_type =~ /\byear(|\(s\)?)/i
-      @user_product.exp_date = @current_date + @time_add.years
-    else
-      @user_product.exp_date = @user_product.unit_of_time_period
-    end
+   @user_product = UserAddedProduct.new(product_params)
+   binding.pry
     if @user_product.save
-      @current_user.user_added_products << @user_product
-      ProductNotificationMailer.notification_for(@user_product).deliver
+      # @current_user.user_added_products << @item
+      # ProductNotificationMailer.notification_for(@item).deliver
       redirect_to user_added_products_path
     else 
       render :new
@@ -61,7 +41,7 @@ class UserAddedProductsController < ApplicationController
       render "edit" 
     end
   end
-   
+
   def destroy
     @user_product = UserAddedProduct.find(params[:id])
     @user_product.destroy
@@ -94,7 +74,7 @@ class UserAddedProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:user_added_product).permit(:name, :exp_date, :product_details, :unit_of_time_period, :number_unit_of_time,:storage, :recipients_attributes =>[:name, :email, :phone_number])
+    params.require(:user_added_product).permit(:name, :product_details, :unit_of_time_period, :number_unit_of_time, :exp_date, :storage, :recipients_attributes =>[:name, :email, :phone_number])
   end
 
   def recipient_params
