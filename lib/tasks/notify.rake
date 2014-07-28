@@ -1,8 +1,6 @@
 namespace :notify do 
 	desc "send sms and emails"
 
-
-
 end
 
 # namespace :twilio do

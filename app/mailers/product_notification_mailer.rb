@@ -1,5 +1,6 @@
-class ProductNotificationMailer < 
-    default :from => "perishably@gmail.com"
+class ProductNotificationMailer < ActionMailer::Base
+    
+    default :from => "perishably@gmail.com" #fluffhead is the password
   
   def notification_for(product)
     @product = product
