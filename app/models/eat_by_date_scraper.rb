@@ -110,6 +110,12 @@ def delete_rows_without_time(producthashes)
 			c["name"].gsub!(/(last)s?\s?(for)?/, "")
 		end
 	end
+
+	def delete_trailing_space(producthashes)
+		producthashes.each do |c|
+			c["name"] = c["name"].rstrip
+		end
+	end
 	
 	def save_a_chart_to_activerecord_db(url)
 		c = scrape_one_chart(url)
@@ -117,6 +123,7 @@ def delete_rows_without_time(producthashes)
 		c = standardize_time(c)
 		c = split_time(c)
 		c = delete_lasts_for(c)
+		c = delete_trailing_space(c)
 		c.each do |p|
 			product = Product.create(p)
 		end
