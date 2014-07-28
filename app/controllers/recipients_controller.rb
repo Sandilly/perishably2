@@ -1,4 +1,5 @@
 class RecipientsController < ApplicationController
+  belongs_to :user
   before_action :find_objects, only: [:show]
 
   def new
@@ -10,6 +11,7 @@ class RecipientsController < ApplicationController
     @product = UserAddedProduct.find(params[:recipient][:user_added_product_id])
     @recipient = Recipient.new(recipient_params)
     if @recipient.save
+      current_user.recipients << @recipient
       redirect_to user_added_products_path, notice:  "#{@recipient.name}.capitalize will be notified on #{@product.exp_date.strftime("%B %d, %Y")} about #{@user_product.name}."
     else 
       render "user_added_products/show"
@@ -18,6 +20,12 @@ class RecipientsController < ApplicationController
 
   def show
     @recipients_stuff = @recipient.user_added_products
+  end
+
+  def notify
+    if self.user.notify?
+      ProductNotificationMailer.notification_for.deliver
+    end
   end
 
   private
