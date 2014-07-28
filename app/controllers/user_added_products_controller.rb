@@ -12,7 +12,7 @@ class UserAddedProductsController < ApplicationController
    
     if @user_product.save
       current_user.user_added_products << @user_product
-      binding.pry #what are params for the day of tag?
+      #what are params for the day of tag?
       # ProductNotificationMailer.notification_for(@user_product).deliver
       redirect_to user_added_products_path
     else 

@@ -23,3 +23,8 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+every 1.day, :at => '3:30 pm' do 
+	rake twilio:send_text
+	#rake cron:test_msg
+end

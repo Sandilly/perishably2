@@ -1,4 +1,4 @@
-class ProductNotificationMailer < ActionMailer::Base
+class ProductNotificationMailer < 
     default :from => "perishably@gmail.com"
   
   def notification_for(product)
