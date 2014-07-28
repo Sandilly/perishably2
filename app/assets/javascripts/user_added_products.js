@@ -18,7 +18,7 @@ $(function() {
 
 $(function() {
 	return $("#datepicker").datepicker({
-		minDate: new Date(2014, 6, 23)
+		minDate: 0
 	});
 });
 
@@ -27,6 +27,29 @@ $(function(){
 	return $('#user_added_product_number_unit_of_time').change(function(){
 		var num_time = parseInt($(this).val());
 		alert(num_time);
+		
+		$('#user_added_product_unit_of_time_period').change(function(){
+			var period_time = $(this).val();
+			switch (period_time){
+		   	case "Day(s)":
+		   		alert(num_time + " " + period_time);
+					break;
+		   	case "Week(s)":
+		   		alert(num_time + " " + period_time);
+		   		break;
+		   	case "Month(s)": 
+		      alert(num_time + " " + period_time);
+		      break;
+		    case "Year(s)": 
+		      alert(num_time + " " + period_time);
+		      break;
+
+		   	default: 
+		      alert('Default case');
+		      break;
+			}
+			//$('#datepicker').val(date);	
+		});
 	});
 });
 
