@@ -9,8 +9,8 @@ class UserAddedProductsController < ApplicationController
   def create
    @user_product = UserAddedProduct.new(product_params)
     if @user_product.save
-      # @current_user.user_added_products << @item
-      # ProductNotificationMailer.notification_for(@item).deliver
+      current_user.user_added_products << @user_product
+      # ProductNotificationMailer.notification_for(@user_product).deliver
       redirect_to user_added_products_path
     else 
       render :new
