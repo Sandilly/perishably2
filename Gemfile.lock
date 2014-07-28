@@ -175,7 +175,6 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass (~> 3.2.0)
-  calendar_date_select
   coffee-rails (~> 4.0.0)
   font-awesome-rails
   jbuilder (~> 2.0)

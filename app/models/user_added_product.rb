@@ -67,12 +67,14 @@ class UserAddedProduct < ActiveRecord::Base
     end
   end
 
-  def time_from_expiration
-    binding.pry
-    if DateTime.now < self.exp_date
-      ( (self.exp_date - DateTime.now).to_i / (self.notification_date - DateTime.now).to_i )
-    end
-  end
+
+#progress bar
+  # def time_from_expiration
+  #   binding.pry
+  #   if DateTime.now < self.exp_date
+  #     ( (self.exp_date - DateTime.now).to_i / (self.notification_date - DateTime.now).to_i )
+  #   end
+  # end
 
 
   # def exp_date(user_found)
