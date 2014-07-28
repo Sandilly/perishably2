@@ -8,6 +8,7 @@ class UserAddedProductsController < ApplicationController
 
   def create
    @user_product = UserAddedProduct.new(product_params)
+   @user_product.notification_date = @user_product.exp_date
    
     if @user_product.save
       current_user.user_added_products << @user_product

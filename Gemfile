@@ -11,6 +11,7 @@ gem "calendar_date_select"
 gem "font-awesome-rails" 
 gem 'pry-nav'
 gem 'sqlite3'
+gem 'whenever'
 group :production do
   gem 'pg'
 end
