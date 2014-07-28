@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140723203514) do
-
-  create_table "friends", force: true do |t|
-    t.string  "name"
-    t.string  "email"
-    t.integer "user_id"
-  end
-
-  add_index "friends", ["user_id"], name: "index_friends_on_user_id"
+ActiveRecord::Schema.define(version: 20140725180048) do
 
   create_table "product_recipients", force: true do |t|
     t.integer "user_added_product_id"
@@ -39,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140723203514) do
     t.string  "name"
     t.string  "email"
     t.integer "phone_number"
+    t.integer "user_added_product_id"
   end
 
   create_table "user_added_products", force: true do |t|

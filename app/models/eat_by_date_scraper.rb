@@ -131,4 +131,3 @@ def delete_rows_without_time(producthashes)
 	end
 
 end
-

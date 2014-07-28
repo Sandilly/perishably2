@@ -8,7 +8,6 @@ class UserAddedProductsController < ApplicationController
 
   def create
    @user_product = UserAddedProduct.new(product_params)
-   binding.pry
     if @user_product.save
       # @current_user.user_added_products << @item
       # ProductNotificationMailer.notification_for(@item).deliver

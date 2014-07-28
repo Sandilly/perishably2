@@ -14,19 +14,6 @@
         </div>
     </div>
 
-    <p>Notify Me <%= @user_product.exp_date%></p>
-    <p>Notify Friends <%= @user_product.exp_date%></p>
-
-    <%= form_for(@friend) do |f| %>
-      <%= f.hidden_field :user_id, :value => current_user.id %>
-      <%= f.hidden_field :user_added_product_id, :value => @user_product.id %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-      <%= f.submit %>
-    <% end %>
-
     <div class ="light well">
         <p>Notification Date : <%= @user_product.notification_date %></p>
         
