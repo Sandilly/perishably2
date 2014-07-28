@@ -15,11 +15,10 @@ scraper.parse('.tiptable tr') do |element|
   time_array= element.css('td')[1].text.split(" ")
   int_str = time_array[0].downcase #["18", "months"] ["one", "month"] ["12-18"- months] << checks for integers
   type_str = time_array[1].capitalize
+  item[:unit_of_time_period] = type_str
 
   if int_str.to_i > 0
     item[:number_unit_of_time] = int_str.to_i.to_s
-   
-    item[:unit_of_time_period] =type_str
   else
     case int_str
       when "one"
@@ -114,6 +113,31 @@ scraper.parse('.tiptable tr') do |element|
         item[:number_unit_of_time] = "--"
         item[:unit_of_time_period] = element.css('td')[1].text
     end
+
+    item[:unit_of_time_period] = item[:unit_of_time_period].capitalize
+
+    if item[:unit_of_time_period]=~ /Year$/
+      item[:unit_of_time_period] = item[:unit_of_time_period].gsub("Year", "Year(s)")
+    elsif item[:unit_of_time_period]=~ /Years$/
+      item[:unit_of_time_period] = item[:unit_of_time_period].gsub("Years", "Year(s)")
+    elsif item[:unit_of_time_period]=~ /Day$/
+      item[:unit_of_time_period] = item[:unit_of_time_period].gsub("Day", "Day(s)")
+    elsif item[:unit_of_time_period]=~ /Days$/
+      item[:unit_of_time_period] = item[:unit_of_time_period].gsub("Days", "Day(s)")
+    # elsif item[:unit_of_time_period]=~ /\bMonth\b/i
+    #   item[:unit_of_time_period] = item[:unit_of_time_period].gsub("Month", "Month(s)")
+    # elsif item[:unit_of_time_period]=~ /\bMonths\b/i
+    #   item[:unit_of_time_period] = item[:unit_of_time_period].gsub("Months", "Month(s)")
+    elsif item[:unit_of_time_period]=~ /Week$/
+      item[:unit_of_time_period] = item[:unit_of_time_period].gsub("Week", "Week(s)")
+    elsif item[:unit_of_time_period]=~ /Weeks$/
+      item[:unit_of_time_period] = item[:unit_of_time_period].gsub("Weeks", "Week(s)")
+    # elsif item[:unit_of_time_period]=~ /\bmonths\b/
+    #   item[:unit_of_time_period] = item[:unit_of_time_period].gsub("month", "Month(s)")
+    # elsif item[:unit_of_time_period]=~ /\bmonths\b/
+    #   item[:unit_of_time_period] = item[:unit_of_time_period].gsub("months", "Month(s)")
+    end
+
   end
   makeup_array << item
   
@@ -130,6 +154,12 @@ makeup_array.each do |element|
 
   product.number_unit_of_time = element[:number_unit_of_time]
   product.unit_of_time_period = element[:unit_of_time_period]
+  if product.unit_of_time_period=~ /\bMonth\b/i
+      product.unit_of_time_period = product.unit_of_time_period.gsub("Month", "Month(s)")
+  end
+  if product.unit_of_time_period=~ /\bMonths\b/i
+    product.unit_of_time_period = product.unit_of_time_period.gsub("Months", "Month(s)")   
+  end
   product.storage = element[:storage]
   product.save
 end
