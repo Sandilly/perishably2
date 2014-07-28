@@ -6,8 +6,10 @@
  
     </div>
     <div class ="light well">
-        <p>Date Added : <%= @user_product.created_at %> </p>
+        <p>Date Added : <%= @create_date %> </p>
+        <p>Time of Exp: <%= @user_product.number_unit_of_time %> <%= @user_product.unit_of_time_period %></p>
         <p>Expiration Date : <%= @user_product.exp_date %></p>
+
         
         <div class="progress progress-striped active">
           <div class="bar" style="width: 80%;"></div>
@@ -15,6 +17,13 @@
     </div>
 
     <div class ="light well">
+        <div class="field"> 
+        Notify : <% @user_product.recipients.each do |recipient| %> 
+          <%= link_to recipient.name.capitalize, user_added_product_recipient_path(@user_product, recipient) %>
+          <%= recipient.email%> 
+          <%= recipient.phone_number %>
+      <% end %>
+</div>
         <p>Notification Date : <%= @user_product.notification_date %></p>
         
     </div>
@@ -24,38 +33,34 @@
   
   </div>
 
-
-<h1><%= @user_product.name %> </h1>
-
+<!-- 
+<h1><%= @user_product.name %> </h1> -->
+<!-- 
 <div class="field">
   Name: <%= @user_product.name %>
-</div>
-<div class="field">
+</div> -->
+<!-- <div class="field">
   Time of Exp: <%= @user_product.number_unit_of_time %> <%= @user_product.unit_of_time_period %>
-</div>
-<div class="field">
+</div> -->
+<!-- <div class="field">
 Storage Type : <%= @user_product.storage %>
-</div>
-<div class="field">
+</div> -->
+<!-- <div class="field">
   Product Details: <%= @user_product.product_details %>
-</div>
-<div class="field">
+</div> -->
+<!-- <div class="field">
   Date Added : <%= @user_product.created_at %> 
 </div>
 <div class="field">
   Expiration Date : <%= @exp_date %>
-</div>
+</div> -->
 
-<div class="field"> 
+<!-- <div class="field"> 
   Notify : <% @user_product.recipients.each do |recipient| %> 
   <%= link_to recipient.name.capitalize, user_added_product_recipient_path(@user_product, recipient) %>
   <%= recipient.email%> 
   <%= recipient.phone_number %>
   <% end %>
-</div>
+</div> -->
 
-<div class="field">
-  Notify Me <%= @user_product.exp_date%></div>
-<%= link_to "Back", user_added_products_path %>
-<%= link_to "Edit", edit_user_added_product_path(@user_product) %>
-<%= link_to 'Destroy', @user_product, :confirm => 'Are you sure?', :method => :delete %>
+
