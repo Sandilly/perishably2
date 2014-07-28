@@ -12,17 +12,16 @@ $(function() {
 				$('#user_added_product_number_unit_of_time').val(data.number_unit_of_time);
 				var date =	moment().add(data.unit_of_time_period.replace("(s)", ""), data.number_unit_of_time).format('YYYY-MM-DD');
 				console.log(date);
-				$('#expDate').val(date);	
+				$('#datepicker').val(date);	
 			});
 		}
 	});
 });
 
 $(function() {
-	return $("#datepicker").datepicker(
-		{ numberOfMonths: [ 1,2 ],
-			minDate: new Date(2014, 6, 23)
-		});
+	return $("#datepicker").datepicker({
+		minDate: new Date(2014, 6, 23)
+	});
 });
 
 
