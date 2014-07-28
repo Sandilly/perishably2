@@ -8,13 +8,16 @@ class UserAddedProductsController < ApplicationController
 
   def create
    @user_product = UserAddedProduct.new(product_params)
+   
     if @user_product.save
       current_user.user_added_products << @user_product
+      binding.pry #what are params for the day of tag?
       # ProductNotificationMailer.notification_for(@user_product).deliver
       redirect_to user_added_products_path
     else 
       render :new
     end
+
   end
 
   def index
@@ -73,7 +76,7 @@ class UserAddedProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:user_added_product).permit(:name, :product_details, :unit_of_time_period, :number_unit_of_time, :exp_date, :storage, :recipients_attributes =>[:name, :email, :phone_number])
+    params.require(:user_added_product).permit(:name, :email, :sms, :product_details, :unit_of_time_period, :number_unit_of_time, :exp_date, :storage, :recipients_attributes =>[:name, :email, :phone_number])
   end
 
   def recipient_params

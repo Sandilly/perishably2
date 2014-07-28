@@ -23,20 +23,21 @@
 
     <div class = "light well">
   
-    <%= check_box_tag(:notify_email) %>
-    <%= label_tag(:notify_email, "Email") %>
+    <%= f.check_box(:email) %>
+    <%= f.label(:email, "Notify me by email") %>
 
-    <%= check_box_tag(:notify_text) %>
-    <%= label_tag(:notify_text, "Text") %>
+    <%= f.check_box(:sms) %>
+    <%= f.label(:sms, "Notify me by text message") %>
 
-    <%= radio_button_tag(:notify_day, "before") %>
-    <%= label_tag(:notify_before, "Notify me BEFORE expiration date.") %>
+    <%#= radio_button_tag(:notify_day, "before") %>
+    <%#= label_tag(:notify_before, "Notify me BEFORE expiration date.") %>
 
-    <%= select_tag(:notify_num, options_for_select(1..7)) %>
-    <%= select_tag(:notify_date_type, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br >
+    <%#= select_tag(:notify_num, options_for_select(1..7)) %>
+    <%#= select_tag(:notify_date_type, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br >
     
-    <%= radio_button_tag(:notify_day, "day_of") %>
-    <%= label_tag(:notify_date_type, "Notify me ON the day of expiration date.") %> <br>
+    <%= radio_button_tag(:day_of) %>
+    <%= label_tag(:day_of, "Notify me on the day of expiration") %> <br>
+    
     <div id="add_ppl">
     <%= link_to 'Add people to notifications', '#',
           :onclick => 'add_ppl_to_notification()' %>

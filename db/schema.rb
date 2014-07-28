@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140725180048) do
+ActiveRecord::Schema.define(version: 20140728163219) do
 
   create_table "product_recipients", force: true do |t|
     t.integer "user_added_product_id"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 20140725180048) do
     t.string   "storage"
     t.string   "number_unit_of_time"
     t.date     "notification_date"
+    t.boolean  "email"
+    t.boolean  "sms"
   end
 
   create_table "users", force: true do |t|
