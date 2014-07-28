@@ -83,22 +83,17 @@ def standardize_time(producthashes)
 
 end
 
-def split_time(producthashes)
-	producthashes.map do |c|
-		c["time"] = c["time"].split
-		if c["time"][0]
-			c[:number_unit_of_time] = c["time"][0]
-		end
-		if c["time"][1]
-			c[:unit_of_time_period] = c["time"][1].capitalize
-		end
-		c.delete("time")
+	def split_time(producthashes)
+	 	producthashes.map do |c|
+	 		c["time"] = c["time"].split
+	 		c[:number_unit_of_time] = c["time"][0].downcase
+	    c[:unit_of_time_period] = c["time"][1].capitalize
+	  end
+		producthashes
 	end
-	producthashes
-end
 
-def delete_rows_without_time(producthashes)
-	producthashes.delete_if do |c|
+	def delete_rows_without_time(producthashes)
+		producthashes.delete_if do |c|
 			#this isn't working 
 			c["time"] == "–" || c["time"].include?("ndef") || c["time"] == "Indedinite"|| c["time"] == "-" || c["time"] =="use by date" || c["time"] =="best by date" || c["time"] =="Decades in a wine cellar"
 		end

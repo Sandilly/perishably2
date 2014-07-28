@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
   #the above is so we can access it in the view
-
   # def authorize
   #   redirect_to login_url, alert: "Not authorized" if current_user.nil?
   # end

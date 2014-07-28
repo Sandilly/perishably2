@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140723203514) do
     t.string  "name"
     t.string  "email"
     t.integer "phone_number"
+    t.integer "user_added_product_id"
   end
 
   create_table "user_added_products", force: true do |t|

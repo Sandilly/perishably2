@@ -18,10 +18,6 @@ $(function() {
 	});
 });
 
-//In the controller #create, 
-//make use of the calendar date.
-//make the calendar date override the default length of time
-
 $(function() {
 	return $("#datepicker").datepicker(
 		{ numberOfMonths: [ 1,2 ],
