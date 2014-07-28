@@ -42,9 +42,8 @@ function change_exp(){
 		    case "Year(s)": 
 		      $('#datepicker').val((moment().add('y', num_time).format("YYYY-MM-DD")));
 		      break;
-
-		   	default: 
-		      alert('Default case');
+				default: 
+		      alert('Error');
 		      break;
 		};
 	});
