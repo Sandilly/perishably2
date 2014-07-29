@@ -29,38 +29,12 @@
     </div>
     <%= link_to "<i class='fa fa-chevron-circle-left'></i> &nbsp;Back".html_safe, user_added_products_path, class: "btn btn-info round2" %>
     <%= link_to "<i class='fa fa-file-text'></i> &nbsp;Edit".html_safe, edit_user_added_product_path(@user_product),class: "btn btn-info round2" %>
-    <%= link_to "<i class='fa fa-trash-o'></i> &nbsp;Destroy".html_safe, @user_product,:onclick => 'Are you sure you want to delete "#{@user_product.name}"?', method: :delete, class: "btn btn-inverse round2" %>
+    
+    <%#= link_to "<i class='fa fa-trash-o'></i> &nbsp;Destroy".html_safe, user_added_products_path, method: :delete, :onclick => 'Are you sure you want to delete "#{@user_product.name}"?', class: "btn btn-inverse round2" %>
+
+    <%#= link_to "Destroy", @user_product, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+    <%= link_to "<i class='fa fa-trash-o'></i> &nbsp;Destroy".html_safe, @user_product, method: :delete, data: { confirm: "Are you sure you want to delete #{@user_product.name}?" }, class: "btn btn-inverse round2" %>
   
+
   </div>
-
-<!-- 
-<h1><%= @user_product.name %> </h1> -->
-<!-- 
-<div class="field">
-  Name: <%= @user_product.name %>
-</div> -->
-<!-- <div class="field">
-  Time of Exp: <%= @user_product.number_unit_of_time %> <%= @user_product.unit_of_time_period %>
-</div> -->
-<!-- <div class="field">
-Storage Type : <%= @user_product.storage %>
-</div> -->
-<!-- <div class="field">
-  Product Details: <%= @user_product.product_details %>
-</div> -->
-<!-- <div class="field">
-  Date Added : <%= @user_product.created_at %> 
-</div>
-<div class="field">
-  Expiration Date : <%= @exp_date %>
-</div> -->
-
-<!-- <div class="field"> 
-  Notify : <% @user_product.recipients.each do |recipient| %> 
-  <%= link_to recipient.name.capitalize, user_added_product_recipient_path(@user_product, recipient) %>
-  <%= recipient.email%> 
-  <%= recipient.phone_number %>
-  <% end %>
-</div> -->
-
-
