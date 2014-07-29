@@ -8,14 +8,11 @@ class UserAddedProductsController < ApplicationController
 
   def create
    @user_product = UserAddedProduct.new(product_params)
-
     if @user_product.notification_date == ""
       @user_product.notification_date = @user_product.exp_date
     end
-
     if @user_product.save
-    current_user.user_added_products << @user_product
-      # ProductNotificationMailer.notification_for(@user_product).deliver
+      current_user.user_added_products << @user_product
       redirect_to user_added_products_path
     else 
       render :new
@@ -49,7 +46,6 @@ class UserAddedProductsController < ApplicationController
 
   def destroy
     @user_product = UserAddedProduct.find(params[:id])
-
     @user_product.destroy
     redirect_to user_added_products_path
   end
@@ -59,21 +55,7 @@ class UserAddedProductsController < ApplicationController
     @create_date = @user_product.created_at.strftime("%Y-%m-%d")
     @time_add = @user_product.number_unit_of_time.to_i
     @time_type = @user_product.unit_of_time_period
-
     @product_exp = @user_product.created_at
-    
-    # if @time_type =~ /\bday(s|\(s\))?/i
-    #   @exp_date = @product_exp + @time_add.days
-    # elsif @time_type =~ /\bweek(s|\(s\)?)/i
-    #   @exp_date = @product_exp + @time_add.weeks
-    # elsif @time_type =~ /\bmonth(s|\(s\)?)/i
-    #   @exp_date = @product_exp + @time_add.months
-    # elsif @time_type =~ /\byear(s|\(s\)?)/i
-    #   @exp_date = @product_exp + @time_add.years
-    # else
-    #   @exp_date = @user_product.unit_of_time_period
-    # end
-
   end
 
   private

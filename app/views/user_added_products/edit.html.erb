@@ -11,44 +11,32 @@
     <%= f.label :product_details %>
     <%= f.text_field :product_details %>
 
-    <!-- <p>Date Added : <%= @create_date %> </p> -->
-    <%= f.label :number_unit_of_time, "Num Time:" %>
-    <%= f.select(:number_unit_of_time, options_for_select(1..7)) %> 
-
-    <%= f.label :unit_of_time_period, "Unit of Time:" %>
-    
-    <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br>
-    
-     <%= link_to 'My product has an expiration date', '#',
-          :onclick => 'add_ppl_to_notification()' %>
+    <%= f.label "Date of Expiration:" %>
+    <%= f.text_field :exp_date , :id => "datepicker" %> <img src="fa-calendar.png" /> 
 
     <%= f.label :storage%>
     <%= f.text_field :storage%>
 
   </div>
 
-  <p> Notify by: </p>
-
   <div class = "light well">
-  
-    <%= check_box_tag(:notify_email) %>
-    <%= label_tag(:notify_email, "Email") %>
-    <%= check_box_tag(:notify_text) %>
-    <%= label_tag(:notify_text, "Text") %>
 
-    <%= radio_button_tag(:notify_day, "before") %>
-    <%= label_tag(:notify_before, "Notify me BEFORE expiration date.") %>
+    <%= f.label(:email, "Notify me by email") %>  
+    <%= f.check_box(:email) %>
 
-    <%= select_tag(:notify_num, options_for_select(1..7)) %>
-    <%= select_tag(:notify_date_type, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br >
-    
-    <%= radio_button_tag(:notify_day, "day_of") %>
-    <%= label_tag(:notify_date_type, "Notify me ON the day of expiration date.") %> <br>
+    <%= f.label(:sms, "Notify me by text message") %>
+    <%= f.check_box(:sms) %>
+
+    <br>
+    <br />
+    <%= f.label :notification_date %>
+    <%= f.text_field :notification_date %>
+
+</div>
+
 <div id="add_ppl">
     <%= link_to 'Add people to notifications', '#',
           :onclick => 'add_ppl_to_notification()' %>
-
-    
     </div>
   </div>
   <%= link_to "<i class='fa fa-chevron-circle-left'></i> &nbsp;Back".html_safe, user_added_product_path, class: "btn btn-info round2" %>
@@ -65,23 +53,24 @@
      <%= recipient_field.text_field :phone_number %>
   <% end%>
 </div>
+
   <%= link_to "Back", user_added_product_path %>
   <%= f.submit "Update Item" %> 
 
 <% end %>
 
 
-<script type="text/javascript">
-  function select_exp_date(){
-    alert("hi");
-  };
+// <script type="text/javascript">
+//   function select_exp_date(){
+//     alert("hi");
+//   };
 
-  function add_ppl_to_notification(){
-    // $('#add_ppl').append("<input id='recipent_email' name='recipent[email]' type='text' value='Enter recipient's email");
-    // $("#create_reminder_dialog").click(function() {
-    // $('#new_reminder_dialog').dialog('open');
-    // return false;
-});
+//   function add_ppl_to_notification(){
+//     // $('#add_ppl').append("<input id='recipent_email' name='recipent[email]' type='text' value='Enter recipient's email");
+//     // $("#create_reminder_dialog").click(function() {
+//     // $('#new_reminder_dialog').dialog('open');
+//     // return false;
+// });
 
-  };
-</script>
+//   };
+// </script>

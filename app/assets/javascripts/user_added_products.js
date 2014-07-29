@@ -1,5 +1,5 @@
 $(function() {
-	return $("#user_added_product_name").autocomplete({
+ 	$("#user_added_product_name").autocomplete({
 		source: $("#user_added_product_name").data("autocomplete-source"),
 		minLength: 3,
 
@@ -17,8 +17,8 @@ $(function() {
 	});
 });
 
-$(function() {
-	return $("#datepicker").datepicker({
+$(function(){
+	$("#datepicker").datepicker({
 		minDate: 0,
 		dateFormat: 'yy-mm-dd'
 	});
