@@ -51,4 +51,14 @@ function change_exp(){
 };
 
 
+$(function(){
+
+
+});
+
+<%#= Turn this into a form appended in javascript. 
+select_tag(:notify_num, options_for_select(1..7)) %>
+<%#= select_tag(:notify_date_type, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br >
+
+
 
