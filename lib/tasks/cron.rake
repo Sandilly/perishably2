@@ -1,7 +1,10 @@
 namespace :cron do
-  desc "fire test run for chronjobs"
-  task :test_msg => :environment do
-    puts "firing now"
-    ProductNotificationMailer.test_email_for("april.rabkin@gmail.com").deliver
-  end
+	desc "fire test run for chronjobs"
+	task :test_msg => :environment do
+		UserAddedProduct.all.each do |p|
+			if (p.notification_date.year == DateTime.now.year) && (p.notification_date.month == DateTime.now.month) && (p.notification_date.day == DateTime.now.day)
+				ProductNotificationMailer.notification_for(p).deliver
+			end
+		end
+	end
 end
