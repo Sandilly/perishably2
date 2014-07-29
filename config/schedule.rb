@@ -23,3 +23,8 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+set :environment, 'development'
+every 1.day do 
+	rake "twilio:send_text"
+	rake "cron:test_msg"
+end

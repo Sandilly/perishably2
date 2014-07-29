@@ -11,11 +11,13 @@ class UserAddedProductsController < ApplicationController
    binding.pry
    @user_product.notification_date = @user_product.exp_date
     if @user_product.save
+      current_user.user_added_products << @user_product
+      #what are params for the day of tag?
+      # ProductNotificationMailer.notification_for(@user_product).deliver
       redirect_to user_added_products_path
     else 
       render :new
     end
-
   end
 
   def index
@@ -28,6 +30,7 @@ class UserAddedProductsController < ApplicationController
 
   def update
     @user_product = UserAddedProduct.find(params[:id])
+    @create_date = @user_product.created_at.strftime("%Y-%m-%d")
     if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes][:"0"][:email])
       @user_product.recipients << @recipient
     else 
@@ -50,21 +53,22 @@ class UserAddedProductsController < ApplicationController
 
   def show
     @user_product = UserAddedProduct.find(params[:id])
+    @create_date = @user_product.created_at.strftime("%Y-%m-%d")
     @time_add = @user_product.number_unit_of_time.to_i
     @time_type = @user_product.unit_of_time_period
     @product_exp = @user_product.created_at
     
-    if @time_type =~ /\bday(s|\(s\))?/i
-      @exp_date = @product_exp + @time_add.days
-    elsif @time_type =~ /\bweek(s|\(s\)?)/i
-      @exp_date = @product_exp + @time_add.weeks
-    elsif @time_type =~ /\bmonth(s|\(s\)?)/i
-      @exp_date = @product_exp + @time_add.months
-    elsif @time_type =~ /\byear(s|\(s\)?)/i
-      @exp_date = @product_exp + @time_add.years
-    else
-      @exp_date = @user_product.unit_of_time_period
-    end
+    # if @time_type =~ /\bday(s|\(s\))?/i
+    #   @exp_date = @product_exp + @time_add.days
+    # elsif @time_type =~ /\bweek(s|\(s\)?)/i
+    #   @exp_date = @product_exp + @time_add.weeks
+    # elsif @time_type =~ /\bmonth(s|\(s\)?)/i
+    #   @exp_date = @product_exp + @time_add.months
+    # elsif @time_type =~ /\byear(s|\(s\)?)/i
+    #   @exp_date = @product_exp + @time_add.years
+    # else
+    #   @exp_date = @user_product.unit_of_time_period
+    # end
 
   end
 

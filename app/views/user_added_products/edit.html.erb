@@ -1,7 +1,7 @@
 <h1><i class="fa fa-pencil-square-o"></i>&nbsp;<%= @user_product.name.capitalize %> </h1>
 
 <%= form_for @user_product, url: {action: "update"}, html: {class: "update_form"} do |f| %>
-  <div class="field">Date Added : <%= @user_product.created_at %> </div>
+  
   
   <div class = "light well">
   
@@ -11,7 +11,7 @@
     <%= f.label :product_details %>
     <%= f.text_field :product_details %>
 
-    
+    <!-- <p>Date Added : <%= @create_date %> </p> -->
     <%= f.label :number_unit_of_time, "Num Time:" %>
     <%= f.select(:number_unit_of_time, options_for_select(1..7)) %> 
 
