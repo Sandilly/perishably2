@@ -52,13 +52,12 @@ function change_exp(){
 
 $(function(){
 	$("#day_of__Specific_notification_date").change(function(){
-		console.log("hello form");
 		$("#select_notification_date").slideDown("slow");
 	})
 });
+
 $(function(){
 	$("#day_of__Default_notification_date").change(function(){
-		console.log("goodbye form");
 		$("#select_notification_date").slideUp("slow");
 	})
 });	
@@ -70,10 +69,10 @@ $(function(){
 		var num = $("#notify_num").val();
 		var unit = $("#notify_date_type").val().replace("(s)", "");
 		var notiDate = expMoment.subtract(unit, num).format("YYYY-MM-DD");
-		console.log(notiDate);
 		$("#notification_date").val(notiDate);
 	})
 });
+
 //repeating above function entirely to make it register a change
 $(function(){
 	$("#notify_num").change(function(){
@@ -82,7 +81,6 @@ $(function(){
 		var num = $("#notify_num").val();
 		var unit = $("#notify_date_type").val().replace("(s)", "");
 		var notiDate = expMoment.subtract(unit, num).format("YYYY-MM-DD");
-		console.log(notiDate);
 		$("#notification_date").val(notiDate);
 	})
 });
