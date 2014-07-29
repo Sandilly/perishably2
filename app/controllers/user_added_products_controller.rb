@@ -49,6 +49,7 @@ class UserAddedProductsController < ApplicationController
 
   def destroy
     @user_product = UserAddedProduct.find(params[:id])
+
     @user_product.destroy
     redirect_to user_added_products_path
   end
