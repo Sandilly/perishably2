@@ -23,11 +23,8 @@ $(function(){
 	});
 });
 
-<<<<<<< HEAD
 $(function(){
 
-=======
->>>>>>> rebase
 	$("#user_added_product_number_unit_of_time, #user_added_product_unit_of_time_period").change(function(){
 		var period_time = $('#user_added_product_unit_of_time_period').val().replace("(s)", "");
 		var num_time = $('#user_added_product_number_unit_of_time').val();
