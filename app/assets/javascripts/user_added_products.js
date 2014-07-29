@@ -27,38 +27,64 @@ $(function() {
 function change_exp(){
 	$("#user_added_product_number_unit_of_time, #user_added_product_unit_of_time_period").change(function(){
 	//$('#user_added_product_unit_of_time_period').change(function(){
-			var period_time = $('#user_added_product_unit_of_time_period').val();
-			var num_time = $('#user_added_product_number_unit_of_time').val();
-			switch (period_time){
-		   	case "Day(s)":
-	
-		   		$('#datepicker').val((moment().add('d', num_time).format("YYYY-MM-DD")));
-		   		break;
-		   	case "Week(s)":
-		   		$('#datepicker').val((moment().add('w', num_time).format("YYYY-MM-DD")));
-		   		break;
-		   	case "Month(s)": 
-		      $('#datepicker').val((moment().add('M', num_time).format("YYYY-MM-DD")));
-		      break;
-		    case "Year(s)": 
-		      $('#datepicker').val((moment().add('y', num_time).format("YYYY-MM-DD")));
-		      break;
-				default: 
-		      alert('Error');
-		      break;
+		var period_time = $('#user_added_product_unit_of_time_period').val();
+		var num_time = $('#user_added_product_number_unit_of_time').val();
+		switch (period_time){
+			case "Day(s)":
+
+			$('#datepicker').val((moment().add('d', num_time).format("YYYY-MM-DD")));
+			break;
+			case "Week(s)":
+			$('#datepicker').val((moment().add('w', num_time).format("YYYY-MM-DD")));
+			break;
+			case "Month(s)": 
+			$('#datepicker').val((moment().add('M', num_time).format("YYYY-MM-DD")));
+			break;
+			case "Year(s)": 
+			$('#datepicker').val((moment().add('y', num_time).format("YYYY-MM-DD")));
+			break;
+			default: 
+			alert('Error');
+			break;
 		};
 	});
 };
 
+$(function(){
+	$("#day_of__Specific_notification_date").change(function(){
+		console.log("hello form");
+		$("#select_notification_date").slideDown("slow");
+	})
+});
+$(function(){
+	$("#day_of__Default_notification_date").change(function(){
+		console.log("goodbye form");
+		$("#select_notification_date").slideUp("slow");
+	})
+});	
 
 $(function(){
-
-
+	$("#notify_date_type").change(function(){
+		var expDate= $("#datepicker").val();
+		var expMoment = moment(expDate, "YYYY-MM-DD");
+		var num = $("#notify_num").val();
+		var unit = $("#notify_date_type").val().replace("(s)", "");
+		var notiDate = expMoment.subtract(unit, num).format("YYYY-MM-DD");
+		console.log(notiDate);
+		$("#notification_date").val(notiDate);
+	})
 });
-
-<%#= Turn this into a form appended in javascript. 
-select_tag(:notify_num, options_for_select(1..7)) %>
-<%#= select_tag(:notify_date_type, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br >
-
+//repeating above function entirely to make it register a change
+$(function(){
+	$("#notify_num").change(function(){
+		var expDate= $("#datepicker").val();
+		var expMoment = moment(expDate, "YYYY-MM-DD");
+		var num = $("#notify_num").val();
+		var unit = $("#notify_date_type").val().replace("(s)", "");
+		var notiDate = expMoment.subtract(unit, num).format("YYYY-MM-DD");
+		console.log(notiDate);
+		$("#notification_date").val(notiDate);
+	})
+});
 
 

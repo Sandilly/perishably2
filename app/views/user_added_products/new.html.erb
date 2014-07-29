@@ -31,15 +31,15 @@
     <%= f.check_box(:sms) %>
     <%= f.label(:sms, "Notify me by text message") %>
 
-    <%= radio_button_tag(:day_of?, "Default notification date") %>
+    <%= radio_button_tag(:day_of?, "Default notification date", value="1") %>
     <%= label_tag(:default_notification, "Notify me on the expiration date.") %>
     <%= radio_button_tag(:day_of?, "Specific notification date") %>
     <%= label_tag(:specific_notification, "Notify me before the expiration date.") %>
-
-    <%#= Turn this into a form appended in javascript. 
-    select_tag(:notify_num, options_for_select(1..7)) %>
-    <%#= select_tag(:notify_date_type, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br >
-
+    <div id="select_notification_date" style="display:none">
+<select id='notify_num' name='notify_num'><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option></select><select id='notify_date_type' name='notify_date_type'><option value='Day(s)'>Day(s)</option><option value='Week(s)'>Week(s)</option><option value='Month(s)'>Month(s)</option><option value='Year(s)'>Year(s)</option></select>
+  <input id="notification_date" name="user_added_product[notification_date]" type="hidden" /><br />
+<br>
+</div>
     <div id="add_ppl">
     <%= link_to 'Add people to notifications', '#',
           :onclick => 'add_ppl_to_notification()' %>
