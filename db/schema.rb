@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140728163219) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "product_recipients", force: true do |t|
     t.integer "user_added_product_id"
     t.integer "recipient_id"
