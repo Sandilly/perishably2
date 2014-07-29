@@ -25,6 +25,7 @@ $(function() {
 });
 
 function change_exp(){
+
 	$("#user_added_product_number_unit_of_time, #user_added_product_unit_of_time_period").change(function(){
 	//$('#user_added_product_unit_of_time_period').change(function(){
 		var period_time = $('#user_added_product_unit_of_time_period').val();
@@ -84,5 +85,8 @@ $(function(){
 		$("#notification_date").val(notiDate);
 	})
 });
+
+change_exp();
+
 
 
