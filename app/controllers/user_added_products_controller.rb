@@ -4,6 +4,7 @@ class UserAddedProductsController < ApplicationController
 
   def new
     @user_product = UserAddedProduct.new
+    @user_product.email = true
   end
 
   def create
