@@ -10,6 +10,7 @@ class CreateUserAddedProducts < ActiveRecord::Migration
       t.date :notification_date
       t.boolean :notify #Do we need this column?
       t.boolean :email
+      t.boolean :sms
       t.boolean :string
       t.string :storage
 

@@ -22,12 +22,10 @@ ActiveRecord::Schema.define(version: 20140721210346) do
   end
 
   create_table "products", force: true do |t|
-    t.string   "name"
-    t.string   "unit_of_time_period"
-    t.integer  "number_unit_of_time"
-    t.string   "storage"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "name"
+    t.string  "unit_of_time_period"
+    t.integer "number_unit_of_time"
+    t.string  "storage"
   end
 
   create_table "recipients", force: true do |t|
@@ -47,7 +45,9 @@ ActiveRecord::Schema.define(version: 20140721210346) do
     t.date     "notification_date"
     t.boolean  "notify"
     t.boolean  "email"
+    t.boolean  "sms"
     t.boolean  "string"
+    t.string   "storage"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
