@@ -8,11 +8,8 @@ gem 'better_errors'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem "font-awesome-rails" 
 gem 'pry-nav'
-gem 'sqlite3'
+gem 'pg'
 gem 'whenever'
-group :production do
-  gem 'pg'
-end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
