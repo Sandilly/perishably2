@@ -1,22 +1,23 @@
-<h1>&nbsp;<%= @user_product.name.capitalize %> </h1>
+<h1><i class="fa fa-barcode"></i> <%= @user_product.name.capitalize %> </h1>
 <div class ="light well">
+    <h4>Product Information</h4>
     <p>Product Details: <%= @user_product.product_details %></p>
-    <p>Time of Exp: <%= @user_product.number_unit_of_time %> <%= @user_product.unit_of_time_period %></p>
+    <p>Time of Expiration: <%= @user_product.number_unit_of_time %> <%= @user_product.unit_of_time_period %></p>
     <p>Storage Type : <%= @user_product.storage %></p>
  
     </div>
     <div class ="light well">
-        <p>Date Added : <%= @create_date %> </p>
-        <p>Time of Exp: <%= @user_product.number_unit_of_time %> <%= @user_product.unit_of_time_period %></p>
-        <p>Expiration Date : <%= @user_product.exp_date %></p>
 
-        
-        <div class="progress progress-striped active">
-          <div class="bar" style="width: 80%;"></div>
-        </div>
-    </div>
+      <h4>Product Date Information</h4>
+      <p>Date Added: <span id="date_added"><%= @create_date %></span></p>
+      <p>Date of Expiration: <span id = "date_exp"><%= @user_product.exp_date %></span></p>
+      
+      <div class="progress progress-striped active">
+        <div class="bar" role="progressbar"></div>
+      </div>
 
     <div class ="light well">
+      <h4>Product Notification Information</h4>
         <div class="field"> 
         Notify : <% @user_product.recipients.each do |recipient| %> 
           <%= link_to recipient.name.capitalize, user_added_product_recipient_path(@user_product, recipient) %>
@@ -29,12 +30,12 @@
     </div>
     <%= link_to "<i class='fa fa-chevron-circle-left'></i> &nbsp;Back".html_safe, user_added_products_path, class: "btn btn-info round2" %>
     <%= link_to "<i class='fa fa-file-text'></i> &nbsp;Edit".html_safe, edit_user_added_product_path(@user_product),class: "btn btn-info round2" %>
-    
-    <%#= link_to "<i class='fa fa-trash-o'></i> &nbsp;Destroy".html_safe, user_added_products_path, method: :delete, :onclick => 'Are you sure you want to delete "#{@user_product.name}"?', class: "btn btn-inverse round2" %>
-
-    <%#= link_to "Destroy", @user_product, method: :delete, data: { confirm: 'Are you sure?' } %>
 
     <%= link_to "<i class='fa fa-trash-o'></i> &nbsp;Destroy".html_safe, @user_product, method: :delete, data: { confirm: "Are you sure you want to delete #{@user_product.name}?" }, class: "btn btn-inverse round2" %>
-  
+
 
   </div>
+
+  <script>
+    getDates();
+  </script>
