@@ -43,4 +43,3 @@ function getDates(){
 
   $('.bar').html(daysleft + " Day(s) Left");
 };
-
