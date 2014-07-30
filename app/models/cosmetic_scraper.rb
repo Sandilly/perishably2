@@ -20,7 +20,6 @@ scraper.parse('.tiptable tr') do |element|
 
   if int_str.to_i > 0
     item[:number_unit_of_time] = int_str.to_i
-    binding.pry
     item[:unit_of_time_period] =type_str
   else
     case int_str
@@ -126,11 +125,9 @@ end
 makeup_array.each do |element|
   #[{:name => "mascara",:expiration => "12 months"}]
   # {:name => "mascara",:expiration => "12 months"}
-  binding.pry
   product = Product.new
 
   product.name = element[:name]
-  binding.pry
   product.number_unit_of_time = element[:number_unit_of_time]
   product.unit_of_time_period = element[:unit_of_time_period]
   product.storage = element[:storage]
