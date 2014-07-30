@@ -24,13 +24,14 @@ $(function(){
 });
 
 $(function(){
+
 	$("#user_added_product_number_unit_of_time, #user_added_product_unit_of_time_period").change(function(){
 		var period_time = $('#user_added_product_unit_of_time_period').val().replace("(s)", "");
 		var num_time = $('#user_added_product_number_unit_of_time').val();
 		var date =	moment().add(period_time, num_time).format("YYYY-MM-DD");
 		$('#datepicker').val(date);
 	});
-})
+});
 
 
 $(function(){
@@ -42,6 +43,7 @@ $(function(){
 $(function(){
 	$("#day_of__Default_notification_date").change(function(){
 		$("#select_notification_date").slideUp("slow");
+		$("#notification_date").val(expDate);
 	})
 });	
 
@@ -67,5 +69,9 @@ $(function(){
 		$("#notification_date").val(notiDate);
 	})
 });
+
+
+
+
 
 
