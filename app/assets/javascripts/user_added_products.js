@@ -1,4 +1,4 @@
-function ifSelected(){
+function ifSelected(date){
 	if ($('#day_of__Specific_notification_date').is(':checked')) {
 		var num = $("#notify_num").val();
 		var unit = $("#notify_date_type").val().replace("(s)", "");
@@ -22,17 +22,7 @@ $(function() {
 				$('#user_added_product_number_unit_of_time').val(data.number_unit_of_time);
 				var date =	moment().add(data.unit_of_time_period.replace("(s)", ""), data.number_unit_of_time).format('YYYY-MM-DD');
 				$('#datepicker').val(date);	
-				//$('#notification_date').val(date);
-
-				//ifSelected();
-				if ($('#day_of__Specific_notification_date').is(':checked')) {
-					var num = $("#notify_num").val();
-					var unit = $("#notify_date_type").val().replace("(s)", "");
-					$('#notification_date').val(moment(date).subtract(unit,num).format("YYYY-MM-DD"));
-				}
-				else{
-					$('#notification_date').val(date);
-				}
+				ifSelected(date);
 			});
 		}
 	});
@@ -46,14 +36,7 @@ $(function(){
 		minDate: 0,
 		dateFormat: 'yy-mm-dd',
 		onSelect: function(date){
-			if ($('#day_of__Specific_notification_date').is(':checked')) {
-				var num = $("#notify_num").val();
-				var unit = $("#notify_date_type").val().replace("(s)", "");
-				$('#notification_date').val(moment(date).subtract(unit,num).format("YYYY-MM-DD"));
-			}
-			else{
-				$('#notification_date').val(date);
-			}
+			ifSelected(date);
 		}
 	});
 });
@@ -64,17 +47,7 @@ $(function(){
 		var num_time = $('#user_added_product_number_unit_of_time').val();
 		var date =	moment().add(period_time, num_time).format("YYYY-MM-DD");
 		$('#datepicker').val(date);
-
-		//ifSelected()
-
-		if ($('#day_of__Specific_notification_date').is(':checked')) {
-			var num = $("#notify_num").val();
-			var unit = $("#notify_date_type").val().replace("(s)", "");
-			$('#notification_date').val(moment(date).subtract(unit,num).format("YYYY-MM-DD"));
-		}
-		else{
-			$('#notification_date').val(date);
-		}
+		ifSelected(date);
 	});
 });
 
