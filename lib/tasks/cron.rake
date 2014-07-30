@@ -8,3 +8,6 @@ namespace :cron do
 		end
 	end
 end
+
+#first test new whenever rake task that includes both
+#then test it on heroku
