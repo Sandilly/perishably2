@@ -1,4 +1,4 @@
-function getDates(){
+git function getDates(){
   var oneDay = 24*60*60*1000;
   
   var today = moment().format("YYYY-MM-DD");
