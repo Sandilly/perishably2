@@ -70,7 +70,6 @@ class UserAddedProduct < ActiveRecord::Base
 
 #progress bar
   # def time_from_expiration
-  #   binding.pry
   #   if DateTime.now < self.exp_date
   #     ( (self.exp_date - DateTime.now).to_i / (self.notification_date - DateTime.now).to_i )
   #   end
