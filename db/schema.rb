@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140730141010) do
+ActiveRecord::Schema.define(version: 20140721210346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,42 +24,41 @@ ActiveRecord::Schema.define(version: 20140730141010) do
   create_table "products", force: true do |t|
     t.string   "name"
     t.string   "unit_of_time_period"
+    t.integer  "number_unit_of_time"
+    t.string   "storage"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "storage"
-    t.string   "number_unit_of_time"
   end
 
   create_table "recipients", force: true do |t|
     t.string  "name"
     t.string  "email"
-    t.integer "phone_number"
+    t.string  "phone_number"
     t.integer "user_added_product_id"
   end
 
   create_table "user_added_products", force: true do |t|
+    t.string   "name"
     t.integer  "user_id"
-    t.string   "unit_of_time_period"
     t.date     "exp_date"
+    t.string   "product_details"
+    t.string   "number_unit_of_time"
+    t.string   "unit_of_time_period"
+    t.date     "notification_date"
+    t.boolean  "notify"
+    t.boolean  "email"
+    t.boolean  "string"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "product_details"
-    t.string   "name"
-    t.string   "storage"
-    t.string   "number_unit_of_time"
-    t.date     "notification_date"
-    t.boolean  "email"
-    t.boolean  "sms"
   end
 
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
+    t.string   "phone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "phone_number"
-    t.boolean  "notify"
   end
 
 end
