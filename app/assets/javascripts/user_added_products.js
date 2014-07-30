@@ -31,7 +31,7 @@ $(function(){
 		var date =	moment().add(period_time, num_time).format("YYYY-MM-DD");
 		$('#datepicker').val(date);
 	});
-})
+});
 
 
 $(function(){
