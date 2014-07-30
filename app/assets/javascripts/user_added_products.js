@@ -43,7 +43,6 @@ $(function(){
 $(function(){
 	$("#day_of__Default_notification_date").change(function(){
 		$("#select_notification_date").slideUp("slow");
-		var expDate= $("#datepicker").val();
 		$("#notification_date").val(expDate);
 	})
 });	
