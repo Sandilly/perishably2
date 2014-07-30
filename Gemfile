@@ -8,7 +8,7 @@ gem 'better_errors'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem "font-awesome-rails" 
 gem 'pry-nav'
-gem 'sqlite3'
+gem 'pg'
 gem 'whenever'
 group :production do
   gem 'pg'
