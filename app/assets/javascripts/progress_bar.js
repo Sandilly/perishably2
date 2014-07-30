@@ -1,4 +1,4 @@
-git function getDates(){
+function getDates(){
   var oneDay = 24*60*60*1000;
   
   var today = moment().format("YYYY-MM-DD");
@@ -28,9 +28,8 @@ git function getDates(){
   var daysPassed = Math.round(Math.abs((newStart.getTime() - newToday.getTime())/(oneDay)));
 
   var daysleft = totalDays - daysPassed;
-  //var percent = Math.floor((daysPassed / totalDays)*100) + "%";
   var percent = (daysPassed / totalDays)*100;
-  //console.log(percent);
+
   $('.bar').progressbar({
     display_text: 'fill',
     use_percentage: false
