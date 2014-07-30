@@ -24,8 +24,9 @@
           <%= link_to recipient.name.capitalize, user_added_product_recipient_path(@user_product, recipient) %>
           <%= recipient.email%> 
           <%= recipient.phone_number %>
-      <% end %>
-    </div>
+        <% end %>
+        </div>
+
         <p>Notification Date : <%= @user_product.notification_date %></p>
         
     </div>
