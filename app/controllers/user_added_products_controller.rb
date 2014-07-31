@@ -10,7 +10,7 @@ class UserAddedProductsController < ApplicationController
   def create
    @user_product = UserAddedProduct.new(product_params)
 
-    if @user_product.notification_date == ""
+    unless @user_product.notification_date
       @user_product.notification_date = @user_product.exp_date
     end
 

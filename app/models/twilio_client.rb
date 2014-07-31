@@ -14,7 +14,7 @@ class TwilioClient
     twilio_client.account.sms.messages.create(
       :from => TWILIO_NUMBER,
       :to => @user.phone_number,
-      :body => "This is a Perishab.ly notification regarding your #{@item.name.downcase}, which expires on #{@item.exp_date}."
+      :body => "This is your Perishab.ly alert. Your #{@item.name.downcase} will expire on #{@item.exp_date}."
       )
   end
 end
