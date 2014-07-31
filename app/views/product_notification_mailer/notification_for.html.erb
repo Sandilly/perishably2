@@ -2,4 +2,4 @@
 
 <p>Here is your Perishab.ly alert.</p>
 
-<p>Your <%= @product.name.capitalize %> is expiring on <%= @product.exp_date.strftime("%B %d, %Y") %></p>
+<p>The expiration date for your <%= @product.name.capitalize %> is <%= @product.exp_date.strftime("%B %d, %Y") %></p>
