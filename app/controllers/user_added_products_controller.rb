@@ -31,10 +31,15 @@ class UserAddedProductsController < ApplicationController
   def update
     @user_product = UserAddedProduct.find(params[:id])
     @create_date = @user_product.created_at.strftime("%Y-%m-%d")
-    if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes][:email])
-      @user_product.recipients << @recipient
+    if params[:user_added_product][:recipients_attributes].count > 0
+      params[:user_added_product][:recipients_attributes].each_with_index do |recipient, index|
+        if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes]["0"][:email])
+          @user_product.recipients << @recipient
+        else
+          @user_product.assign_attributes(product_params)
+        end
+      end
     else
-      @recipient = Recipient.new(product_params)
       @user_product.assign_attributes(product_params)
     end
     if @user_product.save
@@ -45,9 +50,8 @@ class UserAddedProductsController < ApplicationController
     end
   end
 
-  def destroy
+   def destroy
     @user_product = UserAddedProduct.find(params[:id])
-
     @user_product.destroy
     redirect_to user_added_products_path
   end
@@ -87,4 +91,4 @@ class UserAddedProductsController < ApplicationController
   # end
 end
 
-
+# params[:user_added_product][:recipients_attributes][index]
