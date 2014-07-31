@@ -1,5 +1,5 @@
 <p>Dear <%= @product.user.name.capitalize %>,</p>
 
-<p>Here is your Perishab.ly alert.</p>
+<p>Here is a Perishab.ly alert.</p>
 
-<p>The expiration date for your <%= @product.name.capitalize %> is <%= @product.exp_date.strftime("%B %d, %Y") %></p>
+<p>Your <%= @product.name.capitalize %> will expire on <%= @product.exp_date.strftime("%B %d, %Y") %>.</p>
