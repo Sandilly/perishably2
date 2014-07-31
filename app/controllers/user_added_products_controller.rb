@@ -77,8 +77,7 @@ class UserAddedProductsController < ApplicationController
   private
 
   def product_params
-    binding.pry
-    params.require(:user_added_product).permit(:name, :email, :notification_date, :sms, :product_details, :unit_of_time_period, :number_unit_of_time, :exp_date, :storage, :recipient_attributes =>[:id, :name, :email, :phone_number])
+    params.require(:user_added_product).permit(:name, :email, :notification_date, :sms, :product_details, :unit_of_time_period, :number_unit_of_time, :exp_date, :storage, :recipients_attributes =>[:id, :name, :email, :phone_number])
   end
 
   # def recipient_params
