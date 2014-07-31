@@ -9,15 +9,12 @@ class UserAddedProductsController < ApplicationController
 
   def create
    @user_product = UserAddedProduct.new(product_params)
-
     if @user_product.notification_date == ""
       @user_product.notification_date = @user_product.exp_date
     end
-
     if @user_product.save
-    current_user.user_added_products << @user_product
-      # ProductNotificationMailer.notification_for(@user_product).deliver
-      redirect_to user_added_products_path
+      current_user.user_added_products << @user_product
+      redirect_to user_added_product_path(@user_product)
     else
       render :new
     end
@@ -34,14 +31,14 @@ class UserAddedProductsController < ApplicationController
   def update
     @user_product = UserAddedProduct.find(params[:id])
     @create_date = @user_product.created_at.strftime("%Y-%m-%d")
-    if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes][:"0"][:email])
+    if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes][:email])
       @user_product.recipients << @recipient
     else
-      @recipient = Recipient.new(recipient_params)
+      @recipient = Recipient.new(params[:user_added_product][:recipients_attributes])
       @user_product.assign_attributes(product_params)
     end
     if @user_product.save
-      redirect_to user_added_product_path
+      redirect_to user_added_product_path(@user_product)
     else
       flash.now[:notice] = "Your submission is invalid."
       render "edit"
@@ -80,13 +77,15 @@ class UserAddedProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:user_added_product).permit(:name, :email, :notification_date, :sms, :product_details, :unit_of_time_period, :number_unit_of_time, :exp_date, :storage, :recipients_attributes =>[:name, :email, :phone_number])
+    binding.pry
+    params.require(:user_added_product).permit(:name, :email, :notification_date, :sms, :product_details, :unit_of_time_period, :number_unit_of_time, :exp_date, :storage, :recipient_attributes =>[:id, :name, :email, :phone_number])
   end
 
-  def recipient_params
-    params[:recipients] = params[:user_added_product][:recipients_attributes]["0"]
-    params.require(:recipients).permit!
-  end
+  # def recipient_params
+  #   binding.pry
+  #   params[:recipients] = params[:user_added_product][:recipients_attributes]["0"]
+  #   params.require(:recipients).permit!
+  # end
 end
 
 

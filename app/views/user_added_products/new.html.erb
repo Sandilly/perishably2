@@ -40,23 +40,23 @@
   <!-- <input id="notification_date" name="user_added_product[notification_date]" type="hidden" /> --><br />
 <br>
 </div>
-<input id="notification_date" name="user_added_product[notification_date]" />
+
+    <%= link_to 'Add people to notifications', '#add_recipients',
+          :onclick => 'add_ppl_to_notification()', id: "add_recipients" %>
+ 
     <div id="add_ppl">
-    <%= link_to 'Add people to notifications', '#',
-          :onclick => 'add_ppl_to_notification()' %>
+  <div class="field">
+  <%= f.fields_for :recipients do |recipient_field| %>
+     <%= recipient_field.label :name %>
+     <%= recipient_field.text_field :name %>
+     <%= recipient_field.label :email %>
+     <%= recipient_field.text_field :email %>
+     <%= recipient_field.label :phone_number %>
+     <%= recipient_field.text_field :phone_number %>
+  <% end%>
     </div>
   </div>
-  <div class="field">
- <!--    <h2>Recipient</h2> -->
-  <%# f.fields_for(:recipients, Recipient.new) do |recipient_field| %>
-     <%# recipient_field.label :name %>
-     <%# recipient_field.text_field :name %>
-     <%# recipient_field.label :email %>
-     <%# recipient_field.text_field :email %>
-     <%# recipient_field.label :phone_number %>
-     <%# recipient_field.text_field :phone_number %>
-  <%# end%>
-</div>
+ 
 
     <%= f.submit "Add Item", class: "btn btn-info round2" %>
 <% end %>

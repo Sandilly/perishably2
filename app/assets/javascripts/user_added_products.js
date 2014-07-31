@@ -71,7 +71,7 @@ $(function(){
 		$('#notification_date').val(moment(expDate).format("YYYY-MM-DD"));
 	})
 
-});	
+});
 
 $(function(){
 	$("#notify_date_type").change(function(){
@@ -96,8 +96,14 @@ $(function(){
 	})
 });
 
-
-
+$(function(){
+	$("#add_ppl").hide();
+	$("#add_recipients").click(function(){
+	$("#add_ppl").slideDown("slow");
+	$("#add_ppl").append("<label for='name'>Name</label><input id='name' name='user_added_product[recipients_attributes][][name]' type='text'/><label for='email'>Email</label><input id='email' name='user_added_product[recipients_attributes][][email]' type='text'/><label for='phone_number'>Phone Number</label><input id='phone_number' name='user_added_product[recipients_attributes][][phone_number]' type='text'/>");
+	event.preventDefault();
+	});
+});
 
 
 
