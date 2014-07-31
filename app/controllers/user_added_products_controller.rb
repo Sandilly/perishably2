@@ -34,7 +34,7 @@ class UserAddedProductsController < ApplicationController
     if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes][:email])
       @user_product.recipients << @recipient
     else
-      @recipient = Recipient.new(params[:user_added_product][:recipients_attributes])
+      @recipient = Recipient.new(product_params)
       @user_product.assign_attributes(product_params)
     end
     if @user_product.save
