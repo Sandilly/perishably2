@@ -4,7 +4,7 @@ body{
 	/*font-family: 'Alegreya Sans SC', sans-serif;*/
 	font-family: 'helvetica';
 	background-color: #f1f1f1;
-	background-image:url('food.png');
+	background-image:url(image-path('food.png'));
 	background-repeat:repeat;
 	overflow-x:hidden;
 }
@@ -51,7 +51,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc333333', e
 }
 
 .brand.main{
-	background-image:url('../img/elegancy-nav-logo.png');
+	background-image:url(image-path('elegancy-nav-logo.png'));
 	background-repeat:no-repeat;
 	width:98px;
 	margin-left:0px !important;
@@ -102,7 +102,7 @@ h2.hBig{
 }
 .carousel-inner .item .bgimg1{
 	display:block;
-	background-image:url('../img/img1.jpg');
+	background-image:url(image-path('img1.jpg'));
 	background-repeat:no-repeat;
 	background-position:top right;
 	background-size:cover;
@@ -112,7 +112,7 @@ h2.hBig{
 
 .carousel-inner .item .bgimg2{
 	display:block;
-	background-image:url('../img/img2.jpg');
+	background-image:url(image-path('img2.jpg'));
 	background-repeat:no-repeat;
 	background-position:top right;
 	background-size:cover;
@@ -121,7 +121,7 @@ h2.hBig{
 }
 .carousel-inner .item .bgimg3{
 	display:block;
-	background-image:url('../img/img3.jpg');
+	background-image:url(image-path('img3.jpg'));
 	background-repeat:no-repeat;
 	background-position:top right;
 	background-size:cover;
@@ -156,16 +156,16 @@ h2.hBig{
 	background-size:cover;
 	background-position:top right;
 	height:200px;
-	background-image:url('../img/figure1.jpg');
+	background-image:url(image-path('figure1.jpg'));
 }
 .feature1{
-	background-image:url('../img/figure1.jpg');
+	background-image:url(image-path('figure1.jpg'));
 }
 
 .well.deep{
 	box-shadow:inset 0px 0px 5px 2px rgba(0,0,0,0.2);
 	background-repeat:repeat;
-	background-image:url('noise4.png');
+	background-image:url(image-path('noise4.png'));
 	margin: 10% auto;
     /*width: 30%;*/
     text-align: center;
@@ -317,54 +317,54 @@ h2.hBig{
 
 
 .social.links .fb{
-	background-image:url('../img/social/facebook_dark.png');
+	background-image:url(image-path('facebook_dark.png'));
 }
 .social.links .fb:hover{
-	background-image:url('../img/social/facebook_active.png');
+	background-image:url(image-path('facebook_active.png'));
 }
 .social.links .twitter{
-	background-image:url('../img/social/twitter02_dark.png');
+	background-image:url(image-path('twitter02_dark.png'));
 }
 .social.links .twitter:hover{
-	background-image:url('../img/social/twitter02_active.png');
+	background-image:url(image-path('twitter02_active.png'));
 }
 .social.links .rss{
-	background-image:url('../img/social/rss_dark.png');
+	background-image:url(image-path('social/rss_dark.png'));
 }
 .social.links .rss:hover{
-	background-image:url('../img/social/rss_active.png');
+	background-image:url(image-path('social/rss_active.png'));
 }
 .social.links .gplus{
-	background-image:url('../img/social/google_dark.png');
+	background-image:url(image-path('social/google_dark.png'));
 }
 .social.links .gplus:hover{
-	background-image:url('../img/social/google_active.png');
+	background-image:url(image-path('google_active.png'));
 }
 .social.links .blog{
-	background-image:url('../img/social/blog_dark.png');
+	background-image:url(image-path('social/blog_dark.png'));
 }
 .social.links .blog:hover{
-	background-image:url('../img/social/blog_active.png');
+	background-image:url(image-path('social/blog_active.png'));
 }
 .social.links .flickr{
-	background-image:url('../img/social/flickr_dark.png');
+	background-image:url(image-path('social/flickr_dark.png'));
 }
 .social.links .flickr:hover{
-	background-image:url('../img/social/flickr_active.png');
+	background-image:url(image-path('social/flickr_active.png'));
 }
 
 
 .follow .fb{
-	background-image:url('../img/follow/followme_facebook.png');
+	background-image:url(image-path('followme_facebook.png'));
 }
 .follow .tumblr{
-	background-image:url('../img/follow/followme_tumblr.png');
+	background-image:url(image-path('/followme_tumblr.png'));
 }
 .follow .pinterest{
-	background-image:url('../img/follow/followme_pinterest.png');
+	background-image:url(image-path('followme_pinterest.png'));
 }
 .follow .twitter{
-	background-image:url('../img/follow/followme_twitter.png');
+	background-image:url(image-path('followme_twitter.png'));
 }
 
 
