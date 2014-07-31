@@ -2,8 +2,8 @@
 body{
 	/*background-color:rgb(240,240,240);*/
 	/*font-family: 'Alegreya Sans SC', sans-serif;*/
-	font-family: 'helvetica';
-	background-color: #f1f1f1;
+	font-family:helvetica;
+	background-color:#f1f1f1;
 	background-image:url(image-path('food.png'));
 	background-repeat:repeat;
 	overflow-x:hidden;
@@ -19,7 +19,7 @@ body{
 	position:absolute;
 	top:0;left:0;right:0;bottom:0;
 	z-index:2;
-	background-image:url('../img/noise.png');
+	background-image:url(image-path('noise.png'));
 	background-repeat:repeat;
 	opacity:0.5;
 }
@@ -167,8 +167,8 @@ h2.hBig{
 	background-repeat:repeat;
 	background-image:url(image-path('noise4.png'));
 	margin: 10% auto;
-    /*width: 30%;*/
-    text-align: center;
+	/*width: 30%;*/
+	text-align: center;
 }
 .well.trans{
 	background-color:transparent;
@@ -317,16 +317,16 @@ h2.hBig{
 
 
 .social.links .fb{
-	background-image:url(image-path('facebook_dark.png'));
+	background-image:url(image-path('social/facebook_dark.png'));
 }
 .social.links .fb:hover{
-	background-image:url(image-path('facebook_active.png'));
+	background-image:url(image-path('social/facebook_active.png'));
 }
 .social.links .twitter{
-	background-image:url(image-path('twitter02_dark.png'));
+	background-image:url(image-path('social/twitter02_dark.png'));
 }
 .social.links .twitter:hover{
-	background-image:url(image-path('twitter02_active.png'));
+	background-image:url(image-path('social/twitter02_active.png'));
 }
 .social.links .rss{
 	background-image:url(image-path('social/rss_dark.png'));
@@ -338,7 +338,7 @@ h2.hBig{
 	background-image:url(image-path('social/google_dark.png'));
 }
 .social.links .gplus:hover{
-	background-image:url(image-path('google_active.png'));
+	background-image:url(image-path('social/google_active.png'));
 }
 .social.links .blog{
 	background-image:url(image-path('social/blog_dark.png'));
@@ -355,16 +355,16 @@ h2.hBig{
 
 
 .follow .fb{
-	background-image:url(image-path('followme_facebook.png'));
+	background-image:url(image-path('follow/followme_facebook.png'));
 }
 .follow .tumblr{
-	background-image:url(image-path('/followme_tumblr.png'));
+	background-image:url(image-path('follow/followme_tumblr.png'));
 }
 .follow .pinterest{
-	background-image:url(image-path('followme_pinterest.png'));
+	background-image:url(image-path('follow/followme_pinterest.png'));
 }
 .follow .twitter{
-	background-image:url(image-path('followme_twitter.png'));
+	background-image:url(image-path('follow/followme_twitter.png'));
 }
 
 
