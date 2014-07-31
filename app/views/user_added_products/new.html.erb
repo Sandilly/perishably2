@@ -17,8 +17,9 @@
 
     		<%= f.label "Date of Expiration:" %>
         <%#= link_to "Product has it's own expiration date",id: "ownExpDate" %>
-    		<%= f.text_field :exp_date , :id => "datepicker" %> <image_tag("fa-calendar.png") /> 
-        
+        <i class="fa fa-calendar"> 
+    		<%= f.text_field :exp_date , :id => "datepicker"%> 
+        </i>
         <%#= f.label "Storage:" %>
     	<%#= f.text_field :storage %>
     </div>
