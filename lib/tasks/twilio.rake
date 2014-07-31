@@ -10,4 +10,15 @@ namespace :twilio do
 			end
 		end
 	end
+
+	task send_notification_text: :environment do
+		UserAddedProduct.all.each do |user_product|
+			user_product.recipients.all.each do |r|
+				if (r.notification_date.year == DateTime.now.year) && (r.notification_date.month == DateTime.now.month) && (r.notification_date.day == DateTime.now.day)
+					twilio_text = TwilioClient.new(user_product, r)
+					twilio_text.send_text
+				end
+			end
+		end
+	end
 end

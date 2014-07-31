@@ -71,7 +71,7 @@ $(function(){
 		$('#notification_date').val(moment(expDate).format("YYYY-MM-DD"));
 	})
 
-});	
+});
 
 $(function(){
 	$("#notify_date_type").change(function(){
@@ -104,4 +104,6 @@ $(function(){
     event.preventDefault();
     });
 });
+
+>>>>>>> fixing recipients
 

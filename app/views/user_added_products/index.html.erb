@@ -11,10 +11,11 @@
       <li> 
         <%= link_to "#{product.name}".capitalize, user_added_product_path(product) %>
       </li>
+      <li> <%= "#{product.exp_date}" %>
     <% end %>  
   </ul>
 </div>
 <div class="light well">
-  No Notifications sent
+  No Notifications Sent
 </div>
 <%= link_to "<i class='fa fa-plus'></i> &nbsp;Add Item".html_safe, new_user_added_product_path, class: "btn btn-info round2" %>
