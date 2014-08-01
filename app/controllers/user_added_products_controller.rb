@@ -9,9 +9,11 @@ class UserAddedProductsController < ApplicationController
 
   def create
    @user_product = UserAddedProduct.new(product_params)
+
     if @user_product.notification_date == ""
       @user_product.notification_date = @user_product.exp_date
     end
+
     if @user_product.save
       current_user.user_added_products << @user_product
       redirect_to user_added_product_path(@user_product)
