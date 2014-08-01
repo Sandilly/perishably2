@@ -59,14 +59,41 @@
     </div>
 
     <input id="notification_date" name="user_added_product[notification_date]" />
+    
+    </div>
 
-    <%= link_to 'Add people to notifications', '#add_recipients', :onclick => 'add_ppl_to_notification()', id: "add_recipients" %>
+    <div class="light well">
+      <h4>Recipients</h4>
+        <ul>
+        <%= @user_product.recipients.each do |p| %>
+          <li> 
+            <%= p.name %>
+            <%= p.email %>
+            <%= p.phone_number %>
+            <%= link_to %>
+          </li>
+        <% end %>
+      </ul>
+      <%= link_to 'Add people to notifications', '#add_recipients', id: "add_recipients" %>
+    </div>
+    
 
     <div id="add_ppl">
     </div>
-
     <%= link_to "<i class='fa fa-chevron-circle-left'></i> &nbsp;Back".html_safe, user_added_product_path, class: "btn btn-info round2" %>
     <%= f.submit "Update Item", class: "btn btn-info round2" %>
+
+    <!-- <div class="field">
+    <h2>Recipient</h2>
+  <%= f.fields_for(:recipients, Recipient.new) do |recipient_field| %>
+     <%= recipient_field.label :name %>
+     <%= recipient_field.text_field :name %>
+     <%= recipient_field.label :email %>
+     <%= recipient_field.text_field :email %>
+     <%= recipient_field.label :phone_number %>
+     <%= recipient_field.text_field :phone_number %>
+  <% end%>
+</div> -->
   </div> 
 </div>
 <% end %>
