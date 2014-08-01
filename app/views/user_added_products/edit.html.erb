@@ -11,8 +11,17 @@
     <%= f.label :product_details %>
     <%= f.text_field :product_details %>
 
+<<<<<<< HEAD
     <p>Date Added : <%= @user_product.created_at.strftime("%Y-%m-%d") %> </p>
 
+=======
+<<<<<<< HEAD
+    <!-- <p>Date Added : <%= @create_date %> </p> -->
+=======
+    <p>Date Added : <%= @user_product.created_at.strftime("%Y-%m-%d") %> </p>
+    
+>>>>>>> Fix view
+>>>>>>> Fix view
     <%= f.label :number_unit_of_time, "Num Time:" %>
     <%= f.select(:number_unit_of_time, options_for_select(1..7)) %> 
 
@@ -70,22 +79,21 @@
       <h4>Recipients</h4>
         <ul>
         <%= @user_product.recipients.each do |p| %>
-           <li> 
+          <li>
             <%= p.name %>
             <%= p.email %>
             <%= p.phone_number %>
             <%= link_to 'Edit' %>
             <%= link_to 'Delete' %>
-          </li> 
+          </li>
         <% end %>
       </ul>
       <%= link_to 'Add people to notifications', '#add_recipients', id: "add_recipients" %>
     </div>
-
     <div id="add_ppl">
     </div>
     <%= link_to "<i class='fa fa-chevron-circle-left'></i> &nbsp;Back".html_safe, user_added_product_path, class: "btn btn-info round2" %>
     <%= f.submit "Update Item", class: "btn btn-info round2" %>
 
-
 <% end %>
+
