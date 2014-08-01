@@ -11,11 +11,19 @@ class UserAddedProductsController < ApplicationController
     @user_product = UserAddedProduct.new(product_params)
     recipient_attributes = params[:user_added_product][:recipients_attributes]
     if recipient_attributes
+<<<<<<< HEAD
       if recipient_attributes.count > 0
         recipient_attributes.each_with_index do |recipient, index|
 
           if @recipient = Recipient.find_by(:email => recipient_attributes[index][:email])
             @user_product.recipients << @recipient #add recipient
+=======
+       if recipient_attributes.count > 0
+         recipient_attributes.each_with_index do |recipient, index|
+          binding.pry
+          if @recipient = Recipient.find_by(:email => recipient_attributes[index][:email])
+             @user_product.recipients << @recipient
+>>>>>>> fuck
           else
             #create the non-existent recipient
             #then add it.
@@ -41,11 +49,11 @@ class UserAddedProductsController < ApplicationController
   end
 
   def update
-    @user_product = UserAddedProduct.find(params[:id])
+   @user_product = UserAddedProduct.find(params[:id])
     @create_date = @user_product.created_at.strftime("%Y-%m-%d")
     if params[:user_added_product][:recipients_attributes].count > 0
       params[:user_added_product][:recipients_attributes].each_with_index do |recipient, index|
-        if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes][index][:email])
+        if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes]["0"][:email])
           if @user_product.recipients.include?(@recipient)
             flash.now[:notice] = "You have already added this recipient."
           else

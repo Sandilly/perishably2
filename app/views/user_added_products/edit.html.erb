@@ -11,24 +11,15 @@
     <%= f.label :product_details %>
     <%= f.text_field :product_details %>
 
-<<<<<<< HEAD
     <p>Date Added : <%= @user_product.created_at.strftime("%Y-%m-%d") %> </p>
 
-=======
-<<<<<<< HEAD
-    <!-- <p>Date Added : <%= @create_date %> </p> -->
-=======
-    <p>Date Added : <%= @user_product.created_at.strftime("%Y-%m-%d") %> </p>
-    
->>>>>>> Fix view
->>>>>>> Fix view
     <%= f.label :number_unit_of_time, "Num Time:" %>
     <%= f.select(:number_unit_of_time, options_for_select(1..7)) %> 
 
     <%= f.label :unit_of_time_period, "Unit of Time:" %>
 
     <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br>
-
+    
     <%= f.label "Date of Expiration:" %>
     <i class="fa fa-calendar"> 
       <%= f.text_field :exp_date , :id => "datepicker"%> 
@@ -85,7 +76,7 @@
             <%= p.phone_number %>
             <%= link_to 'Edit' %>
             <%= link_to 'Delete' %>
-          </li>
+          </li> 
         <% end %>
       </ul>
       <%= link_to 'Add people to notifications', '#add_recipients', id: "add_recipients" %>
