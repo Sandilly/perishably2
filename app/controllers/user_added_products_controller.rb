@@ -8,17 +8,28 @@ class UserAddedProductsController < ApplicationController
   end
 
   def create
-   @user_product = UserAddedProduct.new(product_params)
-
-    if @user_product.notification_date == ""
-      @user_product.notification_date = @user_product.exp_date
-    end
-
-    if @user_product.save
-      current_user.user_added_products << @user_product
-      redirect_to user_added_product_path(@user_product)
+    @user_product = UserAddedProduct.new(product_params)
+    binding.pry
+    if params[:user_added_product][:recipients_attributes].count > 0
+      params[:user_added_product][:recipients_attributes].each_with_index do |recipient, index|
+        if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes][index][:email])
+           @user_product.recipients << @recipient
+        else
+          if @user_product.save
+             current_user.user_added_products << @user_product
+             redirect_to user_added_product_path(@user_product)
+          else
+             render :new
+          end
+        end
+      end
     else
-      render :new
+      if @user_product.save
+         current_user.user_added_products << @user_product
+         redirect_to user_added_product_path(@user_product)
+      else
+         render :new
+      end 
     end
   end
 
@@ -65,19 +76,6 @@ class UserAddedProductsController < ApplicationController
     @time_type = @user_product.unit_of_time_period
 
     @product_exp = @user_product.created_at
-    
-    # if @time_type =~ /\bday(s|\(s\))?/i
-    # @exp_date = @product_exp + @time_add.days
-    # elsif @time_type =~ /\bweek(s|\(s\)?)/i
-    # @exp_date = @product_exp + @time_add.weeks
-    # elsif @time_type =~ /\bmonth(s|\(s\)?)/i
-    # @exp_date = @product_exp + @time_add.months
-    # elsif @time_type =~ /\byear(s|\(s\)?)/i
-    # @exp_date = @product_exp + @time_add.years
-    # else
-    # @exp_date = @user_product.unit_of_time_period
-    # end
-
   end
 
   private
@@ -85,12 +83,5 @@ class UserAddedProductsController < ApplicationController
   def product_params
     params.require(:user_added_product).permit(:name, :email, :notification_date, :sms, :product_details, :unit_of_time_period, :number_unit_of_time, :exp_date, :storage, :recipients_attributes =>[:id, :name, :email, :phone_number])
   end
-
-  # def recipient_params
-  #   binding.pry
-  #   params[:recipients] = params[:user_added_product][:recipients_attributes]["0"]
-  #   params.require(:recipients).permit!
-  # end
 end
 
-# params[:user_added_product][:recipients_attributes][index]
