@@ -20,10 +20,11 @@
     <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br> 
 
     <%= f.label :exp_date, "Date of Expiration:" %>
+
     <i class="fa fa-calendar">
       <%= f.text_field :exp_date , :id => "datepicker" %>
     <i>
-        
+    
     <%= f.label :storage, "Storage:" %>
     <%= f.text_field :storage %>
   </div>
