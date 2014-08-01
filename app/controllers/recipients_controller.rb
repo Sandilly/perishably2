@@ -35,7 +35,7 @@ class RecipientsController < ApplicationController
     @recipient = Recipient.find(params[:id])
   end
 
-  def recipient_params
-    params.require(:recipient).permit(:name, :email, :phone_number) 
+  def product_params
+    params.require(:user_added_product).permit(:name, :email, :notification_date, :sms, :product_details, :unit_of_time_period, :number_unit_of_time, :exp_date, :storage, :recipients_attributes =>[:id, :name, :email, :phone_number])
   end
 end

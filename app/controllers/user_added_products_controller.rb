@@ -9,12 +9,11 @@ class UserAddedProductsController < ApplicationController
 
   def create
     @user_product = UserAddedProduct.new(product_params)
-    binding.pry
     recipient_attributes = params[:user_added_product][:recipients_attributes]
     if recipient_attributes
        if recipient_attributes.count > 0
          recipient_attributes.each_with_index do |recipient, index|
-          if @recipient = Recipient.find_by(:email => recipient_attributes[index.to_s][:email])
+          if @recipient = Recipient.find_by(:email => recipient_attributes[index][:email])
              @user_product.recipients << @recipient
           else
             if @user_product.save
@@ -50,7 +49,11 @@ class UserAddedProductsController < ApplicationController
     if params[:user_added_product][:recipients_attributes].count > 0
       params[:user_added_product][:recipients_attributes].each_with_index do |recipient, index|
         if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes]["0"][:email])
-          @user_product.recipients << @recipient
+          if @user_product.recipients.include?(@recipient)
+            flash.now[:notice] = "You have already added this recipient."
+          else
+            @user_product.recipients << @recipient
+          end
         else
           @user_product.assign_attributes(product_params)
         end
