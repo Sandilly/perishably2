@@ -1,37 +1,31 @@
-<h1>
-  <i class="fa fa-plus small-i"></i>
-  <i class="fa fa-list-ol"></i> 
-  &nbsp;Add items to my list.
-</h1>
+
+<h1><i class="fa fa-plus small-i"></i><i class="fa fa-list-ol"></i> &nbsp;Add items to my list.</h1>
 <%= form_for(@user_product) do |f|%>
-  <div class = "light well">
-    <h4>Product Information</h4>
 
     <%= f.label "Name:" %>
     <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
+    <div class = "light well">
 
-    <%= f.label :product_details %>
-    <%= f.text_field :product_details %>
+        <%= f.label :product_details %>
+        <%= f.text_field :product_details %>
 
-    <%= f.label :number_unit_of_time, "Num Time:" %>
-    <%= f.select(:number_unit_of_time, options_for_select(1..15)) %> 
+        <%= f.label :number_unit_of_time, "Num Time:" %>
+        <%= f.select(:number_unit_of_time, options_for_select(1..15)) %> 
 
-    <%= f.label :unit_of_time_period, "Unit of Time:" %>
-    <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br> 
+        <%= f.label :unit_of_time_period, "Unit of Time:" %>
+        <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br> 
 
-    <%= f.label :exp_date, "Date of Expiration:" %>
+    		<%= f.label "Date of Expiration:" %>
+        <%#= link_to "Product has it's own expiration date",id: "ownExpDate" %>
+        <i class="fa fa-calendar"> 
+    		<%= f.text_field :exp_date , :id => "datepicker"%> 
+        </i>
+        <%#= f.label "Storage:" %>
+    	<%#= f.text_field :storage %>
+    </div>
 
-    <i class="fa fa-calendar">
-      <%= f.text_field :exp_date , :id => "datepicker" %>
-    <i>
-    
-    <%= f.label :storage, "Storage:" %>
-    <%= f.text_field :storage %>
-  </div>
-
-  <div class = "light well">
-    <h4>Product Notification Information</h4>
-    
+    <div class = "light well">
+  
     <%= f.check_box(:email) %>
     <%= f.label(:email, "Notify me by email") %>
 
@@ -40,36 +34,19 @@
 
     <%= radio_button_tag(:day_of?, "Default notification date", value="1") %>
     <%= label_tag(:default_notification, "Notify me on the expiration date.") %>
-    
     <%= radio_button_tag(:day_of?, "Specific notification date") %>
     <%= label_tag(:specific_notification, "Notify me before the expiration date.") %>
-    
     <div id="select_notification_date" style="display:none">
-      <select id='notify_num' name='notify_num'>
-        <option value='1'>1</option>
-        <option value='2'>2</option>
-        <option value='3'>3</option>
-        <option value='4'>4</option>
-        <option value='5'>5</option>
-        <option value='6'>6</option>
-        <option value='7'>7</option>
-      </select>
-
-      <select id='notify_date_type' name='notify_date_type'>
-        <option value='Day(s)'>Day(s)</option>
-        <option value='Week(s)'>Week(s)</option>
-        <option value='Month(s)'>Month(s)</option>
-        <option value='Year(s)'>Year(s)</option>
-      </select>
-    </div>
-    
-    <input id="notification_date" name="user_added_product[notification_date]" />
-    
-    <%= link_to 'Add people to notifications', '#add_recipients', :onclick => 'add_ppl_to_notification()', id: "add_recipients" %>
-   
-    <div id="add_ppl">
-    </div>
+<select id='notify_num' name='notify_num'><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option></select><select id='notify_date_type' name='notify_date_type'><option value='Day(s)'>Day(s)</option><option value='Week(s)'>Week(s)</option><option value='Month(s)'>Month(s)</option><option value='Year(s)'>Year(s)</option></select>
+  <!-- <input id="notification_date" name="user_added_product[notification_date]" type="hidden" /> --><br />
+<br>
+</div>
+<input id="notification_date" name="user_added_product[notification_date]" />
+ <%= link_to 'Add people to notifications', '#add_recipients',
+          :onclick => 'add_ppl_to_notification()', id: "add_recipients" %>
+   <div id="add_ppl">
   </div>
+
     <%= f.submit "Add Item", class: "btn btn-info round2" %>
 <% end %>
  

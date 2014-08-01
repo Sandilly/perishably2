@@ -2,7 +2,7 @@ class UserAddedProduct < ActiveRecord::Base
   belongs_to :user
   has_many :recipients
   validates :name, :presence => true
-  accepts_nested_attributes_for :recipients, allow_destroy: true
+  accepts_nested_attributes_for :recipients
 
   #before_save :set_expiration_date #, :set_notification_date
 
