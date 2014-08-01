@@ -37,8 +37,8 @@ class ProductRecipientsController < ApplicationController
 
   # def destroy
   #   @user_product = UserAddedProduct.find(params[:id])
-  #   @product_recipient = @user_product.recipients.find(params[:id])
-  #   redirect_to edit_user_added_product_path
+  #   @user_product.destroy
+  #   redirect_to user_added_products_path
   # end
 
   # def show
