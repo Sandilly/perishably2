@@ -1,5 +1,4 @@
 class RecipientsController < ApplicationController
-  belongs_to :user
   before_action :find_objects, only: [:show]
 
   def new
