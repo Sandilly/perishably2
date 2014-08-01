@@ -4,7 +4,7 @@ gem 'bcrypt'
 gem 'nokogiri'
 gem 'rest-client', require: "rest_client"
 gem 'binding_of_caller'
-# gem 'better_errors'
+gem 'better_errors'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem "font-awesome-rails" 
 gem 'pry-nav'

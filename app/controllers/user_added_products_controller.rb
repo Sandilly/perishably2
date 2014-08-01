@@ -10,16 +10,19 @@ class UserAddedProductsController < ApplicationController
   def create
     @user_product = UserAddedProduct.new(product_params)
     binding.pry
-    if params[:user_added_product][:recipients_attributes].count > 0
-      params[:user_added_product][:recipients_attributes].each_with_index do |recipient, index|
-        if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes][index][:email])
-           @user_product.recipients << @recipient
-        else
-          if @user_product.save
-             current_user.user_added_products << @user_product
-             redirect_to user_added_product_path(@user_product)
+    recipient_attributes = params[:user_added_product][:recipients_attributes]
+    if recipient_attributes
+       if recipient_attributes.count > 0
+         recipient_attributes.each_with_index do |recipient, index|
+          if @recipient = Recipient.find_by(:email => recipient_attributes[index.to_s][:email])
+             @user_product.recipients << @recipient
           else
-             render :new
+            if @user_product.save
+               current_user.user_added_products << @user_product
+               redirect_to user_added_product_path(@user_product)
+            else
+               render :new
+            end
           end
         end
       end
