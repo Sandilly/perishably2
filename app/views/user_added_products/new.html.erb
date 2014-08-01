@@ -1,4 +1,3 @@
-
 <h1><i class="fa fa-plus small-i"></i><i class="fa fa-list-ol"></i> &nbsp;Add items to my list.</h1>
 <%= form_for(@user_product) do |f|%>
 
@@ -15,7 +14,7 @@
         <%= f.label :unit_of_time_period, "Unit of Time:" %>
         <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br> 
 
-    		<%= f.label "Date of Expiration:" %>
+        <%= f.label "Date of Expiration:" %>
         <%#= link_to "Product has it's own expiration date",id: "ownExpDate" %>
         <i class="fa fa-calendar"> 
     		<%= f.text_field :exp_date , :id => "datepicker"%> 
@@ -38,19 +37,29 @@
     <%= label_tag(:specific_notification, "Notify me before the expiration date.") %>
     <div id="select_notification_date" style="display:none">
 <select id='notify_num' name='notify_num'><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option></select><select id='notify_date_type' name='notify_date_type'><option value='Day(s)'>Day(s)</option><option value='Week(s)'>Week(s)</option><option value='Month(s)'>Month(s)</option><option value='Year(s)'>Year(s)</option></select>
-  <!-- <input id="notification_date" name="user_added_product[notification_date]" type="hidden" /> --><br />
+  <input id="notification_date" name="user_added_product[notification_date]" /><br />
 <br>
 </div>
-<input id="notification_date" name="user_added_product[notification_date]" />
- <%= link_to 'Add people to notifications', '#add_recipients',
+
+    <%= link_to 'Add people to notifications', '#add_recipients',
           :onclick => 'add_ppl_to_notification()', id: "add_recipients" %>
-   <div id="add_ppl">
+ 
+    <div id="add_ppl">
+  <div class="field">
+  <%= f.fields_for :recipients do |recipient_field| %>
+     <%= recipient_field.label :name %>
+     <%= recipient_field.text_field :name %>
+     <%= recipient_field.label :email %>
+     <%= recipient_field.text_field :email %>
+     <%= recipient_field.label :phone_number %>
+     <%= recipient_field.text_field :phone_number %>
+  <% end%>
+    </div>
   </div>
+ 
 
     <%= f.submit "Add Item", class: "btn btn-info round2" %>
 <% end %>
  
 <%= link_to "<i class='fa fa-times'></i> Cancel".html_safe, user_added_products_path, class: "btn btn-inverse round2" %>
-
-
 
