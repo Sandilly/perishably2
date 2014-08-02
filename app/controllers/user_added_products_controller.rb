@@ -11,27 +11,25 @@ class UserAddedProductsController < ApplicationController
     @user_product = UserAddedProduct.new(product_params)
     recipient_attributes = params[:user_added_product][:recipients_attributes]
     if recipient_attributes
-       if recipient_attributes.count > 0
-         recipient_attributes.each_with_index do |recipient, index|
+      if recipient_attributes.count > 0
+        recipient_attributes.each_with_index do |recipient, index|
+
           if @recipient = Recipient.find_by(:email => recipient_attributes[index][:email])
-             @user_product.recipients << @recipient
+            @user_product.recipients << @recipient #add recipient
           else
-            if @user_product.save
-               current_user.user_added_products << @user_product
-               redirect_to user_added_product_path(@user_product)
-            else
-               render :new
-            end
+            #create the non-existent recipient
+            #then add it.
           end
+          binding.pry
         end
       end
+    end
+    current_user.user_added_products << @user_product
+    if @user_product.save
+      redirect_to user_added_product_path(@user_product)
     else
-      if @user_product.save
-         current_user.user_added_products << @user_product
-         redirect_to user_added_product_path(@user_product)
-      else
-         render :new
-      end 
+      flash.now[:notice] = "Please try again."
+      render :new
     end
   end
 
@@ -69,7 +67,7 @@ class UserAddedProductsController < ApplicationController
     end
   end
 
-   def destroy
+  def destroy
     @user_product = UserAddedProduct.find(params[:id])
     @user_product.destroy
     redirect_to user_added_products_path
@@ -90,4 +88,3 @@ class UserAddedProductsController < ApplicationController
     params.require(:user_added_product).permit(:name, :email, :notification_date, :sms, :product_details, :unit_of_time_period, :number_unit_of_time, :exp_date, :storage, :recipients_attributes =>[:id, :name, :email, :phone_number])
   end
 end
-
