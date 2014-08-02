@@ -48,7 +48,7 @@ class UserAddedProductsController < ApplicationController
     @create_date = @user_product.created_at.strftime("%Y-%m-%d")
     if params[:user_added_product][:recipients_attributes].count > 0
       params[:user_added_product][:recipients_attributes].each_with_index do |recipient, index|
-        if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes]["0"][:email])
+        if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes][index][:email])
           if @user_product.recipients.include?(@recipient)
             flash.now[:notice] = "You have already added this recipient."
           else
