@@ -1,36 +1,36 @@
-function getDates(){
-  var oneDay = 24*60*60*1000;
-  
-  var today = moment().format("YYYY-MM-DD");
-  var startDate = $('#date_added').text();
-  var endDate = $('#date_exp').text();
+function splitDates(date){
+  var date_split = date.split("-");
+  return parseDates(date_split);
+};
 
-  var splitToday = today.split("-");
-  var todayYear = parseInt(splitToday[0]);
-  var todayMonth = parseInt(splitToday[1]);
-  var todayDay = parseInt(splitToday[2]);
+function parseDates(date){
+  var parse_year = parseInt(date[0]);
+  var parse_month = parseInt(date[1]-1);
+  var parse_day = parseInt(date[2]);
+  return getDateObj(parse_year, parse_month, parse_day);
+};
 
-  var splitStart = startDate.split("-");
-  var startYear = parseInt(splitStart[0]);
-  var startMonth = parseInt(splitStart[1]);
-  var startDay = parseInt(splitStart[2]);
+function getDateObj(year,month,day){
+  var dateObj = new Date(year,month,day);
+  return dateObj;
+};
 
-  var splitEnd = endDate.split("-");
-  var endYear = parseInt(splitEnd[0]);
-  var endMonth = parseInt(splitEnd[1]);
-  var endDay = parseInt(splitEnd[2]);
+function total(start, end, day){
+  var totalDays = Math.round(Math.abs((start.getTime() - end.getTime())/(day)));
+  return totalDays;
+};
 
-  var newStart = new Date(startYear,startMonth, startDay);
-  var newEnd = new Date(endYear, endMonth, endDay);
-  var newToday = new Date(todayYear, todayMonth, todayDay);
-  
-  var totalDays = Math.round(Math.abs((newStart.getTime() - newEnd.getTime())/(oneDay)));
-  var daysPassed = Math.round(Math.abs((newStart.getTime() - newToday.getTime())/(oneDay)));
+function daysPassed(start, today, day){
+  var daysPass = Math.round(Math.abs((start.getTime() - today.getTime())/(day)));
+  return daysPass;
+};
 
-  var daysleft = totalDays - daysPassed;
-  //var percent = Math.floor((daysPassed / totalDays)*100) + "%";
-  var percent = (daysPassed / totalDays)*100;
-  //console.log(percent);
+function percent(){
+  var percentForBar = (daysPassed / totalDays)*100;
+  return percentForBar;
+};
+
+function setProgressBar(days,percent){
   $('.bar').progressbar({
     display_text: 'fill',
     use_percentage: false
@@ -40,6 +40,27 @@ function getDates(){
   $('.bar').attr("aria-valuetransitiongoal", percent);
   $('.bar').attr("aria-valuenow", percent);
 
-  $('.bar').html(daysleft + " Day(s) Left");
+  $('.bar').html(days + " Day(s) Left");
+
+};
+
+function setVariables(){
+  var oneDay = 24*60*60*1000;
+
+  var today = moment().format("YYYY-MM-DD");
+  var startDate = $('#date_added').text();
+  var endDate = $('#date_exp').text();
+
+  var newToday = splitDates(today);
+  var newStart = splitDates(startDate);
+  var newEnd = splitDates(endDate);
+
+  var totalDays = total(newStart,newEnd, oneDay);
+  var daysGone = daysPassed(newStart, newToday, oneDay);
+  
+  var daysleft = totalDays - daysGone;
+  var percentage = (daysGone / totalDays)*100;
+
+  setProgressBar(daysleft, percentage);
 };
 

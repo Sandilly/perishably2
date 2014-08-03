@@ -11,19 +11,11 @@ class UserAddedProductsController < ApplicationController
     @user_product = UserAddedProduct.new(product_params)
     recipient_attributes = params[:user_added_product][:recipients_attributes]
     if recipient_attributes
-<<<<<<< HEAD
       if recipient_attributes.count > 0
         recipient_attributes.each_with_index do |recipient, index|
 
           if @recipient = Recipient.find_by(:email => recipient_attributes[index][:email])
             @user_product.recipients << @recipient #add recipient
-=======
-       if recipient_attributes.count > 0
-         recipient_attributes.each_with_index do |recipient, index|
-          binding.pry
-          if @recipient = Recipient.find_by(:email => recipient_attributes[index][:email])
-             @user_product.recipients << @recipient
->>>>>>> fuck
           else
             #create the non-existent recipient
             #then add it.
@@ -49,32 +41,61 @@ class UserAddedProductsController < ApplicationController
   end
 
   def update
-   @user_product = UserAddedProduct.find(params[:id])
+    @user_product = UserAddedProduct.find(params[:id])
     @create_date = @user_product.created_at.strftime("%Y-%m-%d")
+
     if params[:user_added_product][:recipients_attributes].count > 0
       params[:user_added_product][:recipients_attributes].each_with_index do |recipient, index|
         if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes]["0"][:email])
           if @user_product.recipients.include?(@recipient)
             flash.now[:notice] = "You have already added this recipient."
           else
-            @user_product.recipients << @recipient
+            if @user_product.save
+              @user_product.assign_attributes(product_params)
+              redirect_to user_added_product_path(@user_product) and return
+            else
+              render :edit
+            end
           end
-        else
-          @user_product.assign_attributes(product_params)
         end
       end
-    else
-      @user_product.assign_attributes(product_params)
+        #if @recipient = Recipient.find_by(:email => recipient_attributes[index][:email])
     end
-    if @user_product.save
-      redirect_to user_added_product_path(@user_product)
-    else
-      flash.now[:notice] = "Your submission is invalid."
-      render "edit"
-    end
+  
   end
 
-  def destroy
+
+
+
+
+
+
+
+
+
+  #       if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes]["0"][:email])
+  #         if @user_product.recipients.include?(@recipient)
+  #           flash.now[:notice] = "You have already added this recipient."
+  #         else
+  #           @user_product.recipients << @recipient
+  #         end
+  #       else
+  #         @user_product.assign_attributes(product_params)
+  #       end
+  #     end
+  #   else
+  #     @user_product.assign_attributes(product_params)
+  #   end
+  #   if @user_product.save
+  #     redirect_to user_added_product_path(@user_product)
+  #   else
+  #     flash.now[:notice] = "Your submission is invalid."
+  #     render "edit"
+  #   end
+  # end
+
+   def destroy
+>>>>>>> refactored progressbar.js
     @user_product = UserAddedProduct.find(params[:id])
     @user_product.destroy
     redirect_to user_added_products_path
