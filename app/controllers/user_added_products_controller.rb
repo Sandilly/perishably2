@@ -10,17 +10,10 @@ class UserAddedProductsController < ApplicationController
   def create
     @user_product = UserAddedProduct.new(product_params)
     recipient_attributes = params[:user_added_product][:recipients_attributes]
-    if recipient_attributes
-      if recipient_attributes.count > 0
-        recipient_attributes.each_with_index do |recipient, index|
-
-          if @recipient = Recipient.find_by(:email => recipient_attributes[index][:email])
-            @user_product.recipients << @recipient #add recipient
-          else
-            #create the non-existent recipient
-            #then add it.
-          end
-          binding.pry
+    if recipient_attributes.count > 0
+      recipient_attributes.each_with_index do |recipient, index|
+        if @recipient = Recipient.find_by(:email => recipient_attributes[index][:email])
+           @recipient.save 
         end
       end
     end
