@@ -71,8 +71,9 @@
             <%= p.name %>
             <%= p.email %>
             <%= p.phone_number %>
-            <%= link_to 'Edit' %>
-            <%= link_to 'Delete' %>
+            <%# link_to 'Edit', edit_user_added_product_recipient_path %>
+            <%# link_to 'Delete', user_added_product_path(product)%>
+            <%# link_to recipient.name.capitalize, user_added_product_recipient_path(@user_product, recipient) %>
           </li> 
         <% end %>
       </ul>

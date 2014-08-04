@@ -7,12 +7,34 @@ class UserAddedProductsController < ApplicationController
     @user_product.email = true
   end
 
+  
+  # def create
+  #   @user_product = UserAddedProduct.new(product_params)
+  #   recipient_attributes = params[:user_added_product][:recipients_attributes]
+  
+  #   if recipient_attributes.count > 0
+  #     recipient_attributes.each_with_index do |recipient, index|
+  #       if @recipient = Recipient.find_by(:email => recipient_attributes[index][:email])
+  #          @recipient.save 
+  #       end
+  #     end
+  #   end
+  #   current_user.user_added_products << @user_product
+  #   if @user_product.save
+  #     redirect_to user_added_product_path(@user_product)
+  #   else
+  #     flash.now[:notice] = "Please try again."
+  #     render :new
+  #   end
+  # end
+
   def create
     @user_product = UserAddedProduct.new(product_params)
-    recipient_attributes = params[:user_added_product][:recipients_attributes]
-    if recipient_attributes.count > 0
-      recipient_attributes.each_with_index do |recipient, index|
-        if @recipient = Recipient.find_by(:email => recipient_attributes[index][:email])
+    if !params[:user_added_product][:recipients_attributes]
+      current_user.user_added_products << @user_product
+    else
+      params[:user_added_product][:recipients_attributes].each_with_index do |recipient, index|
+        if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes][index][:email])
            @recipient.save 
         end
       end
@@ -25,7 +47,6 @@ class UserAddedProductsController < ApplicationController
       render :new
     end
   end
-
   def index
     @products = current_user.user_added_products
   end
@@ -34,23 +55,52 @@ class UserAddedProductsController < ApplicationController
     @user_product = UserAddedProduct.find(params[:id])
   end
 
+  # def update
+  #   @user_product = UserAddedProduct.find(params[:id])
+  #   @create_date = @user_product.created_at.strftime("%Y-%m-%d")
+  #   if params[:user_added_product][:recipients_attributes].count > 0
+  #     params[:user_added_product][:recipients_attributes].each_with_index do |recipient, index|
+  #       if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes][index][:email])
+  #         @recipient.save
+  #         # if @user_product.recipients.include?(@recipient)
+  #         #   flash.now[:notice] = "You have already added this recipient."
+  #         # else
+  #         #   @user_product.recipients << @recipient
+  #         # end
+  #       else
+  #         @user_product.assign_attributes(product_params)
+  #       end
+  #     end
+  #   else
+  #     @user_product.assign_attributes(product_params)
+  #   end
+  #   if @user_product.save
+  #     redirect_to user_added_product_path(@user_product)
+  #   else
+  #     flash.now[:notice] = "Your submission is invalid."
+  #     render "edit"
+  #   end
+  # end
+
   def update
     @user_product = UserAddedProduct.find(params[:id])
     @create_date = @user_product.created_at.strftime("%Y-%m-%d")
-    if params[:user_added_product][:recipients_attributes].count > 0
+    if !params[:user_added_product][:recipients_attributes]
+      @user_product.assign_attributes(product_params)
+    else 
       params[:user_added_product][:recipients_attributes].each_with_index do |recipient, index|
         if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes][index][:email])
-          if @user_product.recipients.include?(@recipient)
-            flash.now[:notice] = "You have already added this recipient."
-          else
-            @user_product.recipients << @recipient
-          end
+          @recipient.save
+          # if @user_product.recipients.include?(@recipient)
+          #   flash.now[:notice] = "You have already added this recipient."
+          # else
+          #   @user_product.recipients << @recipient
+          # end
         else
           @user_product.assign_attributes(product_params)
+          current_user.user_added_products << @user_product
         end
       end
-    else
-      @user_product.assign_attributes(product_params)
     end
     if @user_product.save
       redirect_to user_added_product_path(@user_product)
@@ -59,7 +109,6 @@ class UserAddedProductsController < ApplicationController
       render "edit"
     end
   end
-
   def destroy
     @user_product = UserAddedProduct.find(params[:id])
     @user_product.destroy
@@ -77,7 +126,11 @@ class UserAddedProductsController < ApplicationController
 
   private
 
-  def product_params
-    params.require(:user_added_product).permit(:name, :email, :notification_date, :sms, :product_details, :unit_of_time_period, :number_unit_of_time, :exp_date, :storage, :recipients_attributes =>[:id, :name, :email, :phone_number])
+  def product_params 
+    params.require(:user_added_product).permit(:name,
+    :email, :notification_date, :sms, :product_details,
+    :unit_of_time_period, :number_unit_of_time, :exp_date, :storage,
+    :recipients_attributes =>[:id, :name, :email, :phone_number])      
   end
+
 end
