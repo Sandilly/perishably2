@@ -7,7 +7,7 @@
   <%= render "layouts/flash_notices" %>
   <p> My Products </p>
   <ul>
-    <% @products.each do |product|%>
+    <% @products.sort.each do |product|%>
       <li> 
         <%= link_to "#{product.name}".capitalize, user_added_product_path(product) %>
       </li>

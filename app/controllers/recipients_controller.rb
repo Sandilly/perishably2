@@ -2,8 +2,8 @@ class RecipientsController < ApplicationController
   before_action :find_objects, only: [:show]
 
   def new
-      @user_product = UserAddedProduct.find(params[:user_added_product_id])
-      @recipient = Recipient.new
+    @user_product = UserAddedProduct.find(params[:user_added_product_id])
+    @recipient = Recipient.new
   end
 
   def create
@@ -12,10 +12,10 @@ class RecipientsController < ApplicationController
     if @recipient.save
       current_user.recipients << @recipient
       redirect_to user_added_products_path, notice:  "#{@recipient.name}.capitalize will be notified on #{@product.exp_date.strftime("%B %d, %Y")} about #{@user_product.name}."
-    else 
+    else
       render "user_added_products/show"
     end
-  end  
+  end
 
   def show
     @recipients_stuff = @recipient.user_added_products
@@ -28,13 +28,13 @@ class RecipientsController < ApplicationController
   end
 
   private
-  
+
   def find_objects
     @user_product = UserAddedProduct.find(params[:user_added_product_id])
     @recipient = Recipient.find(params[:id])
   end
 
-  def recipient_params
-    params.require(:recipient).permit(:name, :email, :phone_number) 
+  def product_params
+    params.require(:user_added_product).permit(:name, :email, :notification_date, :sms, :product_details, :unit_of_time_period, :number_unit_of_time, :exp_date, :storage, :recipients_attributes =>[:id, :name, :email, :phone_number])
   end
 end
