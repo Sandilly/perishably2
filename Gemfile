@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
+gem 'devise'
 gem 'pry'
-gem 'bcrypt'
 gem 'nokogiri'
 gem 'rest-client', require: "rest_client"
 gem 'binding_of_caller'

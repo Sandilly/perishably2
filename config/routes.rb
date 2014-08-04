@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+  devise_for :users
+  root :to => 'user_added_products#index'
   get '/', to: 'user_added_products#index'
   
   get 'signup', to: 'users#new', as: 'signup' 
@@ -16,8 +17,7 @@ Rails.application.routes.draw do
   resources :sessions 
 
   resources :products, only: [:edit, :index, :destroy, :update, :new, :show, :create] 
-  root :to =>'sessions#new' #login page
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

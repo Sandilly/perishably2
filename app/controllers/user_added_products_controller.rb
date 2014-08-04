@@ -1,6 +1,6 @@
 class UserAddedProductsController < ApplicationController
-
-  before_action :login_required
+  before_filter :authenticate_user!
+    #why not before_action? as in railscast?
 
   def new
     @user_product = UserAddedProduct.new
