@@ -20,7 +20,6 @@ class UserAddedProductsController < ApplicationController
             #create the non-existent recipient
             #then add it.
           end
-          binding.pry
         end
       end
     end
