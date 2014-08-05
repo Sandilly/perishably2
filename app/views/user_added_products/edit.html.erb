@@ -66,13 +66,13 @@
     <div class="light well">
       <h4>Recipients</h4>
         <ul>
-        <%= @user_product.recipients.each do |r| %>
+        <% @user_product.recipients.each do |r| %>
            <li> 
-            <%= r.name %>
+            <%= r.name.capitalize %>
             <%= r.email %>
             <%= r.phone_number %>
             <%= link_to 'Edit', edit_user_added_product_recipient_path(@user_product, r) %>
-            <%= link_to 'Delete', user_added_product_path(r)%>
+            <%= link_to 'Delete', user_added_product_recipient_path(@user_product, r), method: :delete, data: { confirm: "Are you sure?" }%>
           </li> 
         <% end %>
       </ul>
