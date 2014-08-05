@@ -90,12 +90,11 @@ class UserAddedProductsController < ApplicationController
     else 
       params[:user_added_product][:recipients_attributes].each_with_index do |recipient, index|
         if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes][index][:email])
+          if @user_product.recipients.all.include?(@recipient)
+            flash.now[:notice] = "You have already added this recipient."
+          end
           @recipient.save
-          # if @user_product.recipients.include?(@recipient)
-          #   flash.now[:notice] = "You have already added this recipient."
-          # else
-          #   @user_product.recipients << @recipient
-          # end
+          @user_product.recipients << @recipient
         else
           @user_product.assign_attributes(product_params)
           current_user.user_added_products << @user_product

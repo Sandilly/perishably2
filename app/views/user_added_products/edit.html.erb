@@ -66,14 +66,13 @@
     <div class="light well">
       <h4>Recipients</h4>
         <ul>
-        <%= @user_product.recipients.each do |p| %>
+        <%= @user_product.recipients.each do |r| %>
            <li> 
-            <%= p.name %>
-            <%= p.email %>
-            <%= p.phone_number %>
-            <%# link_to 'Edit', edit_user_added_product_recipient_path %>
-            <%# link_to 'Delete', user_added_product_path(product)%>
-            <%# link_to recipient.name.capitalize, user_added_product_recipient_path(@user_product, recipient) %>
+            <%= r.name %>
+            <%= r.email %>
+            <%= r.phone_number %>
+            <%= link_to 'Edit', edit_user_added_product_recipient_path(@user_product, r) %>
+            <%= link_to 'Delete', user_added_product_path(r)%>
           </li> 
         <% end %>
       </ul>
