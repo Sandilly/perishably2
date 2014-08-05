@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+  #get 'signup' => 'devise/registrations#new', :as => 'new_registration'
   root :to => 'user_added_products#index'
-  get '/', to: 'user_added_products#index'
-  
-  get 'signup', to: 'users#new', as: 'signup' 
-  get 'login', to: 'sessions#new', as: 'login' 
-  get 'logout', to: 'sessions#destroy', as: 'logout' 
+  devise_for :users
+  #get 'signup', to: 'users#new', as: 'signup' 
+  #get 'login', to: 'sessions#new', as: 'login' 
+  #get 'logout', to: 'sessions#destroy', as: 'logout' 
 
   get 'products/search/:name', to: 'products#search'
 
@@ -13,8 +13,7 @@ Rails.application.routes.draw do
   resources :user_added_products do 
     resources :recipients
   end
-  resources :sign_ins
-  resources :sessions 
+  #resources :sign_ins
 
   resources :products, only: [:edit, :index, :destroy, :update, :new, :show, :create] 
   

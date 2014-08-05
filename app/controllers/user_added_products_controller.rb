@@ -33,7 +33,13 @@ class UserAddedProductsController < ApplicationController
   end
 
   def index
-    @products = current_user.user_added_products
+    if user_signed_in?
+    #binding.pry
+    if current_user.user_added_products
+      @products = current_user.user_added_products
+    end
+  end
+
   end
 
   def edit
