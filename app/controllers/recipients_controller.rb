@@ -22,14 +22,14 @@ class RecipientsController < ApplicationController
     @recipient = Recipient.find(params[:id])
     @recipient.update(recipient_params)
     if @recipient.save  
-      redirect_to user_added_product_path(@user_product), notice:  "#{@recipient.name.capitalize} has been updated."
+      redirect_to user_added_product_path(@user_product)
     else
       render :edit
     end
   end
 
   def show
-    @recipients_stuff = @recipient.user_added_products
+    @recipients_stuff = @recipient.user_added_products.all
   end
 
   def notify
