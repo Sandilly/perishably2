@@ -7,19 +7,15 @@ class UserAddedProductsController < ApplicationController
     @user_product.email = true
   end
 
-  def create
+   def create
     @user_product = UserAddedProduct.new(product_params)
-    recipient_attributes = params[:user_added_product][:recipients_attributes]
-    if recipient_attributes
-      if recipient_attributes.count > 0
-        recipient_attributes.each_with_index do |recipient, index|
-
-          if @recipient = Recipient.find_by(:email => recipient_attributes[index][:email])
-            @user_product.recipients << @recipient #add recipient
-          else
-            #create the non-existent recipient
-            #then add it.
-          end
+    if !params[:user_added_product][:recipients_attributes]
+      current_user.user_added_products << @user_product
+    else
+      params[:user_added_product][:recipients_attributes].each_with_index do |recipient, index|
+        if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes][index][:email])
+           @recipient.update(:phone_number => params[:user_added_product][:recipients_attributes][index][:phone_number])
+           @recipient.save
         end
       end
     end
@@ -31,7 +27,6 @@ class UserAddedProductsController < ApplicationController
       render :new
     end
   end
-
   def index
     @products = current_user.user_added_products
   end
@@ -43,20 +38,21 @@ class UserAddedProductsController < ApplicationController
   def update
     @user_product = UserAddedProduct.find(params[:id])
     @create_date = @user_product.created_at.strftime("%Y-%m-%d")
-    if params[:user_added_product][:recipients_attributes].count > 0
+    if !params[:user_added_product][:recipients_attributes]
+      @user_product.assign_attributes(product_params)
+    else 
       params[:user_added_product][:recipients_attributes].each_with_index do |recipient, index|
         if @recipient = Recipient.find_by(:email => params[:user_added_product][:recipients_attributes][index][:email])
-          if @user_product.recipients.include?(@recipient)
+          @recipient.phone_number == params[:user_added_product][:recipients_attributes][index][:phone_number]
+          if @user_product.recipients.all.include?(@recipient)
             flash.now[:notice] = "You have already added this recipient."
-          else
-            @user_product.recipients << @recipient
           end
+          @recipient.save
         else
           @user_product.assign_attributes(product_params)
+          current_user.user_added_products << @user_product
         end
       end
-    else
-      @user_product.assign_attributes(product_params)
     end
     if @user_product.save
       redirect_to user_added_product_path(@user_product)
@@ -65,7 +61,6 @@ class UserAddedProductsController < ApplicationController
       render "edit"
     end
   end
-
   def destroy
     @user_product = UserAddedProduct.find(params[:id])
     @user_product.destroy
@@ -77,13 +72,16 @@ class UserAddedProductsController < ApplicationController
     @create_date = @user_product.created_at.strftime("%Y-%m-%d")
     @time_add = @user_product.number_unit_of_time.to_i
     @time_type = @user_product.unit_of_time_period
-
     @product_exp = @user_product.created_at
   end
 
   private
 
-  def product_params
-    params.require(:user_added_product).permit(:name, :email, :notification_date, :sms, :product_details, :unit_of_time_period, :number_unit_of_time, :exp_date, :storage, :recipients_attributes =>[:id, :name, :email, :phone_number])
+  def product_params 
+    params.require(:user_added_product).permit(:name,
+    :email, :notification_date, :sms, :product_details,
+    :unit_of_time_period, :number_unit_of_time, :exp_date, :storage,
+    :recipients_attributes =>[:id, :name, :email, :phone_number])      
   end
+
 end
