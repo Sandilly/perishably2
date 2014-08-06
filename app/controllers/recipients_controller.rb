@@ -29,6 +29,7 @@ class RecipientsController < ApplicationController
   end
 
   def show
+
     @recipients_stuff = @recipient.user_added_products.all
   end
 
