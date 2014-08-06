@@ -6,12 +6,7 @@
 <div class="light well">
   <%= render "layouts/flash_notices" %>
   <p> My Products </p>
-<<<<<<< HEAD
-  <ul>
-    <% @products.sort.each do |product|%>
-      <li> 
-        <%= link_to "#{product.name}".capitalize, user_added_product_path(product) %>
-=======
+
   <ul id = "user_product_list">
     <% @products.each do |product|%>
       <li class="product_info"> 
@@ -21,7 +16,7 @@
           </li>
           <li class="product_doe"> <%= "#{product.exp_date}" %>
         </ul>
->>>>>>> refactored progressbar.js
+
       </li>
       
     <% end %>  
