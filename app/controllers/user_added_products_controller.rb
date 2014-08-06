@@ -119,7 +119,6 @@ class UserAddedProductsController < ApplicationController
     @create_date = @user_product.created_at.strftime("%Y-%m-%d")
     @time_add = @user_product.number_unit_of_time.to_i
     @time_type = @user_product.unit_of_time_period
-
     @product_exp = @user_product.created_at
   end
 

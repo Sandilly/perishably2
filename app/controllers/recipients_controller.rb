@@ -47,7 +47,7 @@ class RecipientsController < ApplicationController
     @user_product = UserAddedProduct.find(params[:user_added_product_id])
     @recipient = Recipient.find(params[:id])
     @recipient.destroy
-    redirect_to user_added_products_path
+    redirect_to user_added_product_path(@user_product)
   end
 
   private
