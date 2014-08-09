@@ -32,6 +32,8 @@
   <p> Notify by: </p>
 
   <div class = "light well">
+    <%= f.check_box(:email) %>
+    <%= f.label(:email, "Notify me by email") %>
 
     <%= f.check_box(:sms) %>
     <%= f.label(:sms, "Notify me by text message") %>
@@ -75,7 +77,7 @@
           </li> 
         <% end %>
       </ul>
-      <%= link_to 'Add people to notifications', '#add_recipients', id: "add_recipients" %>
+      <p id="add_recipients"> Add People to Notifications </p>
       <div id="add_ppl">
     </div>
     </div>
