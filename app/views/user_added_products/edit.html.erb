@@ -76,11 +76,12 @@
         <% end %>
       </ul>
       <%= link_to 'Add people to notifications', '#add_recipients', id: "add_recipients" %>
+      <div id="add_ppl">
+    </div>
     </div>
 
 
-    <div id="add_ppl">
-    </div>
+    
     <%= link_to "<i class='fa fa-chevron-circle-left'></i> &nbsp;Back".html_safe, user_added_product_path, class: "btn btn-info round2" %>
     <%= f.submit "Update Item", class: "btn btn-info round2" %>
 
