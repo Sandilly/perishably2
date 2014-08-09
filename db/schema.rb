@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140721210346) do
+ActiveRecord::Schema.define(version: 20140806211041) do
+
 
   create_table "product_recipients", force: true do |t|
     t.integer "user_added_product_id"
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 20140721210346) do
     t.string   "storage"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "recipient_id"
   end
 
   create_table "users", force: true do |t|
