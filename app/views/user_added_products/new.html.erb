@@ -1,9 +1,14 @@
-  <%# render "layouts/flash_notices" %><h1><i class="fa fa-plus small-i"></i><i class="fa fa-list-ol"></i> &nbsp;Add items to my list.</h1>
+
+<h1>
+  <i class="fa fa-plus small-i"></i>
+  <i class="fa fa-list-ol"></i> &nbsp;Add items to my list.
+</h1>
+
 <%= form_for(@user_product) do |f|%>
 
-    <%= f.label "Name:" %>
-    <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
     <div class = "light well">
+        <%= f.label "Name:" %>
+      <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
 
         <%= f.label :product_details %>
         <%= f.text_field :product_details %>
@@ -15,11 +20,11 @@
         <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br> 
 
         <%= f.label "Date of Expiration:" %>
-        <%#= link_to "Product has it's own expiration date",id: "ownExpDate" %>
     		<%= f.text_field :exp_date , :id => "datepicker"%> 
         </i>
-        <%#= f.label "Storage:" %>
-    	<%#= f.text_field :storage %>
+        
+        <%= f.label "Storage:" %>
+    	  <%= f.text_field :storage %>
     </div>
 
     <div class = "light well">
@@ -40,22 +45,13 @@
 <br>
 </div>
 
-    <%= link_to 'Add people to notifications', '#add_recipients',
+    <%#= link_to 'Add people to notifications', '#add_recipients',
           :onclick => 'add_ppl_to_notification()', id: "add_recipients" %>
+  <p id="add_recipients"> Add People to Notifications </p>
  
-    <div id="add_ppl">
-  <div class="field">
-  <%= f.fields_for :recipients do |recipient_field| %>
-     <%= recipient_field.label :name %>
-     <%= recipient_field.text_field :name %>
-     <%= recipient_field.label :email %>
-     <%= recipient_field.text_field :email %>
-     <%= recipient_field.label :phone_number %>
-     <%= recipient_field.text_field :phone_number %>
-  <% end%>
-    </div>
+  <div id="add_ppl">
   </div>
- 
+</div>
 
     <%= f.submit "Add Item", class: "btn btn-info round2" %>
 <% end %>
