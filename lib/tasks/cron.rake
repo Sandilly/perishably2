@@ -7,7 +7,15 @@ namespace :cron do
 			end
 		end
 	end
-end
 
 #first test new whenever rake task that includes both
 #then test it on heroku
+  desc "auto-delete expired items"
+  task :auto_delete => :environment do
+    UserAddedProduct.all.each do |p|
+      if (p.exp_date.year == DateTime.now.year) && (p.exp_date.month == DateTime.now.month) && (p.exp_date.day == DateTime.now.day)
+        p.destroy
+      end
+    end
+  end
+end

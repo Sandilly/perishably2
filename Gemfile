@@ -16,7 +16,7 @@ group :development, :test do
 	gem 'sqlite3'
 	gem 'pry-nav'
 end
-
+gem 'rake'
 gem 'whenever'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'

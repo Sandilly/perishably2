@@ -11,10 +11,11 @@ namespace :twilio do
 		end
 	end
 	
-	task send_group_notification_text: :environment do
+	desc "group notification recipients text"
+	task :send_group_notification_text => :environment do
 		UserAddedProduct.all.each do |user_product|
 			user_product.recipients.all.each do |r|
-				if (r.notification_date.year == DateTime.now.year) && (r.notification_date.month == DateTime.now.month) && (r.notification_date.day == DateTime.now.day)
+				if (p.notification_date.year == DateTime.now.year) && (p.notification_date.month == DateTime.now.month) && (p.notification_date.day == DateTime.now.day)
 					twilio_text = TwilioClient.new
 					twilio_text.send_text(user_product.id, r.id)
 				end
