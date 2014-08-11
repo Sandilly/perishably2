@@ -15,10 +15,9 @@ class ProductRecipientsController < ApplicationController
   #   end
   # end
 
-  # def index
-  #   @product_recipients = ProductRecipient.all
-    
-  # end
+  def index
+    @product_recipients = ProductRecipient.all
+  end
 
   # def edit
   #   @user_product = UserAddedProduct.find(params[:id])
@@ -41,28 +40,28 @@ class ProductRecipientsController < ApplicationController
   #   redirect_to user_added_products_path
   # end
 
-  # def show
-  #   @user_product = UserAddedProduct.find(params[:id])
+  def show
+    @user_product = UserAddedProduct.find(params[:id])
 
 
-  #   @time_add = @user_product.number_unit_of_time.to_i
-  #   @time_type = @user_product.unit_of_time_period
+    @time_add = @user_product.number_unit_of_time.to_i
+    @time_type = @user_product.unit_of_time_period
 
-  #   @product_exp = @user_product.created_at
+    @product_exp = @user_product.created_at
     
-  #   if @time_type =~ /\bday(s|\(s\))?/i
-  #     @exp_date = @product_exp + @time_add.days
-  #   elsif @time_type =~ /\bweek(s|\(s\)?)/i
-  #     @exp_date = @product_exp + @time_add.weeks
-  #   elsif @time_type =~ /\bmonth(s|\(s\)?)/i
-  #     @exp_date = @product_exp + @time_add.months
-  #   elsif @time_type =~ /\byear(s|\(s\)?)/i
-  #     @exp_date = @product_exp + @time_add.years
-  #   else
-  #     @exp_date = @user_product.unit_of_time_period
-  #   end
+    if @time_type =~ /\bday(s|\(s\))?/i
+      @exp_date = @product_exp + @time_add.days
+    elsif @time_type =~ /\bweek(s|\(s\)?)/i
+      @exp_date = @product_exp + @time_add.weeks
+    elsif @time_type =~ /\bmonth(s|\(s\)?)/i
+      @exp_date = @product_exp + @time_add.months
+    elsif @time_type =~ /\byear(s|\(s\)?)/i
+      @exp_date = @product_exp + @time_add.years
+    else
+      @exp_date = @user_product.unit_of_time_period
+    end
 
-  # end
+  end
 
   # private
 
