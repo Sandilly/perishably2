@@ -13,7 +13,7 @@ class RecipientsController < ApplicationController
       current_user.recipients << @recipient
       redirect_to user_added_products_path
     else
-      render "user_added_products/show"
+      redirect_to user_added_product_path(@user_product), notice: "Please try again."
     end
   end
 
@@ -22,14 +22,13 @@ class RecipientsController < ApplicationController
     @recipient = Recipient.find(params[:id])
     @recipient.update(recipient_params)
     if @recipient.save  
-      redirect_to user_added_product_path(@user_product)
+      redirect_to user_added_product_path(@user_product), notice: "You have successfully updated your recipient's information."
     else
-      render :edit
+      redirect_to user_added_product_path(@user_product), notice: "Please try again."
     end
   end
 
   def show
-
     @recipients_stuff = @recipient.user_added_products.all
   end
 
@@ -48,7 +47,7 @@ class RecipientsController < ApplicationController
     @user_product = UserAddedProduct.find(params[:user_added_product_id])
     @recipient = Recipient.find(params[:id])
     @recipient.destroy
-    redirect_to user_added_product_path(@user_product)
+    redirect_to user_added_product_path(@user_product), notice: "You have successfully deleted your recipient."
   end
 
   private

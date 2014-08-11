@@ -7,7 +7,7 @@ class UserAddedProductsController < ApplicationController
     @user_product.email = true
   end
 
-   def create
+  def create
     @user_product = UserAddedProduct.new(product_params)
     @user_product.recipients.delete_all
     if !params[:user_added_product][:recipients_attributes]
@@ -30,13 +30,12 @@ class UserAddedProductsController < ApplicationController
     if @user_product.save
       redirect_to user_added_product_path(@user_product)
     else
-      flash.now[:notice] = "Please try again."
+      flash.now[:notice] = "Please add notification recipient(s)."
       render :new
     end
   end
   def index
     @products = current_user.user_added_products
-    # binding.pry
   end
 
   def edit
@@ -67,8 +66,7 @@ class UserAddedProductsController < ApplicationController
     if @user_product.save
       redirect_to user_added_product_path(@user_product)
     else
-      flash.now[:notice] = "Your submission is invalid."
-      render "edit"
+      redirect_to user_added_product_path(@user_product), notice: "Please try again."
     end
   end
   def destroy
