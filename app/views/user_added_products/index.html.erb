@@ -3,8 +3,13 @@
 </h1>
 
   <p> List of Items </p>
+
 <div class="light well">
   <%# render "layouts/flash_notices" %>
+
+<div class="products_list">
+  <%= render "layouts/flash_notices" %>
+
   <p> My Products </p>
 
   <ul id = "user_product_list">
@@ -22,8 +27,8 @@
     <% end %>  
   </ul>
 </div>
-<div class="light well">
+<div>
   No Notifications Sent
 </div>
 <%= link_to "<i class='fa fa-plus'></i> &nbsp;Add Item".html_safe, new_user_added_product_path, class: "btn btn-info round2" %>
-
+</div>

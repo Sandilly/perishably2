@@ -17,8 +17,37 @@
 //         width: 0;
 //         background-color: #0099ff;
 // }
+// .page{
+//   // border: 3px solid #000;
+//   background-color:#000;
+//   color:#fff;
+//   border-radius:20px;
+// }
 
 .remove{
   background-color:#000;
   color:#f00;
+}
+a.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+div .panel{
+  width:50%;
+  margin:0 auto;
+  border-radius:10px;
+  background-color:#000;
+}
+
+div .panel-heading h1{
+  //background-color: #000;
+  // color: #fff;
+  text-align:left;
+  // border-radius:10px 10px 0 0;
+  font-family: helvetica, sans-serif;
+  color:#5bc0de;
+  margin-bottom:10px;
+}
+div .panel-body label{
+  color:#666;
 }
