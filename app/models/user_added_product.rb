@@ -1,6 +1,7 @@
 class UserAddedProduct < ActiveRecord::Base
   belongs_to :user
-  has_many :recipients
+  has_many :product_recipients
+  has_many :recipients, :through => :product_recipients
   validates :name, :presence => true
   accepts_nested_attributes_for :recipients
 

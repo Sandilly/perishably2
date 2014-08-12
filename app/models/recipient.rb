@@ -1,5 +1,6 @@
 class Recipient < ActiveRecord::Base
-  has_many :user_added_products
+  has_many :product_recipients
+  has_many :user_added_products, :through => :product_recipients
   #belongs_to :user_added_product
   validates_presence_of :email, :phone_number, :name
   validates_formatting_of :email, :using => :email

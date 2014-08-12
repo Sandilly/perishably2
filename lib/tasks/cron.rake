@@ -7,9 +7,7 @@ namespace :cron do
 			end
 		end
 	end
-
-#first test new whenever rake task that includes both
-#then test it on heroku
+  
   desc "auto-delete expired items"
   task :auto_delete => :environment do
     UserAddedProduct.all.each do |p|

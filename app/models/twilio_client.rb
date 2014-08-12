@@ -22,6 +22,14 @@ class TwilioClient
     Recipient.find(recipient_id).phone_number
   end
 
+  def send_text_to_self(user_added_product_id)
+    @client.account.sms.messages.create(
+      :from => TWILIO_NUMBER,
+      :to => UserAddedProduct.find(user_added_product_id).user.phone_number,
+      :body => "This is your Perishab.ly alert. Your #{UserAddedProduct.find(user_added_product_id).name.downcase} will expire on #{UserAddedProduct.find(user_added_product_id).exp_date}."
+      )
+  end
+
   def send_text(user_added_product_id, recipient_id)
     @client.account.sms.messages.create(
       :from => TWILIO_NUMBER,

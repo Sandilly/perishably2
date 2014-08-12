@@ -8,10 +8,12 @@ Rails.application.routes.draw do
 
   get 'products/search/:name', to: 'products#search'
 
-  resources :users, except: [:new]
   resources :user_added_products do 
     resources :recipients
   end
+
+  resources :users, except: [:new]
+
   resources :sign_ins
   resources :sessions 
 

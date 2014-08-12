@@ -11,6 +11,7 @@ class RecipientsController < ApplicationController
     @recipient = Recipient.new(recipient_params)
     if @recipient.save
       current_user.recipients << @recipient
+      @recipient.user_added_products << @product
       redirect_to user_added_products_path
     else
       redirect_to user_added_product_path(@user_product), notice: "Please try again."
@@ -29,7 +30,7 @@ class RecipientsController < ApplicationController
   end
 
   def show
-    @recipients_stuff = @recipient.user_added_products.all
+    @recipients_stuff = @recipient.user_added_products
   end
 
   def notify
