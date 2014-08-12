@@ -18,11 +18,11 @@
         <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br> 
 
         <%= f.label "Date of Expiration:" %>
+        <%#= link_to "Product has it's own expiration date",id: "ownExpDate" %>
     		<%= f.text_field :exp_date , :id => "datepicker"%> 
-      
-        
-        <%= f.label "Storage:" %>
-    	  <%= f.text_field :storage %>
+        </i>
+        <%#= f.label "Storage:" %>
+    	<%#= f.text_field :storage %>
     </div>
 
     <div class = "light well">
@@ -39,10 +39,10 @@
     <%= label_tag(:specific_notification, "Notify me before the expiration date.") %>
     <div id="select_notification_date" style="display:none">
 <select id='notify_num' name='notify_num'><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option></select><select id='notify_date_type' name='notify_date_type'><option value='Day(s)'>Day(s)</option><option value='Week(s)'>Week(s)</option><option value='Month(s)'>Month(s)</option><option value='Year(s)'>Year(s)</option></select>
-  
+  <input id="notification_date" name="user_added_product[notification_date]" /><br />
 <br>
 </div>
-<input id="notification_date" name="user_added_product[notification_date]" /><br />
+
     <%#= link_to 'Add people to notifications', '#add_recipients',
           :onclick => 'add_ppl_to_notification()', id: "add_recipients" %>
   <p id="add_recipients"> Add People to Notifications </p>
