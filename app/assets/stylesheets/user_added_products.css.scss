@@ -33,12 +33,15 @@ a.disabled {
    cursor: default;
 }
 div .panel{
-  width:50%;
+  width:455px;
   margin:0 auto;
-  border-radius:10px;
-  background-color:#000;
+  border-radius:5px;
+  background-color:#fff;
+  border:1px solid #f1f1f1;
 }
-
+div .panel .form{
+  
+}
 div .panel-heading h1{
   //background-color: #000;
   // color: #fff;
@@ -49,5 +52,9 @@ div .panel-heading h1{
   margin-bottom:10px;
 }
 div .panel-body label{
-  color:#666;
+  color:#fff;
+}
+.footer{
+  text-align:center;
+  font-size: 10px;
 }
