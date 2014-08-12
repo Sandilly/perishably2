@@ -8,7 +8,7 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
   </head>
   <body>
-    <div id = "container" class= "fronty">
+    <div id = "container">
       <div id = "user_header">
         <% if current_user %>
           <div id ="topLink"> </div>
@@ -23,12 +23,7 @@
                 <a class="brand main">Perishably</a>
                 <div class="nav-collapse collapse">
                   <ul class="nav pull-left">
-                    <li><a href ="#" class="smooth">Logged in as <%= current_user.email %></a></li>
-                    <li class="smooth"><a href="#topLink" class="smooth">Home</a></li>
-                    <li><a href="#showcase" class="smooth">Showcase</a></li>
-                    <li><a href="#features" class="smooth">Features</a></li>
-                    <li><a href="#newElements" class="smooth">Elements</a></li>
-                    <li><a href="#contactFooter" class="snooth">Contact</a></li>
+                    <li><a href ="#" class="disabled smooth">Logged in as <%= current_user.email %></a></li>
                   </ul>
                   <div class="pull-right">
                     <%= link_to "<i class='fa fa-sign-in'></i> &nbsp;Logout".html_safe, logout_path, class: "btn btn-info round2" %>
@@ -41,14 +36,14 @@
       </div>
     
       <div class="container-fluid pad58"> <br> <br>
-        <%= render 'layouts/flash_notices' %>
+        <%#= render 'layouts/flash_notices' %>
         <div class= "row-fluid">
           <div class = "mainlogo">
-            <img src="assets/mainlogo.png" alt="Perishably" style="margin-left:-240px;" />
+            <img src="assets/Perishably-logo.png" alt="Perishably" style="margin-left:-240px;" />
           </div>
         </div>
 
-        <div class = "row-fluid borBox well deep">
+        <div class = "row-fluid page">
           <%= yield %>
         </div>
       </div>

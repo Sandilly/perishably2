@@ -1,28 +1,30 @@
-<h1> <!-- <i class="fa fa-arrow-circle-right"></i> -->Sign In</h1>
-<div class="light well">
-  
- 
-  <%= render "layouts/flash_notices" %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Sign In</h1>
+  <div>
+  <div class="panel-body">
+    <%= render 'layouts/flash_notices' %>
+    <%= form_tag sessions_path do %>
+      <div class = "field">
+        <%= label_tag :email %>
+        <%= text_field_tag :email %>
+      </div>
 
-  <%= form_tag sessions_path do %>
-    <div class = "field">
-      <%= label_tag :email %>
-      <%= text_field_tag :email %>
-    </div>
+      <div class = "field">
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+      </div>
 
-    <div class = "field">
-      <%= label_tag :password %>
-      <%= password_field_tag :password %>
-    </div>
+      <div class = "actions">
+        <%= submit_tag "Sign In", class: "btn btn-info round2"  do %> 
+        <% end %>
+      </div>
 
-    <div class = "actions">
-      <%= submit_tag "Sign In", class: "btn btn-info round2"  do %> 
-      <% end %>
-    </div>
-
-    <br>
-    <%= link_to "Register", signup_path %>
-  <% end %>
+      <br>
+      <%= link_to "Register", signup_path %>
+    <% end %>
+  </div>
  
 
 </div>
+<!-- <i class="fa fa-arrow-circle-right"></i> -->
