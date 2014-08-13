@@ -2,59 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// #progressBar {
-//         width: 400px;
-//         height: 22px;
-//         border: 1px solid #111;
-//         background-color: #292929;
-// }
- 
-// #progressBar div {
-//         height: 100%;
-//         color: #fff;
-//         text-align: right;
-//         line-height: 22px; /* same as #progressBar height if we want text middle aligned */
-//         width: 0;
-//         background-color: #0099ff;
-// }
-// .page{
-//   // border: 3px solid #000;
-//   background-color:#000;
-//   color:#fff;
-//   border-radius:20px;
-// }
 
+
+/*-----------"X" to the to add recipients box------------*/
 .remove{
   background-color:#000;
   color:#f00;
 }
-a.disabled {
-   pointer-events: none;
-   cursor: default;
-}
+/*-------------------------------------------------------*/
+
+
 div .panel{
-  width:455px;
+  width:435px;
   margin:0 auto;
   border-radius:5px;
   background-color:#fff;
-  border:1px solid #f1f1f1;
+  border:1px solid #a1a1a1;
+  padding:20px;
+  overflow: auto;
 }
-div .panel .form{
-  
-}
-div .panel-heading h1{
-  //background-color: #000;
-  // color: #fff;
-  text-align:left;
-  // border-radius:10px 10px 0 0;
-  font-family: helvetica, sans-serif;
-  color:#5bc0de;
-  margin-bottom:10px;
-}
-div .panel-body label{
-  color:#fff;
-}
-.footer{
-  text-align:center;
-  font-size: 10px;
-}
+
+
+
+/*----gitshoes----*/
+

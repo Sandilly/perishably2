@@ -6,7 +6,7 @@
 
 <%= form_for(@user_product) do |f|%>
 
-    <div class = "light well">
+    <div class = "products">
         <%= f.label "Name:" %>
       <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
 

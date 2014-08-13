@@ -22,3 +22,36 @@
  *= require calendar
 
  */
+/*-------------------------------------------*/
+/*---------------General App-----------------*/
+/*-------------------------------------------*/
+
+a.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+
+div .panel-heading h1, div .row-fluid h1{
+  text-align:left;
+
+  font-family: futura, sans-serif;
+  color:#000;
+  margin-bottom:10px;
+}
+div .panel-body label{
+  color:#000;
+}
+.footer{
+  text-align:center;
+  font-size: 10px;
+}
+
+input[type="text"], input[type="password"]{
+  border:1px solid #000;
+}
+
+/*------------Flash Notice------------*/
+.notice{
+  color:#f00;
+}
+/*------------------------------------*/

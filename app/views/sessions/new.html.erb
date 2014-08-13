@@ -1,30 +1,29 @@
 <div class="panel panel-default">
-  <div class = "form">
+  
+  <div class = "login-form">
     <div class="panel-heading">
-      <h1>Sign In</h1>
+      <h1>SIGN IN</h1>
     </div>
     <div class="panel-body">
       <%= render 'layouts/flash_notices' %>
       <%= form_tag sessions_path do %>
-        <div class = "field">
-          <%= label_tag :email %>
-          <%= text_field_tag :email,'Email' %>
-        </div>
-
-        <div class = "field">
-          <%= label_tag :password %>
-          <%= password_field_tag :password, 'Password'  %>
-        </div>
-
-        <div class = "actions">
-          <%= submit_tag "Sign In", class: "btn btn-info round2"  do %> 
-          <% end %>
-        </div>
-
+        
+        <%= label_tag :email, "EMAIL" %>
+        <%= text_field_tag :email %>
+      
+        <%= label_tag :password, "PASSWORD" %>
+        <%= password_field_tag :password %>
+     
+        <%= submit_tag "SIGN IN", class: "btn btn-inverse round2"%> 
         <br>
-        <%= link_to "Register", signup_path %>
+        <br>
+        <%= link_to "SIGN UP", signup_path %>
       <% end %>
     </div>
+  </div>
+
+  <div class="login-intro">
+    <p>Can't keep track of when products expire? Let us do the work. Sign in to Perishably.</p>
   </div>
 </div>
 <!-- <i class="fa fa-arrow-circle-right"></i> -->
