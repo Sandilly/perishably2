@@ -66,7 +66,7 @@ input[type="text"], input[type="password"],input[type="tel"]{
   border:1px solid #000;
   width:200px;
 }
-.products select{
+select, .products select{
    border:1px solid #000;
   width:210px;
 }
@@ -77,3 +77,9 @@ input[type="text"], input[type="password"],input[type="tel"]{
   padding-bottom: 5px;
 }
 /*------------------------------------*/
+#ui-datepicker-div{
+  background-color: #5bc0de;
+  padding:5px;
+  border-radius: 0 0 5px 5px;
+}
+
