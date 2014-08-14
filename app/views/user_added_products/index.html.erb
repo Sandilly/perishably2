@@ -1,31 +1,35 @@
-<h1>
-  <i class="fa fa-list-alt"></i> <%= current_user.name.capitalize %>'s List
-</h1>
+<div class="products-panel">
+  <h1>
+    <i class="fa fa-list-alt"></i> <%= current_user.name.upcase %>'S LIST
+  </h1>
 
   <%# render "layouts/flash_notices" %>
 
-<div class="products_list">
-  <%= render "layouts/flash_notices" %>
+  <div class="products_list light well">
+    <%= render "layouts/flash_notices" %>
 
-  <p> My Products </p>
+    <h4 class="inverse">MY PRODUCTS</h4>
 
-  <ul id = "user_product_list">
-    <% @products.sort.each do |product|%>
-      <li class="product_info"> 
-        <ul class = "each_product_info">
-          <li>
-            <%= link_to "#{product.name}".capitalize, user_added_product_path(product) %>
-          </li>
-          <li class="product_doe"> <%= "#{product.exp_date}" %>
-        </ul>
+    <ol id = "user_product_list">
 
-      </li>
-      
-    <% end %>  
-  </ul>
-</div>
-<div>
-  No Notifications Sent
-</div>
-<%= link_to "<i class='fa fa-plus'></i> &nbsp;Add Item".html_safe, new_user_added_product_path, class: "btn btn-info round2" %>
+      <% @products.sort.each do |product|%>
+        <li class="product_info"> 
+          <ul class = "each_product_info">
+             <li class="product_doe"> <%= "#{product.exp_date.strftime("%b %d, %Y")}" %> </li>
+            <li>
+              <%= link_to "#{product.name}".capitalize, user_added_product_path(product) %>
+            </li>
+           
+          </ul>
+
+        </li>
+        
+      <% end %>  
+    </ol>
+  </div>
+  <!-- <div>
+    No Notifications Sent
+  </div> -->
+  <%= link_to "<i class='fa fa-plus'></i> ADD PRODUCT".html_safe, new_user_added_product_path, class: "btn btn-info round2" %>
+  </div>
 </div>

@@ -30,7 +30,7 @@ class UserAddedProductsController < ApplicationController
     if @user_product.save
       redirect_to user_added_product_path(@user_product)
     else
-      flash.now[:notice] = "Please add notification recipient(s)."
+      flash.now[:notice] = "Your submission is invalid."
       render :new
     end
   end

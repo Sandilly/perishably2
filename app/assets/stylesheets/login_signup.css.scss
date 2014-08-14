@@ -1,13 +1,23 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+div .panel{
+  width:435px;
+  margin:0 auto;
+  border-radius:5px;
+  background-color:#fff;
+  border:1px solid #a1a1a1;
+  overflow: auto;
+  padding: 20px;
+}
 div .login-intro{
   float:right;
   width:40%;
   border-left: 1px solid #a1a1a1;
   padding-left:20px;
-  min-height: 225px;
+  height: 87%;
+  position: absolute;
+  right: 0;
 }
 
 div .login-form{
@@ -17,4 +27,8 @@ div .login-form{
 
 div .panel-body form{
   margin:0;
+  }
+
+div.form-wrapper{
+  margin:20px;
 }

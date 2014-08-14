@@ -1,10 +1,15 @@
 <%# render "layouts/flash_notices" %>
-<h1><i class="fa fa-barcode"></i> <%= @user_product.name.capitalize %> </h1>
+<div class="products-panel">
+
+<h1><i class="fa fa-barcode"></i> <%= @user_product.name.upcase %> </h1>
 <div class ="light well">
-    <h4>Product Information</h4>
-    <p>Product Details: <%= @user_product.product_details %></p>
-    <p>Time of Expiration: <%= @user_product.number_unit_of_time %> <%= @user_product.unit_of_time_period %></p>
-    <p>Storage Type : <%= @user_product.storage %></p>
+    <h4>PRODUCT INFORMATION</h4>
+    <label>PRODUCT DETAILS:</label>
+    <p><%= @user_product.product_details %></p>
+    <label>SHELF LIFE:</label>
+    <p><%= @user_product.number_unit_of_time %> <%= @user_product.unit_of_time_period %></p>
+    <label>STORAGE:</label>
+    <p><%= @user_product.storage %></p>
  
     </div>
     <div class ="light well">
@@ -31,14 +36,14 @@
         <p>Notification Date : <%= @user_product.notification_date %></p>
         
     </div>
-    <%= link_to "<i class='fa fa-chevron-circle-left'></i> &nbsp;Back".html_safe, user_added_products_path, class: "btn btn-info round2" %>
-    <%= link_to "<i class='fa fa-file-text'></i> &nbsp;Edit".html_safe, edit_user_added_product_path(@user_product),class: "btn btn-info round2" %>
+    <%= link_to "<i class='fa fa-chevron-circle-left'></i> &nbsp;BACK".html_safe, user_added_products_path, class: "btn btn-info round2" %>
+    <%= link_to "<i class='fa fa-file-text'></i> &nbsp;EDIT".html_safe, edit_user_added_product_path(@user_product),class: "btn btn-info round2" %>
 
-    <%= link_to "<i class='fa fa-trash-o'></i> &nbsp;Destroy".html_safe, @user_product, method: :delete, data: { confirm: "Are you sure you want to delete #{@user_product.name}?" }, class: "btn btn-inverse round2" %>
+    <%= link_to "<i class='fa fa-trash-o'></i> &nbsp;DESTROY".html_safe, @user_product, method: :delete, data: { confirm: "Are you sure you want to delete #{@user_product.name}?" }, class: "btn btn-inverse round2" %>
 
 
   </div>
-
+</div>
   <script>
   setVariables();
 </script>

@@ -1,17 +1,18 @@
-<h1><i class="fa fa-pencil-square-o"></i>&nbsp;<%= @user_product.name.capitalize %> </h1>
+<div class="products-panel">
+<h1><i class="fa fa-pencil-square-o"></i>&nbsp;<%= @user_product.name.upcase %> </h1>
 
 <%= form_for @user_product, url: {action: "update"}, html: {class: "update_form"} do |f| %>
 
 
   <div class = "light well">
-
-    <%= f.label :name %>
+    <h4 class="inverse">PRODUCT INFORMATION</h4>
+    <%= f.label :name, "PRODUCT" %>
     <%= f.text_field :name%>
 
-    <%= f.label :product_details %>
+    <%= f.label :product_details, "PRODUCT DETAILS" %>
     <%= f.text_field :product_details %>
 
-    <p>Date Added : <%= @user_product.created_at.strftime("%Y-%m-%d") %> </p>
+    <p>DATE ADDED : <%= @user_product.created_at.strftime("%Y-%m-%d") %> </p>
 
     <%= f.label :number_unit_of_time, "Num Time:" %>
     <%= f.select(:number_unit_of_time, options_for_select(1..7)) %> 
@@ -24,19 +25,18 @@
       <%= f.text_field :exp_date , :id => "datepicker"%> 
     </i>
 
-    <%= f.label :storage%>
+    <%= f.label :storage, "STORAGE"%>
     <%= f.text_field :storage%>
 
   </div>
 
-  <p> Notify by: </p>
-
   <div class = "light well">
+    <h4 class="inverse">PRODUCT NOTIFICATION</h4>
     <%= f.check_box(:email) %>
-    <%= f.label(:email, "Notify me by email") %>
+    <%= f.label(:email, "NOTIFY ME BY EMAIL") %>
 
     <%= f.check_box(:sms) %>
-    <%= f.label(:sms, "Notify me by text message") %>
+    <%= f.label(:sms, "NOTIFY ME BY TEXT") %>
 
     <%= radio_button_tag(:day_of?, "Default notification date", value="1") %>
     <%= label_tag(:default_notification, "Notify me on the expiration date.") %>
@@ -65,27 +65,46 @@
     <input id="notification_date" name="user_added_product[notification_date]" /><br />
   </div>
     <div class="light well">
-      <h4>Recipients</h4>
-        <ul>
+      <h4 class="inverse">NOTIFICATION RECIPIENTS</h4>
+        <table class = "recipients-table">
+          <tr>
+              <th>NAME</th>
+              <th>EMAIL</th>
+              <th>PHONE NUMBER</th>
+              <th><i class="fa fa-edit"></i> EDIT</th>
+              <th><i class="fa fa-trash-o"></i> DELETE</th>
+            
+          </tr>
         <% @user_product.recipients.each do |r| %>
-           <li> 
-            <%= r.name.capitalize %>
-            <%= r.email %>
-            <%= r.phone_number %>
-            <%= link_to 'Edit', edit_user_added_product_recipient_path(@user_product, r) %>
-            <%= link_to 'Delete', user_added_product_recipient_path(@user_product, r), method: :delete, data: { confirm: "Are you sure?" }%>
-          </li> 
+           <tr> 
+            <td>
+              <%= r.name.capitalize %>
+            </td>
+            <td>
+              <%= r.email %>
+            </td>
+            <td>
+              <%= r.phone_number %>
+            </td>
+            <td>
+              <%= link_to ' <i class="fa fa-edit"></i> EDIT'.html_safe, edit_user_added_product_recipient_path(@user_product, r) %>
+            </td>
+            <td>
+            <%= link_to '<i class="fa fa-trash-o"></i> DELETE'.html_safe, user_added_product_recipient_path(@user_product, r), method: :delete, data: { confirm: "Are you sure?" }%>
+            </td>
+          </tr> 
         <% end %>
-      </ul>
-      <p id="add_recipients"> Add People to Notifications </p>
+      </table>
+     <p id="add_recipients" class="btn btn-info"><i class="fa fa-plus"></i> ADD NOTIFICATION RECIPIENTS </p>
       <div id="add_ppl">
     </div>
     </div>
 
 
     
-    <%= link_to "<i class='fa fa-chevron-circle-left'></i> &nbsp;Back".html_safe, user_added_product_path, class: "btn btn-info round2" %>
-    <%= f.submit "Update Item", class: "btn btn-info round2" %>
+    <%= link_to "<i class='fa fa-chevron-circle-left'></i> &nbsp;BACK".html_safe, user_added_product_path, class: "btn btn-info round2" %>
+    <%= f.submit "UPDATE", class: "btn btn-info round2" %>
 
 
 <% end %>
+</div>
