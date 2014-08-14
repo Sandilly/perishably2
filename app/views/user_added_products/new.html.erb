@@ -9,24 +9,41 @@
     <div class = "products light well">
       <h4 class="inverse">PRODUCT INFORMATION</h4>
       <%= render "layouts/flash_notices" %>
-        <%= f.label :name, "PRODUCT" %>
-      <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
 
-        <%= f.label :product_details, "PRODUCT DETAILS" %>
-        <%= f.text_field :product_details %>
-
-        <%= f.label :number_unit_of_time, "LENGTH OF TIME" %>
-        <%= f.select(:number_unit_of_time, options_for_select(1..15)) %> 
-
-        <%= f.label :unit_of_time_period, "UNIT OF TIME" %>
-        <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br> 
-
-        <%= f.label :exp_date, "DATE OF EXPIRATION" %>
-        <%#= link_to "Product has it's own expiration date",id: "ownExpDate" %>
-    		<%= f.text_field :exp_date , :id => "datepicker"%> 
-
-        <%= f.label :storage, "STORAGE" %>
-    	  <%= f.text_field :storage %>
+      <div class="field-row ">
+        <div class="field field-first">
+          <%= f.label :name, "PRODUCT" %>
+          <%= f.text_field :name, data: {autocomplete_source: Product.all.order(:name).map(&:name)} %>
+        </div>
+        <div class="form-field">
+          <%= f.label :product_details, "PRODUCT DETAILS" %>
+          <%= f.text_field :product_details %>
+        </div>
+      </div>
+      
+      <div class="field-row">
+        <div class="field field-first">
+          <%= f.label :number_unit_of_time, "LENGTH OF TIME" %>
+          <%= f.select(:number_unit_of_time, options_for_select(1..15)) %> 
+        </div>
+        <div class="field">
+          <%= f.label :unit_of_time_period, "UNIT OF TIME" %>
+          <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br> 
+        </div>
+      </div>
+      
+      <div class="field-row">
+        <div class="field field-first">
+          <%= f.label :exp_date, "DATE OF EXPIRATION" %>
+          <%#= link_to "Product has it's own expiration date",id: "ownExpDate" %>
+      		<%= f.text_field :exp_date , :id => "datepicker"%>
+        </div> 
+        
+        <div class="field">
+          <%= f.label :storage, "STORAGE" %>
+      	  <%= f.text_field :storage %>
+        </div>
+      </div>
     </div>
 
     <div class = "light well">

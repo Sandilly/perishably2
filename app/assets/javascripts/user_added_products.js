@@ -98,7 +98,7 @@ $(function(){
     $("#add_ppl").hide();
     $("#add_recipients").click(function(){
     $("#add_ppl").slideDown("fast");
-    $("#add_ppl").append("<div class='each_recipient'><div class='remove btn btn-inverse'>x</div> <label for='name'>Name</label><input id='name' name='user_added_product[recipients_attributes][][name]' type='text'/><label for='email'>Email</label><input id='email' name='user_added_product[recipients_attributes][][email]' type='text'/><label for='phone_number'>Phone Number</label><input id='phone_number' name='user_added_product[recipients_attributes][][phone_number]' type='text'/> </div>");
+    $("#add_ppl").append("<div class='each_recipient'><div class='remove btn btn-inverse'>x</div> <label for='name'>NAME</label><input id='name' name='user_added_product[recipients_attributes][][name]' type='text'/><label for='email'>EMAIL</label><input id='email' name='user_added_product[recipients_attributes][][email]' type='text'/><label for='phone_number'>PHONE NUMBER</label><input id='phone_number' name='user_added_product[recipients_attributes][][phone_number]' type='text'/> </div>");
     $(".remove").click(function(){ $(this).parent().remove();});
     event.preventDefault();
     });

@@ -1,11 +1,22 @@
-<h1><%= @recipient.name.upcase %>'S LIST</h1>
-<div class="field">
-  <% @recipients_stuff.each do |recipient_stuff| %>
-    <div class="field">Product<%= recipient_stuff.name.capitalize %></div>
-    <div class="field">Main User<%= User.find(recipient_stuff.user_id).name %></div>
-    <div class="field">Main User ID<%= User.find(recipient_stuff.user_id).id %></div>
-    <div class="field">Expiration Date<%= recipient_stuff.exp_date %></div>
-   
-    %= link_to "<i class='fa fa-chevron-circle-left'></i> &nbsp;BACK".html_safe, user_added_products_path(@user_product), class: "btn btn-info round2" %>
-  <%end%>
+<div class="products-panel">
+
+  <h1><%= @recipient.name.upcase %>'S LIST</h1>
+  <div class="light well">
+    <%= render "layouts/flash_notices" %>
+    <ol>
+    <% @recipients_stuff.each do |recipient_stuff| %>
+      <li>
+      <label>PRODUCT:</label>
+      <p><%= recipient_stuff.name.capitalize %></p>
+      <label>PRODUCT OWNER</label>
+      <p><%= User.find(recipient_stuff.user_id).name.capitalize %></p>
+      <!-- <div class="field">Main User ID<%#= User.find(recipient_stuff.user_id).id %></div> -->
+      <label>EXPIRATION DATE</label>
+      <p><%= recipient_stuff.exp_date %></p>
+     </li>
+    <%end%>
+    </ol>
+  </div>
+
+  <%= link_to "<i class='fa fa-chevron-circle-left'></i> &nbsp;BACK".html_safe, user_added_products_path(@user_product), class: "btn btn-info round2" %>
 </div>

@@ -11,7 +11,8 @@
   border-radius: 5px;
   padding:2px;
   text-align:center;
-  width:15px;
+  width:10px;
+  float:right;
 }
 /*-------------------------------------------------------*/
 
@@ -34,6 +35,9 @@ div .products-panel h4{
   margin-bottom:10px;
   background-color:#000;
 }
+div.products{
+  overflow:auto;
+}
 div .each_product_info{
   list-style: none;
   margin:0;
@@ -44,7 +48,12 @@ div .each_product_info{
   margin-right:10px;
 }
 
-
+.each_recipient{
+  width:210px;
+  border:1px solid #f1f1f1;
+  padding:10px;
+  border-radius:5px;
+}
 
 .recipients-table{
   width:100%;
@@ -55,6 +64,13 @@ div .each_product_info{
   border-bottom:1px solid #a1a1a1;
 }
 
-
-
-
+.field-row{
+  margin:0 auto;
+  width:475px;
+}
+.field-row .field{
+  float:left;
+}
+.field-first{
+  margin-right: 50px;
+}

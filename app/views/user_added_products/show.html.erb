@@ -3,7 +3,9 @@
 
 <h1><i class="fa fa-barcode"></i> <%= @user_product.name.upcase %> </h1>
 <div class ="light well">
-    <h4 class="">PRODUCT INFORMATION</h4>
+    <%= render "layouts/flash_notices" %>
+    <h4 class="inverses">PRODUCT INFORMATION</h4>
+    
     <label>PRODUCT DETAILS:</label>
     <p><%= @user_product.product_details %></p>
     <label>SHELF LIFE:</label>
@@ -27,6 +29,10 @@
 
     <div class ="light well">
       <h4 class="inverse">PRODUCT NOTIFICATION INFORMATION</h4>
+
+        <label>NOTIFICATION DATE:</label>
+        <p><%= @user_product.notification_date %></p>
+
         <table class="recipients-table">
           <tr>
             <th><i class="fa fa-user"></i> NAME</th>
@@ -48,8 +54,7 @@
           </tr>
         <% end %>
       </table>
-        <label>NOTIFICATION DATE:</label>
-        <p><%= @user_product.notification_date %></p>
+        
         
     </div>
     <%= link_to "<i class='fa fa-chevron-circle-left'></i> &nbsp;BACK".html_safe, user_added_products_path, class: "btn btn-info round2" %>
