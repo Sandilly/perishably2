@@ -48,7 +48,7 @@ div .panel{
 
 }
 div .panel-heading h1, div .row-fluid h1{
-  text-align:left;
+  text-align:center;
 
   font-family: futura, sans-serif;
   color:#000;

@@ -7,8 +7,9 @@
 <%= form_for(@user_product) do |f|%>
 
     <div class = "products light well">
-      <h4 class="inverse">PRODUCT INFORMATION</h4>
       <%= render "layouts/flash_notices" %>
+      <h4 class="inverse">PRODUCT INFORMATION</h4>
+      
 
       <div class="field-row ">
         <div class="field field-first">
@@ -55,9 +56,9 @@
     <%= f.label(:sms, "NOTIFY ME BY TEXT") %>
 
     <%= radio_button_tag(:day_of?, "Default notification date", value="1") %>
-    <%= label_tag(:default_notification, "NOTIFY ME ON DATE OF EXPIRATION") %>
+    <%= label_tag(:default_notification, "NOTIFY ON DATE OF EXPIRATION") %>
     <%= radio_button_tag(:day_of?, "Specific notification date") %>
-    <%= label_tag(:specific_notification, "NOTIFY ME BEFORE DATE OF EXPIRATION") %>
+    <%= label_tag(:specific_notification, "NOTIFY BEFORE DATE OF EXPIRATION") %>
     <div id="select_notification_date" style="display:none">
 <select id='notify_num' name='notify_num'><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option></select><select id='notify_date_type' name='notify_date_type'><option value='Day(s)'>Day(s)</option><option value='Week(s)'>Week(s)</option><option value='Month(s)'>Month(s)</option><option value='Year(s)'>Year(s)</option></select>
   <input id="notification_date" name="user_added_product[notification_date]" /><br />

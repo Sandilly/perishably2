@@ -26,6 +26,7 @@ div .products-panel{
   overflow: auto;
   padding: 20px;
 }
+
 div .products-panel h4{
   color:#fff;
   font-family: "Century Gothic", sans-serif;
@@ -73,4 +74,8 @@ div .each_product_info{
 }
 .field-first{
   margin-right: 50px;
+}
+.field label{
+  display: block;
+  clear:both;
 }

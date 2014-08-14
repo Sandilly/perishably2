@@ -4,24 +4,36 @@
 <%= form_for @user_product, url: {action: "update"}, html: {class: "update_form"} do |f| %>
 
 
-  <div class = "light well">
+  <div class = "products light well">
+    <%= render "layouts/flash_notices" %>
     <h4 class="inverse">PRODUCT INFORMATION</h4>
-    <%= f.label :name, "PRODUCT" %>
-    <%= f.text_field :name%>
+    <div class="field-row">
+      <label> DATE ADDED: </label>
+      <p> <%= @user_product.created_at.strftime("%Y-%m-%d") %> </p>
+    </div>
+    <div class="field-row">
+      <div class="field field-first">
+        <%= f.label :name, "PRODUCT" %>
+        <%= f.text_field :name%>
+      </div>
+      <div class="field">
+        <%= f.label :product_details, "PRODUCT DETAILS" %>
+        <%= f.text_field :product_details %>
+      </div>
+    </div>
+    
+    <div class="field-row">
+        <div class="field field-first">
+          <%= f.label :number_unit_of_time, "LENGTH OF TIME" %>
+          <%= f.select(:number_unit_of_time, options_for_select(1..15)) %> 
+        </div>
+        <div class="field">
+          <%= f.label :unit_of_time_period, "UNIT OF TIME" %>
+          <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br> 
+        </div>
+      </div>
 
-    <%= f.label :product_details, "PRODUCT DETAILS" %>
-    <%= f.text_field :product_details %>
-
-    <p>DATE ADDED : <%= @user_product.created_at.strftime("%Y-%m-%d") %> </p>
-
-    <%= f.label :number_unit_of_time, "Num Time:" %>
-    <%= f.select(:number_unit_of_time, options_for_select(1..7)) %> 
-
-    <%= f.label :unit_of_time_period, "Unit of Time:" %>
-
-    <%= f.select(:unit_of_time_period, options_for_select(["Day(s)", "Week(s)", "Month(s)", "Year(s)" ])) %> <br>
-
-    <%= f.label "Date of Expiration:" %>
+    <%= f.label :exp_date,"DATE OF EXPIRATION:" %>
       <%= f.text_field :exp_date , :id => "datepicker"%> 
     </i>
 
