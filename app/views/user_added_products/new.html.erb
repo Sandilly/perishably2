@@ -101,12 +101,14 @@
 
     <%#= link_to 'Add people to notifications', '#add_recipients',
           :onclick => 'add_ppl_to_notification()', id: "add_recipients" %>
-  <p id="add_recipients" class="btn btn-info"><i class="fa fa-plus"></i> ADD NOTIFICATION RECIPIENTS </p>
+  <div class="field-row">
+    <p id="add_recipients" class="btn btn-info"><i class="fa fa-plus"></i> ADD NOTIFICATION RECIPIENTS </p>
+  
  
   <div id="add_ppl">
   </div>
 </div>
-
+  </div>
     <%= f.submit "ADD PRODUCT TO MY LIST", class: "btn btn-info round2" %>
     <%= link_to "<i class='fa fa-times'></i> CANCEL".html_safe, user_added_products_path, class: "btn btn-inverse round2" %>
 </div>
