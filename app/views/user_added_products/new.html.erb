@@ -59,34 +59,60 @@
         <%= f.label(:sms, "NOTIFY ME BY TEXT") %>
       </div>
     </div>
-    <div class="field-row">
-      <div class="field field-first">
-        <%= radio_button_tag(:day_of?, "Default notification date", value="1",{class: "clickbox"}) %>
-        <%= label_tag(:default_notification, "NOTIFY ON DATE OF EXPIRATION",{class: "clickbox"}) %>
-      </div>
-
-      <div class="field">
-        <%= radio_button_tag(:day_of?, "Specific notification date") %>
+        <div class="field-row">
+        <%= radio_button_tag(:day_of?, "Default notification date", value="1", {class: "clickbox"}) %>
+        <%= label_tag(:default_notification, "NOTIFY ON DATE OF EXPIRATION") %>
+    </div>
+      <div class="field-row">
+        <%= radio_button_tag(:day_of?, "Specific notification date", {class: "clickbox"}) %>
         <%= label_tag(:specific_notification, "NOTIFY BEFORE DATE OF EXPIRATION") %>
       </div>
-        <div id="select_notification_date" style="display:none">
+  
     
-        <select id='notify_num' name='notify_num'><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option></select><select id='notify_date_type' name='notify_date_type'><option value='Day(s)'>Day(s)</option><option value='Week(s)'>Week(s)</option><option value='Month(s)'>Month(s)</option><option value='Year(s)'>Year(s)</option></select>
-         
-        <br>
-         <input id="notification_date" name="user_added_product[notification_date]" /><br />
-</div>
+    <div class="field-row">
+    <div id="select_notification_date" style="display:none">
+      
+        <div class="field field-first">
+          <select id='notify_num' name='notify_num'>
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
+            <option value='6'>6</option>
+            <option value='7'>7</option>
+          </select>
+        </div>
+
+          <div class="field">
+            <select id='notify_date_type' name='notify_date_type'>
+              <option value='Day(s)'>Day(s)</option>
+              <option value='Week(s)'>Week(s)</option>
+              <option value='Month(s)'>Month(s)</option>
+              <option value='Year(s)'>Year(s)</option>
+            </select>
+        </div>
+      </div> 
+    </div>
+
+    <div class="field-row field-single">
+        <input id="notification_date" name="user_added_product[notification_date]" />
+    </div>
 
     <%#= link_to 'Add people to notifications', '#add_recipients',
           :onclick => 'add_ppl_to_notification()', id: "add_recipients" %>
-  <p id="add_recipients" class="btn btn-info"><i class="fa fa-plus"></i> ADD NOTIFICATION RECIPIENTS </p>
+  <div class="field-row">
+    <p id="add_recipients" class="btn btn-info"><i class="fa fa-plus"></i> ADD NOTIFICATION RECIPIENTS </p>
+  
  
   <div id="add_ppl">
   </div>
 </div>
-</div>
+  </div>
     <%= f.submit "ADD PRODUCT TO MY LIST", class: "btn btn-info round2" %>
+    <%= link_to "<i class='fa fa-times'></i> CANCEL".html_safe, user_added_products_path, class: "btn btn-inverse round2" %>
+</div>
 <% end %>
  
-<%= link_to "<i class='fa fa-times'></i> CANCEL".html_safe, user_added_products_path, class: "btn btn-inverse round2" %>
-</div>
+
+</

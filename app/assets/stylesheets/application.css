@@ -81,5 +81,12 @@ select, .products select{
   background-color: #5bc0de;
   padding:5px;
   border-radius: 0 0 5px 5px;
+  border:#a1a1a1 1px solid;
 }
+#ui-datepicker-div a {
+  background-color: #fff;
+  border-radius: 3px;
+  text-align: center;
+  padding:2px;
 
+}
