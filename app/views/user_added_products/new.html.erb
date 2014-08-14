@@ -108,8 +108,9 @@
 </div>
 
     <%= f.submit "ADD PRODUCT TO MY LIST", class: "btn btn-info round2" %>
+    <%= link_to "<i class='fa fa-times'></i> CANCEL".html_safe, user_added_products_path, class: "btn btn-inverse round2" %>
+</div>
 <% end %>
  
-<%= link_to "<i class='fa fa-times'></i> CANCEL".html_safe, user_added_products_path, class: "btn btn-inverse round2" %>
-</div>
+
 </
