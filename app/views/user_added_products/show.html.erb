@@ -3,7 +3,7 @@
 
 <h1><i class="fa fa-barcode"></i> <%= @user_product.name.upcase %> </h1>
 <div class ="light well">
-    <h4>PRODUCT INFORMATION</h4>
+    <h4 class="">PRODUCT INFORMATION</h4>
     <label>PRODUCT DETAILS:</label>
     <p><%= @user_product.product_details %></p>
     <label>SHELF LIFE:</label>
@@ -14,9 +14,11 @@
     </div>
     <div class ="light well">
 
-      <h4>Product Date Information</h4>
-      <p>Date Added: <span id="date_added"><%= @create_date %></span></p>
-      <p>Date of Expiration: <span id = "date_exp"><%= @user_product.exp_date %></span></p>
+      <h4 class="inverse">PRODUCT DATE INFORMATION</h4>
+      <label>DATE ADDED: </label>
+      <p><span id="date_added"><%= @create_date %></span></p>
+      <label>DATE OF EXPIRATION:</label>
+      <p><span id = "date_exp"><%= @user_product.exp_date %></span></p>
       
       <div class="progress progress-striped active">
         <div class="bar" role="progressbar"></div>
@@ -24,16 +26,30 @@
     </div>
 
     <div class ="light well">
-      <h4>Product Notification Information</h4>
-        <div class="field"> 
-        Notify : <% @user_product.recipients.each do |recipient| %> 
-          <%= link_to recipient.name.capitalize, user_added_product_recipient_path(@user_product, recipient) %>
-          <%= recipient.email%> 
-          <%= recipient.phone_number %>
+      <h4 class="inverse">PRODUCT NOTIFICATION INFORMATION</h4>
+        <table class="recipients-table">
+          <tr>
+            <th><i class="fa fa-user"></i> NAME</th>
+            <th><i class="fa fa-envelope-o"></i> EMAIL</th>
+            <th><i class="fa fa-phone"></i> PHONE NUMBER</th>
+          </tr>
+ 
+        <% @user_product.recipients.each do |recipient| %> 
+          <tr>
+            <td>
+              <%= link_to recipient.name.capitalize, user_added_product_recipient_path(@user_product, recipient) %>
+            </td>
+            <td>
+              <%= recipient.email%>
+            </td>
+            <td>
+              <%= recipient.phone_number %>
+            </td>
+          </tr>
         <% end %>
-        </div>
-
-        <p>Notification Date : <%= @user_product.notification_date %></p>
+      </table>
+        <label>NOTIFICATION DATE:</label>
+        <p><%= @user_product.notification_date %></p>
         
     </div>
     <%= link_to "<i class='fa fa-chevron-circle-left'></i> &nbsp;BACK".html_safe, user_added_products_path, class: "btn btn-info round2" %>

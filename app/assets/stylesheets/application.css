@@ -30,6 +30,14 @@ label{
 font-weight: normal;
 text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
 }
+.pull-right ul li{
+  margin-top: 3px;
+  list-style: none;
+  display: inline-block;
+}
+.sign-in-as{
+  margin:15px 15px 0 0;
+}
 a.disabled {
    pointer-events: none;
    cursor: default;

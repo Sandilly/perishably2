@@ -22,14 +22,19 @@
                     </a>
                 <a class="brand main">Perishably</a>
                 <div class="nav-collapse collapse">
-                  <ul class="nav pull-left">
+                  <!-- <ul class="nav pull-left">
                     <li><a href ="" class="disabled smooth">Logged in as <%= current_user.email %></a>
-
-                    <%#= link_to "Account", edit_user_path %>
                     </li>
-                  </ul>
+                  </ul> -->
                   <div class="pull-right">
-                    <%= link_to "<i class='fa fa-sign-in'></i> &nbsp;Logout".html_safe, logout_path, class: "btn btn-info round2" %>
+                    <ul>
+                      <li>
+                        <a href ="" class="disabled smooth sign-in-as">Logged in as <%= current_user.email %></a>
+                      </li>
+                      <li>
+                        <%= link_to "<i class='fa fa-sign-in'></i> &nbsp;Logout".html_safe, logout_path, class: "btn btn-info round2" %>
+                        </li>
+                    </ul>
                   </div>
                 </div>
               </div>
