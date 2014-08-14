@@ -1,15 +1,20 @@
+<div class="products-panel">
 <h1>
-  <%= @recipient.name.capitalize %>'s List</h1>
-<div class="field">
+  <i class="fa fa-user"></i>
+  <%= @recipient.name.upcase%>'S INFORMATION
+</h1>
+<div class="light well">
 <%= form_for([@user_product, @recipient]) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_area :name %>
-    <%= f.label :email %>
+    <%= f.label :name, "NAME" %>
+    <%= f.text_field :name %>
+    <%= f.label :email, "EMAIL" %>
     <%= f.text_field :email %>
-    <%= f.label :phone_number %>
+    <%= f.label :phone_number, "PHONE NUMBER" %>
     <%= f.text_field :phone_number %>  
-    <%= f.submit "Update Recipient" %>   
+    <br>
+    <%= f.submit "UPDATE RECIPIENT", class: "btn btn-info round2" %>   
 <%  end %>
-  <%= link_to "Back", user_added_product_path(@user_product) %>
+  <%= link_to "<i class='fa fa-chevron-circle-left'></i> &nbsp;BACK".html_safe, user_added_product_path(@user_product), class: "btn btn-info round2" %>
 
+</div>
 </div>

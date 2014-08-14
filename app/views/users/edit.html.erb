@@ -1,34 +1,38 @@
-<h1>Edit User Info</h1>
-
-
-<%= form_for(@user, url: {action: "update"}, html: {class: "update_form"} do |f| %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
+<div class="panel panel-default">
+  
+  <div class = "login-form">
+    <div class="panel-heading">
+      <h1>Edit User Info</h1>
+    </div>
     
-   <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div> 
-  
-  <div class="field">
-    <%= f.label :phone_number %>
-    <%= f.telephone_field :phone_number %>
-  </div>
-  
-<% end %>
+    <div class="panel-body">
+      <%= render 'layouts/flash_notices' %>
 
-  <%= link_to "Back", user_added_products_index_path %>
-  <%= f.submit "Update Item" %> 
+      <%= form_for(@user, url: {action: "update"}, html: {class: "update_form"} do |f| %>
+
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+    
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+ 
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation %>
+
+          <%= f.label :phone_number %>
+          <%= f.telephone_field :phone_number %>
+        
+      <% end %>
+  
+      <%= link_to "Back", user_added_products_index_path %>
+      <%= f.submit "Update Account" %> 
+    </div>
+
+    <div class="login-intro">
+      <p>Can't keep track of when products expire? Let us do the work. Sign in to Perishably.</p>
+    </div>
+  </div>
+</div>

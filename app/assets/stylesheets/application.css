@@ -22,3 +22,58 @@
  *= require calendar
 
  */
+/*-------------------------------------------*/
+/*---------------General App-----------------*/
+/*-------------------------------------------*/
+label{
+  color: #FFF;
+font-weight: normal;
+text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+}
+.pull-right ul li{
+  margin-top: 3px;
+  list-style: none;
+  display: inline-block;
+}
+.sign-in-as{
+  margin:15px 15px 0 0;
+}
+a.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+div .panel{
+  height:100%;
+  position: relative;
+
+}
+div .panel-heading h1, div .row-fluid h1{
+  text-align:center;
+
+  font-family: futura, sans-serif;
+  color:#000;
+  margin-bottom:10px;
+}
+div .panel-body label{
+  color:#000;
+}
+.footer{
+  text-align:center;
+  font-size: 10px;
+}
+
+input[type="text"], input[type="password"],input[type="tel"]{
+  border:1px solid #000;
+  width:200px;
+}
+.products select{
+   border:1px solid #000;
+  width:210px;
+}
+
+/*------------Flash Notice------------*/
+.notice{
+  color:#f00;
+  padding-bottom: 5px;
+}
+/*------------------------------------*/
