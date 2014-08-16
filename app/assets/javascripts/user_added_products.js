@@ -16,6 +16,7 @@ $(function() {
         select: function(event, object) {
             var url = '/products/search/' + object.item.label;
             $.getJSON(url, function(data) {
+                $('#user_added_product_storage').val(data.storage);
                 $('#user_added_product_unit_of_time_period').val(data.unit_of_time_period);
                 $('#user_added_product_number_unit_of_time').val(data.number_unit_of_time);
                 var date =    moment().add(data.unit_of_time_period.replace("(s)", ""), data.number_unit_of_time).format('YYYY-MM-DD');
